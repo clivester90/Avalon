@@ -316,7 +316,7 @@ public class LividFarmControler extends Controler {
 		player.getLivid().addProduce(20);
 	}
 
-	private transient WorldTile fenceTile[] = { new WorldTile(2108, 3953, 0), new WorldTile(2116, 3953, 0),
+	private transient WorldTile[] fenceTile = { new WorldTile(2108, 3953, 0), new WorldTile(2116, 3953, 0),
 			new WorldTile(2118, 3953, 0), new WorldTile(2120, 3951, 0), new WorldTile(2120, 3946, 0),
 			new WorldTile(2120, 3945, 0) };
 
@@ -335,7 +335,7 @@ public class LividFarmControler extends Controler {
 	/**
 	 * All patch tiles in order north-west to south-east
 	 */
-	private transient WorldTile patchTile[] = {
+	private transient WorldTile[] patchTile = {
 			// first row
 			new WorldTile(2098, 3949, 0), new WorldTile(2100, 3949, 0), new WorldTile(2102, 3949, 0),
 			new WorldTile(2104, 3949, 0), new WorldTile(2106, 3949, 0),

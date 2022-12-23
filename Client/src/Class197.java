@@ -101,7 +101,7 @@ public class Class197 {
 		Class505 class505 = Class255.method2439(this.aClass243_1988, i_6_, -227622319);
 		byte[] is = this.aClass243_1987.method2294(i_6_, (byte) 82);
 		Object object = interface10.method131(is, class505, true, -2012626904);
-		this.aMap1990.put(Integer.valueOf(i_5_), new Class454(object, class505));
+		this.aMap1990.put(i_5_, new Class454(object, class505));
 	    }
 	}
 	catch (RuntimeException runtimeexception) {
@@ -137,7 +137,7 @@ public class Class197 {
 	    if (this.anIntArray1991 != null) {
 		for (int i_11_ = 0; i_11_ < this.anIntArray1991.length; i_11_++) {
 		    if (i == this.anIntArray1991[i_11_])
-			return (Class454) this.aMap1990.get(Integer.valueOf(i_11_));
+			return (Class454) this.aMap1990.get(i_11_);
 		}
 	    }
 	    Class454 class454 = ((Class454) this.aClass348_1989.method4184(i << 1 | (bool_9_ ? 1 : 0)));

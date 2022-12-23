@@ -59,7 +59,7 @@ public class ItemDefinitionsGenerator {
 				writer.write("<int>" + Integer.valueOf(reader.readLine()) + "</int>");
 				writer.newLine();
 				writer.flush();
-				int rangedstr = Integer.valueOf(reader.readLine());
+				int rangedstr = Integer.parseInt(reader.readLine());
 				writer.write("<int>" + Integer.valueOf(reader.readLine()) + "</int>");
 				writer.newLine();
 				writer.flush();

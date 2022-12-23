@@ -71,7 +71,7 @@ public final class Launcher {
 			Settings.DEBUG = true;
 		} else {
 			Settings.VPS_HOSTED = Boolean.parseBoolean(args[3]);
-			Settings.PORT_ID = Integer.valueOf(args[2]);
+			Settings.PORT_ID = Integer.parseInt(args[2]);
 			Settings.HOSTED = Boolean.parseBoolean(args[1]);
 			Settings.DEBUG = Boolean.parseBoolean(args[0]);
 		}
@@ -145,14 +145,11 @@ public final class Launcher {
 	}
 
 	private static void addCleanMemoryTask() {
-		CoresManager.slowExecutor.scheduleWithFixedDelay(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					cleanMemory(Runtime.getRuntime().freeMemory() < Settings.MIN_FREE_MEM_ALLOWED);
-				} catch (Throwable e) {
-					Logger.handle(e);
-				}
+		CoresManager.slowExecutor.scheduleWithFixedDelay(() -> {
+			try {
+				cleanMemory(Runtime.getRuntime().freeMemory() < Settings.MIN_FREE_MEM_ALLOWED);
+			} catch (Throwable e) {
+				Logger.handle(e);
 			}
 		}, 0, 10, TimeUnit.SECONDS);
 	}
@@ -160,22 +157,19 @@ public final class Launcher {
 	private static int i = 0;
 
 	private static void addAccountsSavingTask() {
-		CoresManager.slowExecutor.scheduleWithFixedDelay(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					i++;
-					if (i % 30 == 0 && !Settings.DEBUG) {
-						//discord.getChannelByName("public-chat").sendMessage("30 Minutes Message\n"
-						//		+ World.getPlayers().size() + " players are currently playing Avalon.");
-						i = 0;
-					}
-					saveFiles();
-				} catch (Throwable e) {
-					Logger.handle(e);
+		CoresManager.slowExecutor.scheduleWithFixedDelay(() -> {
+			try {
+				i++;
+				if (i % 30 == 0 && !Settings.DEBUG) {
+					//discord.getChannelByName("public-chat").sendMessage("30 Minutes Message\n"
+					//		+ World.getPlayers().size() + " players are currently playing Avalon.");
+					i = 0;
 				}
-
+				saveFiles();
+			} catch (Throwable e) {
+				Logger.handle(e);
 			}
+
 		}, 0, 1, TimeUnit.MINUTES);
 	}
 

@@ -26,9 +26,9 @@ public class GanodermicCrafting extends Action {
 	private ArmourData data;
 	private int removeThread = 5;
 
-	public static final int FLAKES[] = { 22449, 22450, 22451 };
+	public static final int[] FLAKES = { 22449, 22450, 22451 };
 
-	public static final int PRODUCTS[][] = { { 22458, 22466, 22462 }, { 22470, 22478, 22474 },
+	public static final int[][] PRODUCTS = { { 22458, 22466, 22462 }, { 22470, 22478, 22474 },
 			{ 22482, 22490, 22486 } };
 
 	public enum ArmourData {

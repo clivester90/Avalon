@@ -142,10 +142,10 @@ public class Class298_Sub19_Sub3 extends Class298_Sub19 {
     Class298_Sub30 method3032(int i, double d) {
 	try {
 	    long l = (this.anInt9262 * 1472501875 << 32) | i;
-	    Class298_Sub30 class298_sub30 = ((Class298_Sub30) aClass253_9258.method2413(Long.valueOf(l), (byte) -35));
+	    Class298_Sub30 class298_sub30 = ((Class298_Sub30) aClass253_9258.method2413(l, (byte) -35));
 	    if (null != class298_sub30) {
 		class298_sub30.aDouble7367 = d;
-		aClass253_9258.method2417(Long.valueOf(l), 1695283057);
+		aClass253_9258.method2417(l, 1695283057);
 	    } else
 		class298_sub30 = new Class298_Sub30((new short[(this.anInt9262) * 1472501875][i]), d);
 	    return class298_sub30;
@@ -338,7 +338,7 @@ public class Class298_Sub19_Sub3 extends Class298_Sub19 {
 		class298_sub30.method2839(-1460969981);
 		this.anInt9261 = 0;
 		this.anInt9260 -= -1862483835;
-		aClass253_9258.method2411(Long.valueOf(class298_sub30.method3112(-1380728898)), class298_sub30, (byte) 98);
+		aClass253_9258.method2411(class298_sub30.method3112(-1380728898), class298_sub30, (byte) 98);
 	    }
 	}
 	catch (RuntimeException runtimeexception) {

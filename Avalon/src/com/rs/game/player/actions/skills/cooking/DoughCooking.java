@@ -39,7 +39,7 @@ public class DoughCooking extends Action {
 		private int id, selected, secondIngredient;
 		private double[] xp;
 
-		private Cook(int id, int selected, int secondIngredient, int[] product, int level[], double[] xp) {
+		private Cook(int id, int selected, int secondIngredient, int[] product, int[] level, double[] xp) {
 			this.id = id;
 			this.selected = selected;
 			this.secondIngredient = secondIngredient;

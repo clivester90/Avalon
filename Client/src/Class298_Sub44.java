@@ -263,9 +263,9 @@ public class Class298_Sub44 extends Class298 {
 			int i_11_ = is_6_[i_7_ * 5 + 3];
 			int i_12_ = is_6_[4 + i_7_ * 5];
 			Class472 class472 = new Class472(i_8_, i_9_, i_10_, i_11_, i_12_);
-			hashmap.put(Integer.valueOf(i_8_), class472);
+			hashmap.put(i_8_, class472);
 		    }
-		    Class472 class472 = (Class472) hashmap.get(Integer.valueOf(0));
+		    Class472 class472 = (Class472) hashmap.get(0);
 		    if (null != class472) {
 			RsByteBuffer class298_sub53 = new RsByteBuffer(13);
 			class298_sub53.writeLEInt((-2056580217 * (class472.anInt5960)), 162325587);
@@ -274,7 +274,7 @@ public class Class298_Sub44 extends Class298 {
 			class298_sub53.index = 0;
 			this.aString7496 = class298_sub53.readString(512996154);
 		    }
-		    Class472 class472_13_ = (Class472) hashmap.get(Integer.valueOf(1));
+		    Class472 class472_13_ = (Class472) hashmap.get(1);
 		    if (null != class472_13_) {
 			this.anInt7513 = (-1193649755 * class472_13_.anInt5961);
 			int i_14_ = (class472_13_.anInt5960 * -2056580217);
@@ -282,12 +282,12 @@ public class Class298_Sub44 extends Class298 {
 			this.anIntArray7512[0] = class472_13_.anInt5963 * 634425393;
 			this.anIntArray7512[1] = 272393713 * class472_13_.anInt5964;
 		    }
-		    Class472 class472_15_ = (Class472) hashmap.get(Integer.valueOf(-2147483647));
+		    Class472 class472_15_ = (Class472) hashmap.get(-2147483647);
 		    if (class472_15_ != null)
 			this.anIntArray7512[2] = 272393713 * class472_15_.anInt5964;
 		    RsByteBuffer class298_sub53 = new RsByteBuffer(49);
 		    for (int i_16_ = -2147483646; i_16_ <= -2147483644; i_16_++) {
-			Class472 class472_17_ = (Class472) hashmap.get(Integer.valueOf(i_16_));
+			Class472 class472_17_ = (Class472) hashmap.get(i_16_);
 			if (null != class472_17_) {
 			    class298_sub53.writeLEInt((class472_17_.anInt5961 * 1461544821), 1924293641);
 			    class298_sub53.writeLEInt((-2056580217 * (class472_17_.anInt5960)), -1273071648);

@@ -59,7 +59,7 @@ public class Class502 implements Interface26 {
 	    if (1282634425 * Class291.anInt6472 < i_1_)
 		i_1_ = Class291.anInt6472 * 1282634425;
 	    try {
-		Class212.aClass212_2425.method1955((new Object[] { Integer.valueOf(i_0_), Integer.valueOf(i_1_), Integer.valueOf(Class190.method1859((byte) -5)), Integer.valueOf(Class422_Sub25.aClass298_Sub48_8425.screenSizePreference.method5654(-1747444886)) }), (short) 28321);
+		Class212.aClass212_2425.method1955((new Object[] {i_0_, i_1_, Class190.method1859((byte) -5), Class422_Sub25.aClass298_Sub48_8425.screenSizePreference.method5654(-1747444886)}), (short) 28321);
 	    }
 	    catch (Throwable throwable) {
 		/* empty */

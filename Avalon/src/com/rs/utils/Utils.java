@@ -399,7 +399,7 @@ public final class Utils {
 	 */
 	public static String getDay() {
 		String today = "";
-		String suffixes[] = { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th",
+		String[] suffixes = { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th",
 				"th", "th", "th", "th", "th", "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "st" };
 		Date date = new Date();
 		SimpleDateFormat formatDayOfMonth = new SimpleDateFormat("d");
@@ -1110,7 +1110,7 @@ public final class Utils {
 		if (l % 37L == 0L)
 			return null;
 		int i = 0;
-		char ac[] = new char[12];
+		char[] ac = new char[12];
 		while (l != 0L) {
 			long l1 = l;
 			l /= 37L;
@@ -1899,7 +1899,7 @@ public final class Utils {
 	 * @return a percentage between 0 and 100;
 	 */
 	public static double percentileDiceRoll() {
-		return Double.valueOf(randomise(0, 10000000) / 100000);
+		return (double) (randomise(0, 10000000) / 100000);
 	}
 
 	/**
@@ -1923,13 +1923,13 @@ public final class Utils {
 	 * @return the answer.
 	 */
 	public static int safelyMathNumber(SafeMathNumberOperation operation, long value, long value2) {
-		long answer = Long.valueOf(value);
+		long answer = value;
 		if (operation == SafeMathNumberOperation.ADD) {
 			answer = value + value2;
 		} else if (operation == SafeMathNumberOperation.MULTIPLY) {
 			answer = value * value2;
 		}
-		return answer > Integer.MAX_VALUE ? Integer.MAX_VALUE : Integer.valueOf(answer + "");
+		return answer > Integer.MAX_VALUE ? Integer.MAX_VALUE : Integer.parseInt(answer + "");
 	}
 
 	public static String formatTime(long time) {

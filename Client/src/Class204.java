@@ -13,7 +13,7 @@ public class Class204 {
 		throw new RuntimeException("");
 	    if (!Class85.method955(-739351876).method265("jagdx", 65483240))
 		throw new RuntimeException("");
-	    class_ra = Class_ra_Sub3_Sub2.method5545(canvas, interface_ma, class243, Integer.valueOf(i));
+	    class_ra = Class_ra_Sub3_Sub2.method5545(canvas, interface_ma, class243, i);
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw runtimeexception;
@@ -32,7 +32,7 @@ public class Class204 {
 		throw new RuntimeException("");
 	    if (!Class85.method955(-765516167).method265("jagdx", -1570923611))
 		throw new RuntimeException("");
-	    class_ra = Class_ra_Sub3_Sub2.method5545(canvas, interface_ma, class243, Integer.valueOf(i));
+	    class_ra = Class_ra_Sub3_Sub2.method5545(canvas, interface_ma, class243, i);
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw runtimeexception;
@@ -55,7 +55,7 @@ public class Class204 {
 		throw new RuntimeException("");
 	    if (!Class85.method955(1227056345).method265("jagdx", 1326863059))
 		throw new RuntimeException("");
-	    class_ra = Class_ra_Sub3_Sub2.method5545(canvas, interface_ma, class243, Integer.valueOf(i));
+	    class_ra = Class_ra_Sub3_Sub2.method5545(canvas, interface_ma, class243, i);
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw runtimeexception;

@@ -156,7 +156,7 @@ public final class ItemDefinitions {
 				if (output.equalsIgnoreCase("coins"))
 					return 995;
 				if (name.contains("�")) {
-					amount = Integer.valueOf(name.substring(name.length() - 1, name.length()));
+					amount = Integer.parseInt(name.substring(name.length() - 1, name.length()));
 					return definition.getId() + amount;
 				}
 				return definition.getId();

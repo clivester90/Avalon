@@ -28,7 +28,7 @@ public class Class254 {
 	    ClientScriptMap class483 = Class51.aClass475_506.getClientScriptMap(i_1_, 1528209569);
 	    if (class483.aChar6037 != i_0_)
 		throw new RuntimeException();
-	    class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919 - 1)] = (class483.method6127(Integer.valueOf(i_2_), (byte) 94) ? 1 : 0);
+	    class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919 - 1)] = (class483.method6127(i_2_, (byte) 94) ? 1 : 0);
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw Class346.method4175(runtimeexception, new StringBuilder().append("kq.vo(").append(')').toString());

@@ -59,10 +59,10 @@ public class ArtisanWorkshop implements Serializable {
 		RUNITE_III(20646,90,758,  new Item[]  {new Item(451,4), new Item(453,30)}, 	new Item[] {new Item(20616,1),new Item(20621,1),new Item(20626,1),new Item(20631,1)});
 		
 		int barId, level;
-		Item ores[], products[];
+		Item[] ores, products;
 		double exp;
 		
-		Ingots(int id, int level,double exp, Item ores[], Item products[]){
+		Ingots(int id, int level, double exp, Item[] ores, Item[] products){
 			this.barId = id;
 			this.level = level;
 			this.exp = exp;
@@ -106,9 +106,9 @@ public class ArtisanWorkshop implements Serializable {
 	/**
 	 * enum of all thye ingots
 	 */
-	private Ingots ignots_I[] =  {Ingots.IRON_I, Ingots.STEEL_I,Ingots.MITHRIL_I,Ingots.ADAMANT_I,Ingots.RUNITE_I};
-	private Ingots ignots_II[]  = {Ingots.IRON_II,Ingots.STEEL_II,Ingots.MITHRIL_II,Ingots.ADAMANT_II,Ingots.RUNITE_II};
-	private Ingots ignots_III[] = {Ingots.IRON_III,Ingots.STEEL_III,Ingots.MITHRIL_III,Ingots.ADAMANT_III, Ingots.RUNITE_III};
+	private Ingots[] ignots_I =  {Ingots.IRON_I, Ingots.STEEL_I,Ingots.MITHRIL_I,Ingots.ADAMANT_I,Ingots.RUNITE_I};
+	private Ingots[] ignots_II = {Ingots.IRON_II,Ingots.STEEL_II,Ingots.MITHRIL_II,Ingots.ADAMANT_II,Ingots.RUNITE_II};
+	private Ingots[] ignots_III = {Ingots.IRON_III,Ingots.STEEL_III,Ingots.MITHRIL_III,Ingots.ADAMANT_III, Ingots.RUNITE_III};
 	/**
 	 * deletes all the items
 	 */
@@ -300,7 +300,7 @@ public class ArtisanWorkshop implements Serializable {
 	/**
 	 * sends the correct values of the bars
 	 */
-	public int barValuesCid[] = new int[] {46,71,72,12,13,6,7,2,3};
+	public int[] barValuesCid = new int[] {46,71,72,12,13,6,7,2,3};
 	public void sendBarValues(Ingots[] ing){
 		int count = 0;
 		for(int i = 0; i <ing.length; i ++){
@@ -315,7 +315,7 @@ public class ArtisanWorkshop implements Serializable {
 			
 		}
 	}
-	Ingots selected[] = ignots_I;
+	Ingots[] selected = ignots_I;
 	public void handelButtons(int button){
 		int amount = player.getInventory().getFreeSlots();
 		switch(button){

@@ -332,7 +332,7 @@ public class Class301 {
 		    aByteArray3222[i_71_ + i_72_ * anInt3239] = (byte) i_80_;
 		    aByteArray3246[i_71_ + i_72_ * anInt3239] = (byte) i_81_;
 		    if (i_82_ == 1) {
-			anObjectArray3247[i_71_ + i_72_ * anInt3239] = new Integer(class298_sub53.readBigSmart(1235052657));
+			anObjectArray3247[i_71_ + i_72_ * anInt3239] = class298_sub53.readBigSmart(1235052657);
 			aByteArray3250[i_71_ + i_72_ * anInt3239] = class298_sub53.readByte(-12558881);
 		    } else if (i_82_ > 1) {
 			int[] is_83_ = new int[i_82_];

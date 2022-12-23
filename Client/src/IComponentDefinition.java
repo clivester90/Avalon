@@ -459,7 +459,7 @@ public class IComponentDefinition {
 	    for (int i_26_ = 0; i_26_ < i_25_; i_26_++) {
 		int i_27_ = class298_sub53.readUnsignedByte();
 		if (i_27_ == 0)
-		    objects[i_26_] = new Integer(class298_sub53.readInt((byte) 52));
+		    objects[i_26_] = class298_sub53.readInt((byte) 52);
 		else if (i_27_ == 1)
 		    objects[i_26_] = class298_sub53.readString(1069755759);
 	    }

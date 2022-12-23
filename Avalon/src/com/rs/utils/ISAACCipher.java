@@ -14,9 +14,9 @@ public class ISAACCipher {
 	@SuppressWarnings("unused")
 	private int count = 0;
 	/** * The results. */
-	private int results[] = new int[SIZE];
+	private int[] results = new int[SIZE];
 	/** * The internal memory state. */
-	private int memory[] = new int[SIZE];
+	private int[] memory = new int[SIZE];
 	/** * The accumulator. */
 	private int a;
 	/** * The last result. */

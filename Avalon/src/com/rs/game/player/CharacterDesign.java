@@ -18,17 +18,17 @@ public class CharacterDesign {
 		player.getPackets().sendHideIComponent(1028, 123, true);
 		player.getPackets().sendConfig(2533, 0);
 		player.getPackets().sendConfig(1363, player.getAppearence().isMale() ? 0 : 4096);
-		player.temporaryAttribute().put("customizing_stage", Integer.valueOf(0));
-		player.temporaryAttribute().put("customizing_set", Integer.valueOf(-1));
-		player.temporaryAttribute().put("extra_set", Integer.valueOf(-1));
+		player.temporaryAttribute().put("customizing_stage", 0);
+		player.temporaryAttribute().put("customizing_set", -1);
+		player.temporaryAttribute().put("extra_set", -1);
 		armStyle = player.getAppearence().getArmsStyle();
 	}
 
 	public static void handleButtons(Player player, int componentId, int slotId, int packetId) {
 		if (componentId >= 116 && componentId <= 121)
-			player.temporaryAttribute().put("customizing_stage", Integer.valueOf(componentId - 115));
+			player.temporaryAttribute().put("customizing_stage", componentId - 115);
 		if (componentId == 137 || componentId == 139)
-			player.temporaryAttribute().put("customizing_stage", Integer.valueOf(componentId != 139 ? 0 : 1));
+			player.temporaryAttribute().put("customizing_stage", componentId != 139 ? 0 : 1);
 		if (componentId == 138) {
 			int set = ((Integer) player.temporaryAttribute().get("customizing_set")).intValue();
 			if (set == -1)
@@ -60,7 +60,7 @@ public class CharacterDesign {
 			case 72:
 			case 73:
 			case 74:
-				player.temporaryAttribute().put("customizing_set", Integer.valueOf(componentId - 68));
+				player.temporaryAttribute().put("customizing_set", componentId - 68);
 				break;
 			}
 			break;
@@ -175,12 +175,12 @@ public class CharacterDesign {
 		player.getAppearence().generateAppearenceData();
 	}
 
-	private static final short HAIR_STYLES[][] = {
+	private static final short[][] HAIR_STYLES = {
 			{ 5, 6, 93, 96, 92, 268, 265, 264, 267, 315, 94, 263, 312, 313, 311, 314, 261, 310, 1, 0, 97, 95, 262, 316,
 					309, 3, 91, 4 },
 			{ 141, 361, 272, 273, 359, 274, 353, 277, 280, 360, 356, 269, 358, 270, 275, 357, 145, 271, 354, 355, 45,
 					52, 49, 47, 48, 46, 143, 362, 144, 279, 142, 146, 278, 135 } };
-	public static final short TORSOS[][][] = {
+	public static final short[][][] TORSOS = {
 			{ { 558, 0, 591, 592, 593, 594, 0, 596, 597, 0, 599, 600, 601, 0, 603, 0, 0, 0, 607, 608, 0, 589, 0, 0, 0,
 					613, 0, 615, 616, 0, 618, 0 },
 			{ 364, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385,
@@ -189,7 +189,7 @@ public class CharacterDesign {
 					417, 418, -1, 420, 421, 422, 423, -1, 425, -1 },
 					{ 507, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526,
 							527, 528, 508, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538 } } };
-	public static final int SETS[][][][] = { {
+	public static final int[][][][] SETS = { {
 			{ { 473, 616, 392, 648, 441 }, { 37, 213, 4 }, { 443, armStyle, 390, 646, 440 }, { 37, 213, 4 },
 					{ 474, 618, 394, 650, 441 }, { 37, 213, 4 } },
 			{ { 453, armStyle, 380, 636, 429 }, { 197, 202, 4 }, { 454, armStyle, 381, 637, 429 }, { 197, 202, 4 },

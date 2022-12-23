@@ -87,7 +87,7 @@ public class Class375 {
 	    ClientScriptMap class483 = Class51.aClass475_506.getClientScriptMap(i_3_, 1528209569);
 	    if (class483.aChar6037 != i_2_)
 		throw new RuntimeException();
-	    int[] is = class483.method6128(Integer.valueOf(i_4_), (short) 19520);
+	    int[] is = class483.method6128(i_4_, (short) 19520);
 	    int i_5_ = 0;
 	    if (is != null)
 		i_5_ = is.length;

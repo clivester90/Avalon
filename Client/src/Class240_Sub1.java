@@ -957,7 +957,7 @@ public class Class240_Sub1 extends Class240 {
 		throw new RuntimeException();
 	    if (class483.aChar6037 != i_185_)
 		throw new RuntimeException();
-	    int[] is = class483.method6128(Integer.valueOf(i_188_), (short) 3608);
+	    int[] is = class483.method6128(i_188_, (short) 3608);
 	    if (i_189_ < 0 || is == null || is.length <= i_189_)
 		throw new RuntimeException();
 	    class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919 - 1)] = is[i_189_];

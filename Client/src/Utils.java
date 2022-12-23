@@ -37,7 +37,7 @@ public class Utils {
      */
     public static String getDay() {
 	String today = "";
-	String suffixes[] = { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "st" };
+	String[] suffixes = { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "st" };
 	Date date = new Date();
 	SimpleDateFormat formatDayOfMonth = new SimpleDateFormat("d");
 	int day = Integer.parseInt(formatDayOfMonth.format(date));

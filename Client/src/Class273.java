@@ -67,7 +67,7 @@ public class Class273 {
 	    boolean bool = false;
 	    if (client.aBoolean8638) {
 		try {
-		    Object object = (Class212.aClass212_2426.method1953((new Object[] { Integer.valueOf(Class298_Sub41.anInt7456 * 1914527151), (Boolean.valueOf(1 == (Class287.myPlayer.aByte10220))), Integer.valueOf(class403.anIntArray5244[((class403.anInt5239 -= -391880689) * 681479919)]) }), -1838433046));
+		    Object object = (Class212.aClass212_2426.method1953((new Object[] {Class298_Sub41.anInt7456 * 1914527151, (1 == (Class287.myPlayer.aByte10220)), class403.anIntArray5244[((class403.anInt5239 -= -391880689) * 681479919)]}), -1838433046));
 		    if (null != object)
 			bool = ((Boolean) object).booleanValue();
 		}

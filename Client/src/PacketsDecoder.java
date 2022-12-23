@@ -856,9 +856,9 @@ public class PacketsDecoder {
                     if (string.charAt(i_216_) == 's')
                         objects[i_216_ + 1] = stream.readString(1977322513);
                     else
-                        objects[i_216_ + 1] = new Integer(stream.readInt((byte) -5));
+                        objects[i_216_ + 1] = stream.readInt((byte) -5);
                 }
-                objects[0] = new Integer(stream.readInt((byte) 18));
+                objects[0] = stream.readInt((byte) 18);
                 Class343.method4162(1722404314);
                 ScriptEnvironment script = new ScriptEnvironment();
                 script.arguements = objects;
@@ -1015,7 +1015,7 @@ public class PacketsDecoder {
                 byte i_243_ = stream.readByte(-12558881);
                 if (null == Class313.anObjectArray3298)
                     Class313.anObjectArray3298 = (new Object[2143828057 * Class99.aClass517_951.anInt6268]);
-                Class313.anObjectArray3298[i_242_] = new Integer(i_243_);
+                Class313.anObjectArray3298[i_242_] = (int) i_243_;
                 client.anIntArray8880[((client.anInt8881 += -1965237945) * -1653538697) - 1 & 0x1f] = i_242_;
                 class25.INCOMMING_PACKET = null;
                 return true;
@@ -1308,7 +1308,7 @@ public class PacketsDecoder {
                 long l = stream.readLong((short) 19761);
                 if (null == Class313.anObjectArray3298)
                     Class313.anObjectArray3298 = (new Object[Class99.aClass517_951.anInt6268 * 2143828057]);
-                Class313.anObjectArray3298[i_291_] = new Long(l);
+                Class313.anObjectArray3298[i_291_] = l;
                 client.anIntArray8880[((client.anInt8881 += -1965237945) * -1653538697) - 1 & 0x1f] = i_291_;
                 class25.INCOMMING_PACKET = null;
                 return true;
@@ -1981,7 +1981,7 @@ public class PacketsDecoder {
                 int i_438_ = stream.readInt((byte) -116);
                 if (Class313.anObjectArray3298 == null)
                     Class313.anObjectArray3298 = (new Object[Class99.aClass517_951.anInt6268 * 2143828057]);
-                Class313.anObjectArray3298[i_437_] = new Integer(i_438_);
+                Class313.anObjectArray3298[i_437_] = i_438_;
                 client.anIntArray8880[((client.anInt8881 += -1965237945) * -1653538697) - 1 & 0x1f] = i_437_;
                 class25.INCOMMING_PACKET = null;
                 return true;

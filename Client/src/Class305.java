@@ -245,7 +245,7 @@ public class Class305 implements Interface27 {
 					    method.invoke(method_17_, (new Object[] { Boolean.TRUE }));
 					    try {
 						method_17_.invoke(object, (new Object[0]));
-						field_16_.set(object, new Integer(0));
+						field_16_.set(object, 0);
 						hashtable.remove(string);
 					    }
 					    catch (Throwable throwable) {
@@ -322,7 +322,7 @@ public class Class305 implements Interface27 {
 					method.invoke(method_23_, (new Object[] { Boolean.TRUE }));
 					try {
 					    method_23_.invoke(object, new Object[0]);
-					    field_22_.set(object, new Integer(0));
+					    field_22_.set(object, 0);
 					    hashtable.remove(string);
 					}
 					catch (Throwable throwable) {
@@ -420,7 +420,7 @@ public class Class305 implements Interface27 {
 					method.invoke(method_29_, (new Object[] { Boolean.TRUE }));
 					try {
 					    method_29_.invoke(object, new Object[0]);
-					    field_28_.set(object, new Integer(0));
+					    field_28_.set(object, 0);
 					    hashtable.remove(string);
 					}
 					catch (Throwable throwable) {
@@ -512,7 +512,7 @@ public class Class305 implements Interface27 {
 					method.invoke(method_35_, (new Object[] { Boolean.TRUE }));
 					try {
 					    method_35_.invoke(object, new Object[0]);
-					    field_34_.set(object, new Integer(0));
+					    field_34_.set(object, 0);
 					    hashtable.remove(string);
 					}
 					catch (Throwable throwable) {

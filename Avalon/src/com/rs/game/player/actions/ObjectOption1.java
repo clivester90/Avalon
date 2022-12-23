@@ -84,7 +84,7 @@ public class ObjectOption1 {
 		}
 	}
 
-	public static final Objects objectInfo[] = Objects.values();
+	public static final Objects[] objectInfo = Objects.values();
 
 	public static boolean validObject(Player player, WorldObject object) {
 		for (Objects objects : objectInfo) {

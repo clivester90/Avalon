@@ -40,13 +40,13 @@ public class Class128_Sub2 extends Class128 {
 		if (string.charAt(i_8_ - 1) == 's')
 		    objects[i_8_] = (class403.anObjectArray5240[(class403.anInt5241 -= 969361751) * -203050393]);
 		else if (string.charAt(i_8_ - 1) == '\u00a7')
-		    objects[i_8_] = new Long(class403.aLongArray5251[(class403.anInt5245 -= -682569305) * 1685767703]);
+		    objects[i_8_] = class403.aLongArray5251[(class403.anInt5245 -= -682569305) * 1685767703];
 		else
-		    objects[i_8_] = new Integer(class403.anIntArray5244[(class403.anInt5239 -= -391880689) * 681479919]);
+		    objects[i_8_] = class403.anIntArray5244[(class403.anInt5239 -= -391880689) * 681479919];
 	    }
 	    int i_9_ = (class403.anIntArray5244[((class403.anInt5239 -= -391880689) * 681479919)]);
 	    if (-1 != i_9_)
-		objects[0] = new Integer(i_9_);
+		objects[0] = i_9_;
 	    else
 		objects = null;
 	    return objects;

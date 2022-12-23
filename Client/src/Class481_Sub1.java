@@ -76,7 +76,7 @@ public class Class481_Sub1 extends Class481 {
 		    Class var_class = Class.forName("sun.net.www.protocol.http.AuthenticationInfo.class");
 		    Method method = (var_class.getDeclaredMethod("getProxyAuth", new Class[] { java.lang.String.class, Integer.TYPE }));
 		    method.setAccessible(true);
-		    Object object = method.invoke(null, (new Object[] { inetsocketaddress.getHostName(), new Integer(inetsocketaddress.getPort()) }));
+		    Object object = method.invoke(null, (new Object[] { inetsocketaddress.getHostName(), inetsocketaddress.getPort()}));
 		    if (object != null) {
 			Method method_6_ = (var_class.getDeclaredMethod("supportsPreemptiveAuthorization", new Class[0]));
 			method_6_.setAccessible(true);

@@ -498,7 +498,7 @@ public class Class2 {
 	}
     }
 
-    final void method291(boolean flag, boolean flag1, int ai[], int i, int j, int k, int l, int i1, float f, float f1, float f2, float f3) {
+    final void method291(boolean flag, boolean flag1, int[] ai, int i, int j, int k, int l, int i1, float f, float f1, float f2, float f3) {
 	if (aBoolean20) {
 	    if (i1 > anInt22)
 		i1 = anInt22;
@@ -1658,7 +1658,7 @@ public class Class2 {
 	}
     }
 
-    final void method294(boolean flag, boolean flag1, boolean flag2, int ai[], int i, int j, int k, int l, int i1, float f, float f1) {
+    final void method294(boolean flag, boolean flag1, boolean flag2, int[] ai, int i, int j, int k, int l, int i1, float f, float f1) {
 	if (aBoolean20) {
 	    if (i1 > anInt22)
 		i1 = anInt22;
@@ -1931,7 +1931,7 @@ public class Class2 {
 	    }
     }
 
-    final void method295(boolean flag, boolean flag1, int ai[], int ai1[], int i, int j, int k, float f, float f1, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17) {
+    final void method295(boolean flag, boolean flag1, int[] ai, int[] ai1, int i, int j, int k, float f, float f1, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17) {
 	int l = k - j;
 	float f18 = 1.0F / l;
 	float f19 = (f1 - f) * f18;
@@ -2620,7 +2620,7 @@ public class Class2 {
 	}
     }
 
-    final void method297(boolean flag, boolean flag1, int ai[], int i, int j, int k, float f, float f1, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18, float f19, float f20, float f21) {
+    final void method297(boolean flag, boolean flag1, int[] ai, int i, int j, int k, float f, float f1, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18, float f19, float f20, float f21) {
 	int l = k - j;
 	float f22 = 1.0F / l;
 	float f23 = (f1 - f) * f22;
@@ -2738,7 +2738,7 @@ public class Class2 {
 	aFloatArray35 = aClass_ra_Sub1_31.aFloatArray7973;
     }
 
-    final void method298(boolean flag, boolean flag1, int ai[], int i, int j, int k, int l, int i1, float f, float f1, float f2, float f3, float f4, float f5, float f6, float f7) {
+    final void method298(boolean flag, boolean flag1, int[] ai, int i, int j, int k, int l, int i1, float f, float f1, float f2, float f3, float f4, float f5, float f6, float f7) {
 	if (aBoolean20) {
 	    if (i1 > anInt22)
 		i1 = anInt22;
@@ -2827,7 +2827,7 @@ public class Class2 {
 			    f2 += f3;
 			    f4 += f5;
 			    f6 += f7;
-			    int ai1[] = ai;
+			    int[] ai1 = ai;
 			    int i3 = i++;
 			    int k8 = j;
 			    int k15 = ai1[i3];
@@ -2835,7 +2835,7 @@ public class Class2 {
 			    int i23 = (k8 & 0xff00ff) + (k15 & 0xff00ff);
 			    k15 = (i23 & 0x1000100) + (j19 - i23 & 0x10000);
 			    ai1[i3] = 0xff000000 | j19 - k15 | k15 - (k15 >>> 8);
-			    int ai16[] = ai;
+			    int[] ai16 = ai;
 			    j19 = i++;
 			    i23 = j;
 			    int l26 = ai16[j19];
@@ -2843,7 +2843,7 @@ public class Class2 {
 			    int j27 = (i23 & 0xff00ff) + (l26 & 0xff00ff);
 			    l26 = (j27 & 0x1000100) + (i27 - j27 & 0x10000);
 			    ai16[j19] = 0xff000000 | i27 - l26 | l26 - (l26 >>> 8);
-			    int ai17[] = ai;
+			    int[] ai17 = ai;
 			    i27 = i++;
 			    j27 = j;
 			    int k27 = ai17[i27];
@@ -2851,7 +2851,7 @@ public class Class2 {
 			    int i28 = (j27 & 0xff00ff) + (k27 & 0xff00ff);
 			    k27 = (i28 & 0x1000100) + (l27 - i28 & 0x10000);
 			    ai17[i27] = 0xff000000 | l27 - k27 | k27 - (k27 >>> 8);
-			    int ai18[] = ai;
+			    int[] ai18 = ai;
 			    l27 = i++;
 			    i28 = j;
 			    int j28 = ai18[l27];
@@ -2865,7 +2865,7 @@ public class Class2 {
 		    if (k > 0) {
 			j = (int) f2 & 0xff0000 | (int) f4 & 0xff00 | (int) f6 & 0xff;
 			do {
-			    int ai2[] = ai;
+			    int[] ai2 = ai;
 			    int j3 = i++;
 			    int l8 = j;
 			    int l15 = ai2[j3];
@@ -2905,7 +2905,7 @@ public class Class2 {
 		    while (--k > 0);
 		} else {
 		    do {
-			int ai3[] = ai;
+			int[] ai3 = ai;
 			int l3 = i++;
 			int j9 = (int) f2 & 0xff0000 | (int) f4 & 0xff00 | (int) f6 & 0xff;
 			int i16 = ai3[l3];
@@ -3068,7 +3068,7 @@ public class Class2 {
 			    f6 += f7;
 			    i++;
 			    if (!flag || f < aFloatArray35[i]) {
-				int ai4[] = ai;
+				int[] ai4 = ai;
 				int j4 = i;
 				int l10 = j;
 				int j16 = ai4[j4];
@@ -3082,7 +3082,7 @@ public class Class2 {
 			    f += f1;
 			    i++;
 			    if (!flag || f < aFloatArray35[i]) {
-				int ai5[] = ai;
+				int[] ai5 = ai;
 				int k4 = i;
 				int i11 = j;
 				int k16 = ai5[k4];
@@ -3096,7 +3096,7 @@ public class Class2 {
 			    f += f1;
 			    i++;
 			    if (!flag || f < aFloatArray35[i]) {
-				int ai6[] = ai;
+				int[] ai6 = ai;
 				int l4 = i;
 				int j11 = j;
 				int l16 = ai6[l4];
@@ -3110,7 +3110,7 @@ public class Class2 {
 			    f += f1;
 			    i++;
 			    if (!flag || f < aFloatArray35[i]) {
-				int ai7[] = ai;
+				int[] ai7 = ai;
 				int i5 = i;
 				int k11 = j;
 				int i17 = ai7[i5];
@@ -3130,7 +3130,7 @@ public class Class2 {
 			do {
 			    i++;
 			    if (!flag || f < aFloatArray35[i]) {
-				int ai8[] = ai;
+				int[] ai8 = ai;
 				int j5 = i;
 				int l11 = j;
 				int j17 = ai8[j5];
@@ -3189,7 +3189,7 @@ public class Class2 {
 		do {
 		    i++;
 		    if (!flag || f < aFloatArray35[i]) {
-			int ai9[] = ai;
+			int[] ai9 = ai;
 			int l5 = i;
 			int j12 = (int) f2 & 0xff0000 | (int) f4 & 0xff00 | (int) f6 & 0xff;
 			int k17 = ai9[l5];
@@ -3324,7 +3324,7 @@ public class Class2 {
 			f6 += f7;
 			i++;
 			if (!flag || f < aFloatArray35[i]) {
-			    int ai10[] = ai;
+			    int[] ai10 = ai;
 			    int j6 = i;
 			    int l13 = j;
 			    int l17 = ai10[j6];
@@ -3336,7 +3336,7 @@ public class Class2 {
 			f += f1;
 			i++;
 			if (!flag || f < aFloatArray35[i]) {
-			    int ai11[] = ai;
+			    int[] ai11 = ai;
 			    int k6 = i;
 			    int i14 = j;
 			    int i18 = ai11[k6];
@@ -3348,7 +3348,7 @@ public class Class2 {
 			f += f1;
 			i++;
 			if (!flag || f < aFloatArray35[i]) {
-			    int ai12[] = ai;
+			    int[] ai12 = ai;
 			    int l6 = i;
 			    int j14 = j;
 			    int j18 = ai12[l6];
@@ -3360,7 +3360,7 @@ public class Class2 {
 			f += f1;
 			i++;
 			if (!flag || f < aFloatArray35[i]) {
-			    int ai13[] = ai;
+			    int[] ai13 = ai;
 			    int i7 = i;
 			    int k14 = j;
 			    int k18 = ai13[i7];
@@ -3378,7 +3378,7 @@ public class Class2 {
 		    do {
 			i++;
 			if (!flag || f < aFloatArray35[i]) {
-			    int ai14[] = ai;
+			    int[] ai14 = ai;
 			    int j7 = i;
 			    int l14 = j;
 			    int l18 = ai14[j7];
@@ -3430,7 +3430,7 @@ public class Class2 {
 	    do {
 		i++;
 		if (!flag || f < aFloatArray35[i]) {
-		    int ai15[] = ai;
+		    int[] ai15 = ai;
 		    int l7 = i;
 		    int j15 = (int) f2 & 0xff0000 | (int) f4 & 0xff00 | (int) f6 & 0xff;
 		    int i19 = ai15[l7];
@@ -3874,12 +3874,12 @@ public class Class2 {
     float aFloat27;
     int anInt28;
     int anInt29;
-    int anIntArray30[];
+    int[] anIntArray30;
     Class_ra_Sub1 aClass_ra_Sub1_31;
     float aFloat32;
     int anInt33;
-    int anIntArray34[];
-    float aFloatArray35[];
+    int[] anIntArray34;
+    float[] aFloatArray35;
     boolean aBoolean36;
     int anInt37;
     int anInt38;
@@ -3889,12 +3889,12 @@ public class Class2 {
     int anInt42;
     boolean aBoolean43;
     int anInt44;
-    int anIntArray45[];
+    int[] anIntArray45;
     float aFloat46;
-    int anIntArray47[];
+    int[] anIntArray47;
     boolean aBoolean48;
     int anInt49;
-    int anIntArray50[];
+    int[] anIntArray50;
     int anInt51;
     int anInt52;
     float aFloat53;

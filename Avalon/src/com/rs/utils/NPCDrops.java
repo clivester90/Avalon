@@ -50,7 +50,7 @@ public class NPCDrops {
 			npcDrops.put(npcID, new Drop[] { d });
 		} else {
 			int length = oldDrop.length;
-			Drop destination[] = new Drop[length + 1];
+			Drop[] destination = new Drop[length + 1];
 			System.arraycopy(oldDrop, 0, destination, 0, length);
 			destination[length] = d;
 			npcDrops.put(npcID, destination);

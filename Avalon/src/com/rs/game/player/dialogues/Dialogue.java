@@ -279,8 +279,8 @@ public abstract class Dialogue {
 	public boolean sendOptionsDialogue(String title, String... options) {
 		int i = 0;
 		player.getInterfaceManager().sendChatBoxInterface(1188);
-		Object params[] = new Object[options.length + 1];
-		params[i++] = Integer.valueOf(options.length);
+		Object[] params = new Object[options.length + 1];
+		params[i++] = options.length;
 		List<String> optionsList = Arrays.asList(options);
 		Collections.reverse(optionsList);
 		for (Iterator<String> iterator = optionsList.iterator(); iterator.hasNext();) {
@@ -296,8 +296,8 @@ public abstract class Dialogue {
 	public boolean sendOptions(String title, String... options) {
 		int i = 0;
 		player.getInterfaceManager().sendChatBoxInterface(1188);
-		Object params[] = new Object[options.length + 1];
-		params[i++] = Integer.valueOf(options.length);
+		Object[] params = new Object[options.length + 1];
+		params[i++] = options.length;
 		List<String> optionsList = Arrays.asList(options);
 		Collections.reverse(optionsList);
 		for (Iterator<String> iterator = optionsList.iterator(); iterator.hasNext();) {

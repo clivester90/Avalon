@@ -120,7 +120,7 @@ public class ClanSettings {
 	    Class298 class298 = this.configurations.method5812(i);
 	    if (null == class298 || !(class298 instanceof Class298_Sub35))
 		return null;
-	    return new Integer(((Class298_Sub35) class298).anInt7394 * -774922497);
+	    return ((Class298_Sub35) class298).anInt7394 * -774922497;
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw Class346.method4175(runtimeexception, new StringBuilder().append("gp.i(").append(')').toString());
@@ -135,7 +135,7 @@ public class ClanSettings {
 	    if (null == class298 || !(class298 instanceof Class298_Sub35))
 		return null;
 	    int i_11_ = i_9_ == 31 ? -1 : (1 << 1 + i_9_) - 1;
-	    return new Integer(((((Class298_Sub35) class298).anInt7394 * -774922497) & i_11_) >>> i_8_);
+	    return ((((Class298_Sub35) class298).anInt7394 * -774922497) & i_11_) >>> i_8_;
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw Class346.method4175(runtimeexception, new StringBuilder().append("gp.k(").append(')').toString());
@@ -497,7 +497,7 @@ public class ClanSettings {
 	    Class298 class298 = this.configurations.method5812(i);
 	    if (null == class298 || !(class298 instanceof Class298_Sub33))
 		return null;
-	    return new Long(((Class298_Sub33) class298).aLong7385 * -959724544626478745L);
+	    return ((Class298_Sub33) class298).aLong7385 * -959724544626478745L;
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw Class346.method4175(runtimeexception, new StringBuilder().append("gp.d(").append(')').toString());

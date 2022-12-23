@@ -436,13 +436,13 @@ public class Appearence implements Serializable {
 		return lookI[0];
 	}
 
-	public void setLookStyles(int sets[]) {
+	public void setLookStyles(int[] sets) {
 		for (int i = 2; i < 7; i++)
 			lookI[i] = sets[i - 2];
 
 	}
 
-	public void setColours(int colours[]) {
+	public void setColours(int[] colours) {
 		for (int i = 1; i < 4; i++)
 			if (colours[i - 1] <= 127)
 				colour[i] = (byte) colours[i - 1];

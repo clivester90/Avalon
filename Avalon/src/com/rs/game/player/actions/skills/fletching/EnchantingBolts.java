@@ -59,7 +59,7 @@ public class EnchantingBolts extends Action {
 		private int newId;
 		private double xp;
 		private int level;
-		private Item runes[];
+		private Item[] runes;
 
 		private Enchant(int baseId, int newId, double xp, int level, Item... runes) {
 			this.baseId = baseId;

@@ -50,13 +50,13 @@ public class ShopsHandler {
 				if (splitedInform.length != 3)
 					throw new RuntimeException("Invalid list for shop line: " + line);
 				String[] splitedItems = splitedLine[2].split(" ");
-				int key = Integer.valueOf(splitedInform[0]);
-				int money = Integer.valueOf(splitedInform[1]);
-				boolean generalStore = Boolean.valueOf(splitedInform[2]);
+				int key = Integer.parseInt(splitedInform[0]);
+				int money = Integer.parseInt(splitedInform[1]);
+				boolean generalStore = Boolean.parseBoolean(splitedInform[2]);
 				Item[] items = new Item[splitedItems.length / 2];
 				int count = 0;
 				for (int i = 0; i < items.length; i++)
-					items[i] = new Item(Integer.valueOf(splitedItems[count++]), Integer.valueOf(splitedItems[count++]),
+					items[i] = new Item(Integer.parseInt(splitedItems[count++]), Integer.parseInt(splitedItems[count++]),
 							true);
 				out.writeInt(key);
 				writeAlexString(out, splitedLine[1]);

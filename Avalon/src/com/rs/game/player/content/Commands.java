@@ -833,7 +833,7 @@ public final class Commands {
                     for (Item items : player.getInventory().getItems().getContainerItems()) {
                         if (items == null)
                             continue;
-                        WorldTile tile[] = {
+                        WorldTile[] tile = {
                                 new WorldTile(player.getX() + Utils.random(tilesAmount),
                                         player.getY() + Utils.random(tilesAmount), player.getPlane()),
                                 new WorldTile(player.getX() - Utils.random(tilesAmount),
@@ -1340,12 +1340,12 @@ public final class Commands {
                         return true;
                     if (Integer.parseInt(cmd[2]) > 32)
                         return true;
-                    int itemIds[] = {4151, 15486, 11694, 11696, 11698, 11700, 11724, 11726, 11728, 11718, 11720, 11722,
+                    int[] itemIds = {4151, 15486, 11694, 11696, 11698, 11700, 11724, 11726, 11728, 11718, 11720, 11722,
                             6585, 6737, 6731, 6733, 6735, 14484, 15220, 15017, 15018, 15019, 15020, 4708, 4710, 4712, 4714,
                             4716, 4718, 4720, 4722, 4724, 4726, 4728, 4730, 4732, 4734, 4736, 4738, 4745, 4747, 4749, 4751,
                             4753, 4755, 4757, 4759};
                     for (int i = 0; i < Integer.parseInt(cmd[1]); i++) {
-                        WorldTile tiles[] = {
+                        WorldTile[] tiles = {
                                 new WorldTile(player.getX() + Utils.random(Integer.parseInt(cmd[2])),
                                         player.getY() + Utils.random(Integer.parseInt(cmd[2])), player.getPlane()),
                                 new WorldTile(player.getX() - Utils.random(Integer.parseInt(cmd[2])),
@@ -1368,9 +1368,9 @@ public final class Commands {
                         return true;
                     if (Integer.parseInt(cmd[2]) > 32)
                         return true;
-                    int rareIds[] = {1038, 1040, 1042, 1044, 1046, 1048, 1050, 1053, 1055, 1057};
+                    int[] rareIds = {1038, 1040, 1042, 1044, 1046, 1048, 1050, 1053, 1055, 1057};
                     for (int i = 0; i < Integer.parseInt(cmd[1]); i++) {
-                        WorldTile tiles[] = {
+                        WorldTile[] tiles = {
                                 new WorldTile(player.getX() + Utils.random(Integer.parseInt(cmd[2])),
                                         player.getY() + Utils.random(Integer.parseInt(cmd[2])), player.getPlane()),
                                 new WorldTile(player.getX() - Utils.random(Integer.parseInt(cmd[2])),

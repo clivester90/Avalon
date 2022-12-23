@@ -49,7 +49,7 @@ public class LeatherCrafting extends Action {
 		private double[] xp;
 		private Animation anim;
 
-		private Craft(int id, int selected, int[] product, int level[], double[] xp, Animation anim) {
+		private Craft(int id, int selected, int[] product, int[] level, double[] xp, Animation anim) {
 			this.id = id;
 			this.product = product;
 			this.selected = selected;

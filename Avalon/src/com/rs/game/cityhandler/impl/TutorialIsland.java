@@ -25,16 +25,16 @@ public class TutorialIsland implements CityEvent {
 	public boolean handleNPCClick(Player player, NPC npc) {
 		switch(npc.getId()) {
 		case 945:
-			player.getDialogueManager().startDialogue("ArrowGuide", new Object[] { Integer.valueOf(npc.getId()), Boolean.valueOf(true) });
+			player.getDialogueManager().startDialogue("ArrowGuide", new Object[] {npc.getId(), Boolean.TRUE});
 			break;
 		case 943:
-			player.getDialogueManager().startDialogue("SurvivalExpert", new Object[] { Integer.valueOf(npc.getId()), Boolean.valueOf(true) });
+			player.getDialogueManager().startDialogue("SurvivalExpert", new Object[] {npc.getId(), Boolean.TRUE});
 			break;
 		case 942:
-			player.getDialogueManager().startDialogue("MasterChef", new Object[] { Integer.valueOf(npc.getId()), Boolean.valueOf(true) });
+			player.getDialogueManager().startDialogue("MasterChef", new Object[] {npc.getId(), Boolean.TRUE});
 			break;
 		case 948:
-			player.getDialogueManager().startDialogue("MiningExpert", new Object[] { Integer.valueOf(npc.getId()), Boolean.valueOf(true) });
+			player.getDialogueManager().startDialogue("MiningExpert", new Object[] {npc.getId(), Boolean.TRUE});
 			break;
 		case 954:
 			player.getDialogueManager().startDialogue("BrotherBrace", npc);

@@ -110,8 +110,8 @@ public final class Skills implements Serializable {
             "Herblore", "Agility", "Thieving", "Slayer", "Farming", "Runecrafting", "Hunter", "Construction",
             "Summoning", "Dungeoneering"};
 
-    public short level[];
-    private double xp[];
+    public short[] level;
+    private double[] xp;
     private double[] xpTracks;
     private boolean[] trackSkills;
     private byte[] trackSkillsIds;

@@ -106,7 +106,7 @@ public class Smithing extends Action {
 		private int barId;
 		private int[] componentChilds;
 		private double[] experience;
-		private Item items[];
+		private Item[] items;
 		private int level;
 
 		private ForgingBar(int barId, int level, Item[] items, double[] experience, int[] componentChilds) {
@@ -237,8 +237,8 @@ public class Smithing extends Action {
 
 	public static class ForgingInterface {
 
-		public static final int componentChilds[] = new int[30];
-		public static final int CLICKED_CHILDS[] = { 28, -1, 5, 1 };
+		public static final int[] componentChilds = new int[30];
+		public static final int[] CLICKED_CHILDS = { 28, -1, 5, 1 };
 
 		public static void handleIComponents(Player player, int componentId) {
 			int slot = -1;

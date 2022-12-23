@@ -3481,6 +3481,6 @@ public class ButtonHandler {
         player.getInterfaceManager().sendInterface(499);
     }
 
-    private static String names[] = {"Stab", "Slash", "Crush", "Magic", "Ranged", "Summoning", "Absorb Melee",
+    private static String[] names = {"Stab", "Slash", "Crush", "Magic", "Ranged", "Summoning", "Absorb Melee",
             "Absorb Magic", "Absorb Ranged", "Strength", "Ranged Strength", "Prayer", "Magic Damage"};
 }

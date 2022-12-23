@@ -62,7 +62,7 @@ public class MusicHints {
 				String[] splitedLine = line.split(" - ", 2);
 				if (splitedLine.length < 2)
 					throw new RuntimeException("Invalid list for music hints line: " + line);
-				int musicId = Integer.valueOf(splitedLine[0]);
+				int musicId = Integer.parseInt(splitedLine[0]);
 				if (splitedLine[1].length() > 255)
 					continue;
 				out.writeShort(musicId);

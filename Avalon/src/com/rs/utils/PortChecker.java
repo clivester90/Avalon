@@ -40,7 +40,7 @@ public class PortChecker {
 			JOptionPane.showMessageDialog(null, "Something went wrong... =(", "Error", JOptionPane.ERROR_MESSAGE);
 			return;
 		}
-		Status(IP, Integer.valueOf(PORT));
+		Status(IP, Integer.parseInt(PORT));
 
 	}
 

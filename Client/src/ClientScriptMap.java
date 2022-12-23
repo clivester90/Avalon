@@ -69,8 +69,8 @@ public class ClientScriptMap {
 		    if (i == 5)
 			serializable = class298_sub53.readString(-968722088);
 		    else
-			serializable = new Integer(class298_sub53.readInt((byte) -67));
-		    this.aMap6040.put(new Integer(i_4_), serializable);
+			serializable = class298_sub53.readInt((byte) -67);
+		    this.aMap6040.put(i_4_, serializable);
 		}
 	    } else if (7 == i || 8 == i) {
 		int i_5_ = class298_sub53.readUnsignedShort();
@@ -81,7 +81,7 @@ public class ClientScriptMap {
 		    if (i == 7)
 			this.anObjectArray6041[i_7_] = class298_sub53.readString(1730348772);
 		    else
-			this.anObjectArray6041[i_7_] = new Integer(class298_sub53.readInt((byte) -14));
+			this.anObjectArray6041[i_7_] = class298_sub53.readInt((byte) -14);
 		}
 	    }
 	}
@@ -110,7 +110,7 @@ public class ClientScriptMap {
 		return this.anObjectArray6041[i];
 	    }
 	    if (null != this.aMap6040)
-		return this.aMap6040.get(new Integer(i));
+		return this.aMap6040.get(i);
 	    return null;
 	}
 	catch (RuntimeException runtimeexception) {
@@ -173,7 +173,7 @@ public class ClientScriptMap {
 			    list = new LinkedList();
 			    hashmap.put(object, list);
 			}
-			list.add(new Integer(i_10_));
+			list.add(i_10_);
 		    }
 		}
 	    } else if (null != this.aMap6040) {

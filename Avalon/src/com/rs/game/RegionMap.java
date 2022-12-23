@@ -7,7 +7,7 @@ public class RegionMap {
 
 	private int regionX;
 	private int regionY;
-	private int masks[][][];
+	private int[][][] masks;
 	private boolean clipedOnly;
 
 	public RegionMap(int regionId, boolean clipedOnly) {

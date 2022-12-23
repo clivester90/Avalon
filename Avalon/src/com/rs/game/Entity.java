@@ -1129,7 +1129,7 @@ public abstract class Entity extends WorldTile {
 		Object[] objects = walkSteps.toArray();
 		if (objects.length == 0)
 			return new int[] { getX(), getY() };
-		Object step[] = (Object[]) objects[objects.length - 1];
+		Object[] step = (Object[]) objects[objects.length - 1];
 		return new int[] { (int) step[1], (int) step[2] };
 	}
 
