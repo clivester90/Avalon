@@ -14,6 +14,7 @@ import java.nio.channels.FileChannel.MapMode;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.rs.Settings;
 import com.rs.cache.loaders.NPCDefinitions;
 import com.rs.game.World;
 import com.rs.game.WorldTile;
@@ -29,7 +30,7 @@ public final class NPCSpawns {
 
 	public static boolean addSpawn(String username, int id, WorldTile tile) throws Throwable {
 		synchronized (lock) {
-			File file = new File("data/npcs/spawns.txt");
+			File file = new File(Settings.DATA_PATH + "data/npcs/spawns.txt");
 			writer = new BufferedWriter(new FileWriter(file, true));
 			writer.write("// " + NPCDefinitions.getNPCDefinitions(id).name + ", "
 					+ NPCDefinitions.getNPCDefinitions(id).combatLevel + ", added by: " + username);
@@ -46,8 +47,8 @@ public final class NPCSpawns {
 
 	public static boolean removeSpawn(NPC npc) throws Throwable {
 		synchronized (lock) {
-			List<String> page = new ArrayList<String>();
-			File file = new File("data/npcs/unpackedSpawnsList.txt");
+			List<String> page = new ArrayList<>();
+			File file = new File(Settings.DATA_PATH + "data/npcs/unpackedSpawnsList.txt");
 			in = new BufferedReader(new FileReader(file));
 			String line;
 			boolean removed = false;
@@ -76,16 +77,16 @@ public final class NPCSpawns {
 	}
 
 	public static final void init() {
-		if (!new File("data/npcs/packedSpawns").exists())
+		if (!new File(Settings.DATA_PATH + "data/npcs/packedSpawns").exists())
 			packNPCSpawns();
 	}
 
 	private static final void packNPCSpawns() {
 		Logger.log("NPCSpawns", "Packing npc spawns...");
-		if (!new File("data/npcs/packedSpawns").mkdir())
+		if (!new File(Settings.DATA_PATH + "data/npcs/packedSpawns").mkdir())
 			throw new RuntimeException("Couldn't create packedSpawns directory.");
 		try {
-			in2 = new BufferedReader(new FileReader("data/npcs/unpackedSpawnsList.txt"));
+			in2 = new BufferedReader(new FileReader(Settings.DATA_PATH + "data/npcs/unpackedSpawnsList.txt"));
 			while (true) {
 				String line = in2.readLine();
 				if (line == null)
@@ -117,8 +118,8 @@ public final class NPCSpawns {
 		}
 	}
 
-	public static final void loadNPCSpawns(int regionId) {
-		File file = new File("data/npcs/packedSpawns/" + regionId + ".ns");
+	public static void loadNPCSpawns(int regionId) {
+		File file = new File(Settings.DATA_PATH + "data/npcs/packedSpawns/" + regionId + ".ns");
 		if (!file.exists())
 			return;
 		try {
@@ -146,11 +147,11 @@ public final class NPCSpawns {
 		}
 	}
 
-	private static final void addNPCSpawn(int npcId, int regionId, WorldTile tile, int mapAreaNameHash,
+	private static void addNPCSpawn(int npcId, int regionId, WorldTile tile, int mapAreaNameHash,
 			boolean canBeAttackFromOutOfArea) {
 		try {
 			DataOutputStream out = new DataOutputStream(
-					new FileOutputStream("data/npcs/packedSpawns/" + regionId + ".ns", true));
+					new FileOutputStream(Settings.DATA_PATH + "data/npcs/packedSpawns/" + regionId + ".ns", true));
 			out.writeShort(npcId);
 			out.writeByte(tile.getPlane());
 			out.writeShort(tile.getX());

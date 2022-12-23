@@ -12,16 +12,17 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
 import java.util.HashMap;
 
+import com.rs.Settings;
 import com.rs.game.item.Item;
 import com.rs.game.player.Player;
 import com.rs.game.player.content.Shop;
 
 public class ShopsHandler {
 
-	private static final HashMap<Integer, Shop> handledShops = new HashMap<Integer, Shop>();
+	private static final HashMap<Integer, Shop> handledShops = new HashMap<>();
 
-	private static final String PACKED_PATH = "data/items/packedShops.s";
-	private static final String UNPACKED_PATH = "data/items/unpackedShops.txt";
+	private static final String PACKED_PATH = Settings.DATA_PATH + "data/items/packedShops.s";
+	private static final String UNPACKED_PATH = Settings.DATA_PATH + "data/items/unpackedShops.txt";
 
 	private static BufferedReader in;
 

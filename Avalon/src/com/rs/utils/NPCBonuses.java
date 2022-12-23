@@ -1,5 +1,7 @@
 package com.rs.utils;
 
+import com.rs.Settings;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -14,8 +16,8 @@ import java.nio.channels.FileChannel.MapMode;
 import java.util.HashMap;
 
 public final class NPCBonuses {
-	public final static HashMap<Integer, int[]> npcBonuses = new HashMap<Integer, int[]>();
-	private static final String PACKED_PATH = "data/npcs/packedBonuses.nb";
+	public final static HashMap<Integer, int[]> npcBonuses = new HashMap<>();
+	private static final String PACKED_PATH = Settings.DATA_PATH + "data/npcs/packedBonuses.nb";
 	private static DataOutputStream out;
 	private static BufferedReader in;
 
@@ -38,7 +40,7 @@ public final class NPCBonuses {
 		Logger.log("NPCBonuses", "Packing npc bonuses...");
 		try {
 			out = new DataOutputStream(new FileOutputStream(PACKED_PATH));
-			in = new BufferedReader(new FileReader("data/npcs/unpackedBonuses.txt"));
+			in = new BufferedReader(new FileReader(Settings.DATA_PATH + "data/npcs/unpackedBonuses.txt"));
 			while (true) {
 				String line = in.readLine();
 				if (line == null)

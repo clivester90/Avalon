@@ -6,6 +6,7 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
 import java.util.HashMap;
 
+import com.rs.Settings;
 import com.rs.cache.loaders.NPCDefinitions;
 
 /**
@@ -14,10 +15,10 @@ import com.rs.cache.loaders.NPCDefinitions;
  */
 public class NPCExamines {
 
-	private final static HashMap<Integer, String> npcExamines = new HashMap<Integer, String>(
+	private final static HashMap<Integer, String> npcExamines = new HashMap<>(
 			Utils.getNPCDefinitionsSize());
 
-	public static final String getExamine(final int id) {
+	public static String getExamine(final int id) {
 		String examine = npcExamines.get(id);
 		return examine == null || examine.length() < 1 ? "A " + NPCDefinitions.getNPCDefinitions(id).name + "."
 				: examine;
@@ -25,7 +26,7 @@ public class NPCExamines {
 
 	public static void loadPackedExamines() {
 		try {
-			RandomAccessFile in = new RandomAccessFile("data/npcs/packedNpcExamines.e", "r");
+			RandomAccessFile in = new RandomAccessFile(Settings.DATA_PATH + "data/npcs/packedNpcExamines.e", "r");
 			FileChannel channel = in.getChannel();
 			ByteBuffer buffer = channel.map(MapMode.READ_ONLY, 0, channel.size());
 			while (buffer.hasRemaining())

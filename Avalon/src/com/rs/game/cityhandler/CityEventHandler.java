@@ -3,6 +3,7 @@ package com.rs.game.cityhandler;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 import com.rs.Settings;
@@ -13,22 +14,18 @@ import com.rs.game.player.Player;
 
 public final class CityEventHandler {
 
-    private static final Map<Integer, CityEvent> cityEvents = new HashMap<Integer, CityEvent>();
+    private static final Map<Integer, CityEvent> cityEvents = new HashMap<>();
 
     private static final Logger logger = Logger.getLogger(CityEventHandler.class
             .getCanonicalName());
 
-    public static final boolean registerCitys() {
+    public static boolean registerCitys() {
         for (File file : (Settings.VPS_HOSTED ? new File("src/com/game/cityhandlers/impl/") : new File("src/com/rs/game/cityhandler/impl/")).listFiles()) {
             try {
 				if (!((CityEvent) Class.forName("com.rs.game.cityhandler.impl."+ file.getName().replace(".java", "")).newInstance()).init()) {
 				    return false;
 				}
-			} catch (InstantiationException e) {
-				//e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				//e.printStackTrace();
-			} catch (ClassNotFoundException e) {
+			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 				//e.printStackTrace();
 			}
         }
@@ -36,12 +33,12 @@ public final class CityEventHandler {
         return true;
     }
 
-    public static final boolean reload() throws Throwable {
+    public static boolean reload() throws Throwable {
         cityEvents.clear();
         return registerCitys();
     }
 
-    public static final boolean handleNPCClick(Player player, NPC npc, int npcId) {
+    public static boolean handleNPCClick(Player player, NPC npc, int npcId) {
         CityEvent cityEvent = cityEvents.get(npcId);
         if (cityEvent == null)
             return false;
@@ -69,14 +66,14 @@ public final class CityEventHandler {
         return cityEvent.handleNPCClick4(player, npc);
     }
 
-    public static final boolean handleObjectClick(Player player, WorldObject object, int objectId) {
+    public static boolean handleObjectClick(Player player, WorldObject object, int objectId) {
         CityEvent cityEvent = cityEvents.get(objectId);
         if (cityEvent == null)
             return false;
         return cityEvent.handleObjectClick(player, object);
     }
 
-    public static final boolean handleObjectClick2(Player player,
+    public static boolean handleObjectClick2(Player player,
     		WorldObject object, int objectId) {
         CityEvent cityEvent = cityEvents.get(objectId);
         if (cityEvent == null)
@@ -84,7 +81,7 @@ public final class CityEventHandler {
         return cityEvent.handleObjectClick2(player, object);
     }
 
-    public static final boolean handleObjectClick3(Player player,
+    public static boolean handleObjectClick3(Player player,
     		WorldObject object, int objectId) {
         CityEvent cityEvent = cityEvents.get(objectId);
         if (cityEvent == null)
@@ -92,7 +89,7 @@ public final class CityEventHandler {
         return cityEvent.handleObjectClick3(player, object);
     }
 
-    public static final boolean handleObjectClick4(Player player,
+    public static boolean handleObjectClick4(Player player,
     		WorldObject object, int objectId) {
         CityEvent cityEvent = cityEvents.get(objectId);
         if (cityEvent == null)
@@ -100,7 +97,7 @@ public final class CityEventHandler {
         return cityEvent.handleObjectClick4(player, object);
     }
 
-    public static final boolean handleObjectClick5(Player player,
+    public static boolean handleObjectClick5(Player player,
     		WorldObject object, int objectId) {
         CityEvent cityEvent = cityEvents.get(objectId);
         if (cityEvent == null)

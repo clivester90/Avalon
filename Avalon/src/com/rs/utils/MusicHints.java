@@ -1,5 +1,7 @@
 package com.rs.utils;
 
+import com.rs.Settings;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -15,9 +17,9 @@ import java.util.HashMap;
 
 public class MusicHints {
 
-	private final static HashMap<Integer, String> musicHints = new HashMap<Integer, String>();
-	private final static String PACKED_PATH = "data/musics/packedMusicHints.mh";
-	private final static String UNPACKED_PATH = "data/musics/unpackedMusicHints.txt";
+	private final static HashMap<Integer, String> musicHints = new HashMap<>();
+	private final static String PACKED_PATH = Settings.DATA_PATH + "data/musics/packedMusicHints.mh";
+	private final static String UNPACKED_PATH = Settings.DATA_PATH + "data/musics/unpackedMusicHints.txt";
 	private static BufferedReader in;
 
 	public static final void init() {
@@ -27,7 +29,7 @@ public class MusicHints {
 			loadUnpackedItemExamines();
 	}
 
-	public static final String getHint(int musicId) {
+	public static String getHint(int musicId) {
 		String hint = musicHints.get(musicId);
 		if (hint == null)
 			return "somewhere.";

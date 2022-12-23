@@ -1,5 +1,7 @@
 package com.rs.utils;
 
+import com.rs.Settings;
+
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -9,10 +11,10 @@ import java.util.HashMap;
 
 public class WeaponTypesLoader {
 	
-	private static final String PATH = "data/items/weapons.dat";
+	private static final String PATH = Settings.DATA_PATH + "data/items/weapons.dat";
 	private static WeaponType DEFAULT_WEAPON_DEFINITION = new WeaponType(0, 0);
 
-	private final static HashMap<Integer, WeaponType> weaponDefs = new HashMap<Integer, WeaponType>();
+	private final static HashMap<Integer, WeaponType> weaponDefs = new HashMap<>();
 	
 	private static void loadNext() {
 		weaponDefs.put(812, new WeaponType(1, 10)); //Bronze dart (p)

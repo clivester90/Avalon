@@ -12,6 +12,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
 
+import com.rs.Settings;
 import com.rs.game.World;
 import com.rs.game.WorldObject;
 import com.rs.game.WorldTile;
@@ -20,17 +21,17 @@ public final class ObjectSpawns {
 
 	private static BufferedReader in;
 
-	public static final void init() {
-		if (!new File("data/map/packedSpawns").exists())
+	public static void init() {
+		if (!new File(Settings.DATA_PATH + "data/map/packedSpawns").exists())
 			packObjectSpawns();
 	}
 
-	private static final void packObjectSpawns() {
+	private static void packObjectSpawns() {
 		Logger.log("ObjectSpawns", "Packing object spawns...");
-		if (!new File("data/map/packedSpawns").mkdir())
+		if (!new File(Settings.DATA_PATH + "data/map/packedSpawns").mkdir())
 			throw new RuntimeException("Couldn't create packedSpawns directory.");
 		try {
-			in = new BufferedReader(new FileReader("data/map/unpackedSpawnsList.txt"));
+			in = new BufferedReader(new FileReader(Settings.DATA_PATH + "data/map/unpackedSpawnsList.txt"));
 			while (true) {
 				String line = in.readLine();
 				if (line == null)
@@ -59,8 +60,8 @@ public final class ObjectSpawns {
 		}
 	}
 
-	public static final void loadObjectSpawns(int regionId) {
-		File file = new File("data/map/packedSpawns/" + regionId + ".os");
+	public static void loadObjectSpawns(int regionId) {
+		File file = new File(Settings.DATA_PATH + "data/map/packedSpawns/" + regionId + ".os");
 		if (!file.exists())
 			return;
 		try {
@@ -87,11 +88,11 @@ public final class ObjectSpawns {
 		}
 	}
 
-	private static final void addObjectSpawn(int objectId, int type, int rotation, int regionId, WorldTile tile,
-			boolean cliped) {
+	private static void addObjectSpawn(int objectId, int type, int rotation, int regionId, WorldTile tile,
+									   boolean cliped) {
 		try {
 			DataOutputStream out = new DataOutputStream(
-					new FileOutputStream("data/map/packedSpawns/" + regionId + ".os", true));
+					new FileOutputStream(Settings.DATA_PATH + "data/map/packedSpawns/" + regionId + ".os", true));
 			out.writeShort(objectId);
 			out.writeByte(type);
 			out.writeByte(rotation);

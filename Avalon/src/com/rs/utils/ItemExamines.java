@@ -18,12 +18,12 @@ import com.rs.game.item.Item;
 
 public class ItemExamines {
 
-	private final static HashMap<Integer, String> itemExamines = new HashMap<Integer, String>();
-	private final static String PACKED_PATH = "data/items/packedExamines.e";
-	private final static String UNPACKED_PATH = "data/items/unpackedExamines.txt";
+	private final static HashMap<Integer, String> itemExamines = new HashMap<>();
+	private final static String PACKED_PATH = Settings.DATA_PATH + "data/items/packedExamines.e";
+	private final static String UNPACKED_PATH = Settings.DATA_PATH + "data/items/unpackedExamines.txt";
 	private static BufferedReader in;
 
-	public static final void init() {
+	public static void init() {
 		if (new File(PACKED_PATH).exists())
 			loadPackedItemExamines();
 		else
@@ -39,7 +39,7 @@ public class ItemExamines {
 		return "a";
 	}
 
-	public static final String getExamine(Item item) {
+	public static String getExamine(Item item) {
 		if (item.getDefinitions().isNoted())
 			return "Swamp this note at any bank for the equivalent item.";
 		String examine = itemExamines.get(item.getId());

@@ -11,14 +11,15 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
 import java.util.HashMap;
 
+import com.rs.Settings;
 import com.rs.game.npc.combat.NPCCombatDefinitions;
 
 public final class NPCCombatDefinitionsL {
 
-	private final static HashMap<Integer, NPCCombatDefinitions> npcCombatDefinitions = new HashMap<Integer, NPCCombatDefinitions>();
+	private final static HashMap<Integer, NPCCombatDefinitions> npcCombatDefinitions = new HashMap<>();
 	private final static NPCCombatDefinitions DEFAULT_DEFINITION = new NPCCombatDefinitions(1, -1, -1, -1, 5, 1, 33, 0,
 			NPCCombatDefinitions.MELEE, -1, -1, NPCCombatDefinitions.PASSIVE, NPCCombatDefinitions.SLASH);
-	private static final String PACKED_PATH = "data/npcs/packedCombatDefinitions.ncd";
+	private static final String PACKED_PATH = Settings.DATA_PATH + "data/npcs/packedCombatDefinitions.ncd";
 	private static DataOutputStream out;
 	private static BufferedReader in;
 
@@ -41,7 +42,7 @@ public final class NPCCombatDefinitionsL {
 		Logger.log("NPCCombatDefinitionsL", "Packing npc combat definitions...");
 		try {
 			out = new DataOutputStream(new FileOutputStream(PACKED_PATH));
-			in = new BufferedReader(new FileReader("data/npcs/unpackedCombatDefinitionsList.txt"));
+			in = new BufferedReader(new FileReader(Settings.DATA_PATH + "data/npcs/unpackedCombatDefinitionsList.txt"));
 			while (true) {
 				String line = in.readLine();
 				count++;

@@ -1,5 +1,7 @@
 package com.rs.utils;
 
+import com.rs.Settings;
+
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -10,7 +12,7 @@ import java.util.HashMap;
 public final class ItemBonuses {
 
 	private static HashMap<Integer, int[]> itemBonuses;
-	private final static String PACKED_PATH = "data/items/bonuses.ib";
+	private final static String PACKED_PATH = Settings.DATA_PATH + "data/items/bonuses.ib";
 
 	public static final void init() {
 		if (new File(PACKED_PATH).exists())
@@ -28,7 +30,7 @@ public final class ItemBonuses {
 			RandomAccessFile in = new RandomAccessFile(PACKED_PATH, "r");
 			FileChannel channel = in.getChannel();
 			ByteBuffer buffer = channel.map(MapMode.READ_ONLY, 0, channel.size());
-			itemBonuses = new HashMap<Integer, int[]>(buffer.remaining() / 38);
+			itemBonuses = new HashMap<>(buffer.remaining() / 38);
 			while (buffer.hasRemaining()) {
 				int itemId = buffer.getShort() & 0xffff;
 				int[] bonuses = new int[18];

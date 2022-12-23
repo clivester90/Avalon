@@ -13,28 +13,29 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
 import java.util.HashMap;
 
+import com.rs.Settings;
 import com.rs.game.WorldTile;
 
 public final class MapAreas {
 
-	private final static HashMap<Integer, int[]> mapAreas = new HashMap<Integer, int[]>();
-	private final static String PACKED_PATH = "data/map/packedMapAreas.ma";
+	private final static HashMap<Integer, int[]> mapAreas = new HashMap<>();
+	private final static String PACKED_PATH = Settings.DATA_PATH + "data/map/packedMapAreas.ma";
 	private final static Object lock = new Object();
 	private static BufferedReader in;
 	private static DataOutputStream out;
 
-	public static final void init() {
+	public static void init() {
 		if (new File(PACKED_PATH).exists())
 			loadPackedMapAreas();
 		else
 			loadUnpackedMapAreas();
 	}
 
-	public static final boolean isAtArea(String areaName, WorldTile tile) {
+	public static boolean isAtArea(String areaName, WorldTile tile) {
 		return isAtArea(Utils.getNameHash(areaName), tile);
 	}
 
-	public static final boolean isAtArea(int areaNameHash, WorldTile tile) {
+	public static boolean isAtArea(int areaNameHash, WorldTile tile) {
 		int[] coordsList = mapAreas.get(areaNameHash);
 		if (coordsList == null)
 			return false;
@@ -49,15 +50,15 @@ public final class MapAreas {
 		return false;
 	}
 
-	public static final void removeArea(int areaNameHash) {
+	public static void removeArea(int areaNameHash) {
 		mapAreas.remove(areaNameHash);
 	}
 
-	public static final void addArea(int areaNameHash, int[] coordsList) {
+	public static void addArea(int areaNameHash, int[] coordsList) {
 		mapAreas.put(areaNameHash, coordsList);
 	}
 
-	public static final int getRandomAreaHash() {
+	public static int getRandomAreaHash() {
 		synchronized (lock) {
 			while (true) {
 				long id = Utils.getRandom(Integer.MAX_VALUE) + Utils.getRandom(Integer.MAX_VALUE);
@@ -71,7 +72,7 @@ public final class MapAreas {
 	private static void loadUnpackedMapAreas() {
 		Logger.log("MapAreas", "Packing map areas...");
 		try {
-			in = new BufferedReader(new FileReader("data/map/unpackedMapAreas.txt"));
+			in = new BufferedReader(new FileReader(Settings.DATA_PATH+"data/map/unpackedMapAreas.txt"));
 			out = new DataOutputStream(new FileOutputStream(PACKED_PATH));
 			while (true) {
 				String line = in.readLine();

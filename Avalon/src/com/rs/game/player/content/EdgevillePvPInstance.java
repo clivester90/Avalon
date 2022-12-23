@@ -18,23 +18,14 @@ public class EdgevillePvPInstance {
 	}
 
 	public static void buildInstance() {
-		Runnable event = new Runnable() {
-			@Override
-			public void run() {
-				CoresManager.slowExecutor.execute(new Runnable() {
-					@Override
-					public void run() {
-						if (boundChuncks == null) {
-							boundChuncks = MapBuilder.findEmptyChunkBound(8, 8);
-							buildMap();
-						} else {
-							buildMap();
-						}
-					}
-				});
-
+		Runnable event = () -> CoresManager.slowExecutor.execute(() -> {
+			if (boundChuncks == null) {
+				boundChuncks = MapBuilder.findEmptyChunkBound(8, 8);
+				buildMap();
+			} else {
+				buildMap();
 			}
-		};
+		});
 		event.run();
 
 	}
