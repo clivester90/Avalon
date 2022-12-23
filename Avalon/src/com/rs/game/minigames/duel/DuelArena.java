@@ -10,6 +10,7 @@ import java.util.TimeZone;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
+import com.rs.Settings;
 import com.rs.cache.loaders.ItemDefinitions;
 import com.rs.game.Animation;
 import com.rs.game.Entity;
@@ -362,7 +363,7 @@ public class DuelArena extends Controler {
 	public static void archiveDuel(Player player, Player p2, ItemsContainer<Item> items, ItemsContainer<Item> items2) {
 		try {
 			String location = "";
-			location = "data/logs/duel/" + player.getUsername() + ".txt";
+			location = Settings.DATA_PATH + "data/logs/duel/" + player.getUsername() + ".txt";
 			BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
 			writer.write("[" + currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] - " + player.getUsername() + " staked "
 					+ p2.getUsername() + " items:");
@@ -389,14 +390,14 @@ public class DuelArena extends Controler {
 		}
 	}
 
-	public ArrayList<String> wonItems = new ArrayList<String>();
+	public ArrayList<String> wonItems = new ArrayList<>();
 
 	public void endDuel(final Player victor, final Player loser, boolean removeLoserControler) {
 		if (player.isCanPvp() && target.isCanPvp()) {
 			startEndingTeleport(victor);
 			startEndingTeleport(loser);
 			sendFinishInterface(victor, loser);
-			CopyOnWriteArrayList<Item> lostItems = new CopyOnWriteArrayList<Item>();
+			CopyOnWriteArrayList<Item> lostItems = new CopyOnWriteArrayList<>();
 			archiveDuel(player, loser, victor.getLastDuelRules().getStake(), loser.getLastDuelRules().getStake());
 			if (player.getLastDuelRules().getStake() != null) {
 				for (Item item : player.getLastDuelRules().getStake().getContainerItems()) {
@@ -427,7 +428,7 @@ public class DuelArena extends Controler {
 							+ "!", false);
 					wonItems.clear();
 				}
-				CopyOnWriteArrayList<Item> wonItems = new CopyOnWriteArrayList<Item>();
+				CopyOnWriteArrayList<Item> wonItems = new CopyOnWriteArrayList<>();
 				for (Item item : player.getLastDuelRules().getStake().getContainerItems()) {
 					if (item == null)
 						continue;

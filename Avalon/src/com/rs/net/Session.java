@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import com.rs.Settings;
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
@@ -42,7 +43,7 @@ public class Session {
 	public void logIp(Session session) {
 		try {
 			String location = "";
-			location = "data/iplog/log.txt";
+			location = Settings.DATA_PATH + "data/iplog/log.txt";
 			BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
 			writer.write("[" + Commands.currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] - " + session.getIP());
 			writer.newLine();

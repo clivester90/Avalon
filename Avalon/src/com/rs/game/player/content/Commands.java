@@ -486,9 +486,9 @@ public final class Commands {
                     player.getDropLogs().toggleMessage();
                     return true;
                 case "droplogvalue":
-                    player.getDropLogs().setLowestValue(Integer.valueOf(cmd[1]));
+                    player.getDropLogs().setLowestValue(Integer.parseInt(cmd[1]));
                     player.getPackets().sendGameMessage("Lowest droplog value is now: "
-                            + Utils.getFormattedNumber(Integer.valueOf(cmd[1]), ',') + " gp.");
+                            + Utils.getFormattedNumber(Integer.parseInt(cmd[1]), ',') + " gp.");
                     return true;
                 case "skull":
                     player.skullDelay = 2000; // 20minutes
@@ -535,9 +535,9 @@ public final class Commands {
                     return true;
                 case "tele":
                     cmd = cmd[1].split(",");
-                    int plane = Integer.valueOf(cmd[0]);
-                    int x = Integer.valueOf(cmd[1]) << 6 | Integer.valueOf(cmd[3]);
-                    int y = Integer.valueOf(cmd[2]) << 6 | Integer.valueOf(cmd[4]);
+                    int plane = Integer.parseInt(cmd[0]);
+                    int x = Integer.parseInt(cmd[1]) << 6 | Integer.parseInt(cmd[3]);
+                    int y = Integer.parseInt(cmd[2]) << 6 | Integer.parseInt(cmd[4]);
                     player.setNextWorldTile(new WorldTile(x, y, plane));
                     if (player.getInterfaceManager().containsInterface(755))
                         player.getInterfaceManager().closeInterface(755, 1);
@@ -1036,17 +1036,17 @@ public final class Commands {
                     player.getInterfaceManager().sendInterface(686);
                     return true;
                 case "testlevel":
-                    int lvl = Integer.valueOf(cmd[1]);
+                    int lvl = Integer.parseInt(cmd[1]);
                     player.getVarsManager().sendVar(965, lvl);
                     player.getInterfaceManager().sendInterface(499);
                     return true;
                 case "lvlup":
-                    int skillId = Integer.valueOf(cmd[1]);
+                    int skillId = Integer.parseInt(cmd[1]);
                     int oldLevel = 37;
                     int newLevel = 40;
                     if (cmd.length > 2) {
-                        oldLevel = Integer.valueOf(cmd[2]);
-                        newLevel = Integer.valueOf(cmd[3]);
+                        oldLevel = Integer.parseInt(cmd[2]);
+                        newLevel = Integer.parseInt(cmd[3]);
                     }
                     int gainedLevels = oldLevel - newLevel;
                     boolean milestoneAchievement = true;
@@ -1080,7 +1080,7 @@ public final class Commands {
                     player.getInterfaceManager().sendInterface(741);
                     return true;
                 case "totalmile":
-                    player.getPackets().sendVarBit(2728, Integer.valueOf(cmd[1]));
+                    player.getPackets().sendVarBit(2728, Integer.parseInt(cmd[1]));
                     player.getPackets().sendVarBit(2730, 1);
                     player.getPackets().sendVarBit(4729, 1);
                     player.getInterfaceManager().sendInterface(741);
@@ -1148,7 +1148,7 @@ public final class Commands {
                     player.sm("x: " + player.getLocation().getX() + " y: " + player.getLocation().getY());
                     break;
                 case "testarti":
-                    double rollChance = 100 - (Integer.valueOf(cmd[1]) * 0.30);
+                    double rollChance = 100 - (Integer.parseInt(cmd[1]) * 0.30);
                     double c = Utils.getRandomDouble2(rollChance);
                     Artefacts rolledItem = Artefacts.values()[Utils.getRandom(Artefacts.values().length - 1)];
                     System.out.println("--------------");
@@ -1189,7 +1189,7 @@ public final class Commands {
                     return true;
                 case "serverdoubledrop":
                     try {
-                        boolean doubledrop = Boolean.valueOf(cmd[1]);
+                        boolean doubledrop = Boolean.parseBoolean(cmd[1]);
                         ;
                         if (Settings.DOUBLE_DROP == doubledrop) {
                             player.getPackets().sendGameMessage("Nothing interesting happens.");
@@ -1204,7 +1204,7 @@ public final class Commands {
                     return true;
                 case "serverskillingxp":
                     try {
-                        int rate = Integer.valueOf(cmd[1]);
+                        int rate = Integer.parseInt(cmd[1]);
                         ;
                         if (rate > Integer.MAX_VALUE || rate < 1) {
                             player.getPackets().sendGameMessage("Use ::serverxp (int) 1 >.");
@@ -1228,7 +1228,7 @@ public final class Commands {
                 case "dxp":
                 case "serverbonusxp":
                     try {
-                        double rate = Double.valueOf(cmd[1]);
+                        double rate = Double.parseDouble(cmd[1]);
                         ;
                         if (rate > Integer.MAX_VALUE || rate < 1.0) {
                             player.getPackets().sendGameMessage("Use ::serverxp (double) 1-50.");
@@ -1250,7 +1250,7 @@ public final class Commands {
                     return true;
                 case "serverbonuspts":
                     try {
-                        double rate = Double.valueOf(cmd[1]);
+                        double rate = Double.parseDouble(cmd[1]);
                         ;
                         if (rate > 50.0 || rate < 1.0) {
                             player.getPackets().sendGameMessage("Use ::serverbonuspts (double) 1-50.");
@@ -1311,7 +1311,7 @@ public final class Commands {
                     int delay = 60;
                     if (cmd.length >= 2) {
                         try {
-                            delay = Integer.valueOf(cmd[1]);
+                            delay = Integer.parseInt(cmd[1]);
                         } catch (NumberFormatException e) {
                             player.getPackets().sendPanelBoxMessage("Use: ::shutdown secondsDelay(IntegerValue)");
                             return true;
@@ -1323,8 +1323,8 @@ public final class Commands {
                     Summoning.spawnFamiliar(player, Pouch.WOLPERTINGER);
                     return true;
                 case "cstore":
-                    int type = Integer.valueOf(cmd[1]);
-                    int shop = Integer.valueOf(cmd[2]);
+                    int type = Integer.parseInt(cmd[1]);
+                    int shop = Integer.parseInt(cmd[2]);
                     player.getCustomStore().sendInterface(player, type, shop);
                     return true;
                 case "tradestore":
@@ -1336,24 +1336,24 @@ public final class Commands {
                                 .sendGameMessage("::drop 'amount of drops' 'amount of squares random generated'");
                         return true;
                     }
-                    if (Integer.valueOf(cmd[1]) > 100)
+                    if (Integer.parseInt(cmd[1]) > 100)
                         return true;
-                    if (Integer.valueOf(cmd[2]) > 32)
+                    if (Integer.parseInt(cmd[2]) > 32)
                         return true;
                     int itemIds[] = {4151, 15486, 11694, 11696, 11698, 11700, 11724, 11726, 11728, 11718, 11720, 11722,
                             6585, 6737, 6731, 6733, 6735, 14484, 15220, 15017, 15018, 15019, 15020, 4708, 4710, 4712, 4714,
                             4716, 4718, 4720, 4722, 4724, 4726, 4728, 4730, 4732, 4734, 4736, 4738, 4745, 4747, 4749, 4751,
                             4753, 4755, 4757, 4759};
-                    for (int i = 0; i < Integer.valueOf(cmd[1]); i++) {
+                    for (int i = 0; i < Integer.parseInt(cmd[1]); i++) {
                         WorldTile tiles[] = {
-                                new WorldTile(player.getX() + Utils.random(Integer.valueOf(cmd[2])),
-                                        player.getY() + Utils.random(Integer.valueOf(cmd[2])), player.getPlane()),
-                                new WorldTile(player.getX() - Utils.random(Integer.valueOf(cmd[2])),
-                                        player.getY() + Utils.random(Integer.valueOf(cmd[2])), player.getPlane()),
-                                new WorldTile(player.getX() - Utils.random(Integer.valueOf(cmd[2])),
-                                        player.getY() - Utils.random(Integer.valueOf(cmd[2])), player.getPlane()),
-                                new WorldTile(player.getX() + Utils.random(Integer.valueOf(cmd[2])),
-                                        player.getY() - Utils.random(Integer.valueOf(cmd[2])), player.getPlane())};
+                                new WorldTile(player.getX() + Utils.random(Integer.parseInt(cmd[2])),
+                                        player.getY() + Utils.random(Integer.parseInt(cmd[2])), player.getPlane()),
+                                new WorldTile(player.getX() - Utils.random(Integer.parseInt(cmd[2])),
+                                        player.getY() + Utils.random(Integer.parseInt(cmd[2])), player.getPlane()),
+                                new WorldTile(player.getX() - Utils.random(Integer.parseInt(cmd[2])),
+                                        player.getY() - Utils.random(Integer.parseInt(cmd[2])), player.getPlane()),
+                                new WorldTile(player.getX() + Utils.random(Integer.parseInt(cmd[2])),
+                                        player.getY() - Utils.random(Integer.parseInt(cmd[2])), player.getPlane())};
                         World.addGroundItem(new Item(itemIds[Utils.getRandom(itemIds.length - 1)], 1),
                                 new WorldTile(tiles[Utils.getRandom(tiles.length - 1)]), player, false, 0);
                     }
@@ -1364,21 +1364,21 @@ public final class Commands {
                                 .sendGameMessage("::drop 'amount of drops' 'amount of squares random generated'");
                         return true;
                     }
-                    if (Integer.valueOf(cmd[1]) > 100)
+                    if (Integer.parseInt(cmd[1]) > 100)
                         return true;
-                    if (Integer.valueOf(cmd[2]) > 32)
+                    if (Integer.parseInt(cmd[2]) > 32)
                         return true;
                     int rareIds[] = {1038, 1040, 1042, 1044, 1046, 1048, 1050, 1053, 1055, 1057};
-                    for (int i = 0; i < Integer.valueOf(cmd[1]); i++) {
+                    for (int i = 0; i < Integer.parseInt(cmd[1]); i++) {
                         WorldTile tiles[] = {
-                                new WorldTile(player.getX() + Utils.random(Integer.valueOf(cmd[2])),
-                                        player.getY() + Utils.random(Integer.valueOf(cmd[2])), player.getPlane()),
-                                new WorldTile(player.getX() - Utils.random(Integer.valueOf(cmd[2])),
-                                        player.getY() + Utils.random(Integer.valueOf(cmd[2])), player.getPlane()),
-                                new WorldTile(player.getX() - Utils.random(Integer.valueOf(cmd[2])),
-                                        player.getY() - Utils.random(Integer.valueOf(cmd[2])), player.getPlane()),
-                                new WorldTile(player.getX() + Utils.random(Integer.valueOf(cmd[2])),
-                                        player.getY() - Utils.random(Integer.valueOf(cmd[2])), player.getPlane())};
+                                new WorldTile(player.getX() + Utils.random(Integer.parseInt(cmd[2])),
+                                        player.getY() + Utils.random(Integer.parseInt(cmd[2])), player.getPlane()),
+                                new WorldTile(player.getX() - Utils.random(Integer.parseInt(cmd[2])),
+                                        player.getY() + Utils.random(Integer.parseInt(cmd[2])), player.getPlane()),
+                                new WorldTile(player.getX() - Utils.random(Integer.parseInt(cmd[2])),
+                                        player.getY() - Utils.random(Integer.parseInt(cmd[2])), player.getPlane()),
+                                new WorldTile(player.getX() + Utils.random(Integer.parseInt(cmd[2])),
+                                        player.getY() - Utils.random(Integer.parseInt(cmd[2])), player.getPlane())};
                         World.addGroundItem(new Item(rareIds[Utils.getRandom(rareIds.length - 1)], 1),
                                 new WorldTile(tiles[Utils.getRandom(tiles.length - 1)]), player, false, 0);
                     }
@@ -1512,23 +1512,23 @@ public final class Commands {
                             .sendGameMessage("Drop testing: " + (player.dropTesting ? "Enabled" : "Disabled") + ".");
                     return true;
                 case "dropamount":
-                    int droptimes = Integer.valueOf(cmd[1]);
+                    int droptimes = Integer.parseInt(cmd[1]);
                     player.dropTestingAmount = droptimes;
                     player.getPackets().sendGameMessage("Drop testing amount set to: " + (droptimes) + ".");
                     return true;
                 case "zoom":
-                    int zoomId = Integer.valueOf(cmd[1]);
+                    int zoomId = Integer.parseInt(cmd[1]);
                     player.getPackets().sendGlobalConfig(184, zoomId);
                     return true;
                 case "global":
-                    int globalConfigId = Integer.valueOf(cmd[1]);
-                    int value = Integer.valueOf(cmd[2]);
+                    int globalConfigId = Integer.parseInt(cmd[1]);
+                    int value = Integer.parseInt(cmd[2]);
                     player.getPackets().sendGlobalConfig(globalConfigId, value);
                     player.getPackets().sendGameMessage("Sent global config: " + globalConfigId + "; " + value);
                     return true;
                 case "varbit":
-                    globalConfigId = Integer.valueOf(cmd[1]);
-                    value = Integer.valueOf(cmd[2]);
+                    globalConfigId = Integer.parseInt(cmd[1]);
+                    value = Integer.parseInt(cmd[2]);
                     player.getVarsManager().sendVarBit(globalConfigId, value);
                     player.getPackets().sendGameMessage("Sent varbit: " + globalConfigId + "; " + value);
                     player.getInventory().refresh();
@@ -1536,16 +1536,16 @@ public final class Commands {
                         player.getEquipment().refresh(i);
                     return true;
                 case "var":
-                    int configValues = Integer.valueOf(cmd[2]);
-                    int configId = Integer.valueOf(cmd[1]);
+                    int configValues = Integer.parseInt(cmd[2]);
+                    int configId = Integer.parseInt(cmd[1]);
                     player.getVarsManager().sendVar(configId, configValues);
                     // player.getVarsManager().sendVar(configId, configValue);
                     player.getPackets().sendGameMessage("Sent var: " + configId + "; " + configValues);
                     return true;
                 case "varloop":
-                    int var1 = Integer.valueOf(cmd[1]);
-                    int var2 = Integer.valueOf(cmd[2]);
-                    int varValue = Integer.valueOf(cmd[3]);
+                    int var1 = Integer.parseInt(cmd[1]);
+                    int var2 = Integer.parseInt(cmd[2]);
+                    int varValue = Integer.parseInt(cmd[3]);
                     for (int i = var1; i < var2; i++) {
                         player.sm(i + "");
                         player.getVarsManager().sendVar(i, varValue);
@@ -1553,23 +1553,23 @@ public final class Commands {
                     player.sm("sent vars " + var1 + "-" + var2 + ":value:" + varValue);
                     return true;
                 case "varbitloop":
-                    var1 = Integer.valueOf(cmd[1]);
-                    var2 = Integer.valueOf(cmd[2]);
-                    varValue = Integer.valueOf(cmd[3]);
+                    var1 = Integer.parseInt(cmd[1]);
+                    var2 = Integer.parseInt(cmd[2]);
+                    varValue = Integer.parseInt(cmd[3]);
                     for (int i = var1; i < var2; i++)
                         player.getVarsManager().sendVarBit(i, varValue);
                     player.sm("sent varbit " + var1 + "-" + var2 + ":value:" + varValue);
                     return true;
                 case "globalloop":
-                    var1 = Integer.valueOf(cmd[1]);
-                    var2 = Integer.valueOf(cmd[2]);
-                    varValue = Integer.valueOf(cmd[3]);
+                    var1 = Integer.parseInt(cmd[1]);
+                    var2 = Integer.parseInt(cmd[2]);
+                    varValue = Integer.parseInt(cmd[3]);
                     for (int i = var1; i < var2; i++)
                         player.getPackets().sendGlobalConfig(i, varValue);
                     player.sm("sent global config " + var1 + "-" + var2 + ":value:" + varValue);
                     return true;
                 case "sendstring":
-                    int stringId = Integer.valueOf(cmd[1]);
+                    int stringId = Integer.parseInt(cmd[1]);
                     String stringText = cmd[2].substring(cmd[2].indexOf(" ") + 1);
                     player.getPackets().sendGlobalString(stringId, stringText == null ? "Test" : stringText);
                     player.getPackets().sendGameMessage("Sent global string: " + stringId + "; " + stringText);
@@ -1983,7 +1983,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        player.getSkills().addXp(Integer.valueOf(cmd[1]), 150000000);
+                        player.getSkills().addXp(Integer.parseInt(cmd[1]), 150000000);
                     } catch (NumberFormatException e) {
                         player.getPackets().sendPanelBoxMessage("Use: ::master skill");
                     }
@@ -2286,7 +2286,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        player.getAppearence().setTitle(Integer.valueOf(cmd[1]));
+                        player.getAppearence().setTitle(Integer.parseInt(cmd[1]));
                         player.getPackets().sendGameMessage("Title set to: " + player.getAppearence().getTitleString());
                     } catch (NumberFormatException e) {
                         player.getPackets().sendGameMessage("Use: ::title id");
@@ -2318,7 +2318,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        int interId1 = Integer.valueOf(cmd[1]);
+                        int interId1 = Integer.parseInt(cmd[1]);
                         for (int componentId = 0; componentId < Utils
                                 .getInterfaceDefinitionsComponentsSize(interId1); componentId++) {
                             player.getPackets().sendIComponentText(interId1, componentId, "cid: " + componentId);
@@ -2445,7 +2445,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        int itemId1 = Integer.valueOf(cmd[1]);
+                        int itemId1 = Integer.parseInt(cmd[1]);
                         int amount3 = 1;
                         if (cmd.length == 3)
                             amount3 = Integer.parseInt(cmd[2]);
@@ -2462,7 +2462,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        int itemId1 = Integer.valueOf(cmd[1]);
+                        int itemId1 = Integer.parseInt(cmd[1]);
                         int amount4 = 1;
                         if (cmd.length == 3)
                             amount4 = Integer.parseInt(cmd[2]);
@@ -2475,19 +2475,19 @@ public final class Commands {
                     return true;
 
                 case "sound":
-                    int soundId = Integer.valueOf(cmd[1]);
+                    int soundId = Integer.parseInt(cmd[1]);
                     player.sm("play sound " + soundId);
                     player.getPackets().sendSound(soundId, 0, 0);
                     return true;
 
                 case "sound2":
-                    soundId = Integer.valueOf(cmd[1]);
+                    soundId = Integer.parseInt(cmd[1]);
                     player.sm("play sound " + soundId);
                     player.getPackets().sendSound(soundId, 0, 1);
                     return true;
 
                 case "s":
-                    soundId = Integer.valueOf(cmd[1]);
+                    soundId = Integer.parseInt(cmd[1]);
                     player.sm("play sound " + soundId);
                     player.getPackets().sendSound(soundId, 0, 2);
                     return true;
@@ -2648,7 +2648,7 @@ public final class Commands {
                 case "adnpc":
                     try {
                         World.spawnNPC(Integer.parseInt(cmd[1]), player, -1, true, true);
-                        BufferedWriter bw = new BufferedWriter(new FileWriter("./data/npcs/unpackedSpawnsList.txt", true));
+                        BufferedWriter bw = new BufferedWriter(new FileWriter(Settings.DATA_PATH + "data/npcs/unpackedSpawnsList.txt", true));
                         bw.write("//" + NPCDefinitions.getNPCDefinitions(Integer.parseInt(cmd[1])).name + " spawned by "
                                 + player.getUsername());
                         bw.newLine();
@@ -2678,9 +2678,9 @@ public final class Commands {
                                 type = 10;
                             }
                         }
-                        World.spawnObject(new WorldObject(Integer.valueOf(cmd[1]), type, rotation, player.getX(),
+                        World.spawnObject(new WorldObject(Integer.parseInt(cmd[1]), type, rotation, player.getX(),
                                 player.getY(), player.getPlane()));
-                        BufferedWriter bw = new BufferedWriter(new FileWriter("./data/map/unpackedSpawnsList.txt", true));
+                        BufferedWriter bw = new BufferedWriter(new FileWriter(Settings.DATA_PATH + "data/map/unpackedSpawnsList.txt", true));
                         bw.write("//" + ObjectDefinitions.getObjectDefinitions(Integer.parseInt(cmd[1])).name
                                 + " spawned by " + player.getUsername());
                         bw.newLine();
@@ -2824,7 +2824,7 @@ public final class Commands {
                                 type = 10;
                             }
                         }
-                        World.spawnObject(new WorldObject(Integer.valueOf(cmd[1]), type, rotation, player.getX(),
+                        World.spawnObject(new WorldObject(Integer.parseInt(cmd[1]), type, rotation, player.getX(),
                                 player.getY(), player.getPlane()));
                         player.sm(Integer.valueOf(cmd[1]) + " " + type + " " + rotation + " - " + player.getX() + " "
                                 + player.getY() + " " + player.getPlane());
@@ -2876,7 +2876,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        player.getAppearence().transformIntoNPC(Integer.valueOf(cmd[1]));
+                        player.getAppearence().transformIntoNPC(Integer.parseInt(cmd[1]));
                     } catch (NumberFormatException e) {
                         player.getPackets().sendPanelBoxMessage("Use: ::tonpc id(-1 for player)");
                     }
@@ -2887,7 +2887,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        player.getInterfaceManager().sendInterface(Integer.valueOf(cmd[1]));
+                        player.getInterfaceManager().sendInterface(Integer.parseInt(cmd[1]));
                     } catch (NumberFormatException e) {
                         player.getPackets().sendPanelBoxMessage("Use: ::inter interfaceId");
                     }
@@ -2898,7 +2898,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        player.getInterfaceManager().sendChatBoxInterface(Integer.valueOf(cmd[1]));
+                        player.getInterfaceManager().sendChatBoxInterface(Integer.parseInt(cmd[1]));
                     } catch (NumberFormatException e) {
                         player.getPackets().sendPanelBoxMessage("Use: ::inter interfaceId");
                     }
@@ -2916,8 +2916,8 @@ public final class Commands {
                     }
                     try {
                         player.resetWalkSteps();
-                        player.setNextWorldTile(new WorldTile(Integer.valueOf(cmd[1]), Integer.valueOf(cmd[2]),
-                                cmd.length >= 4 ? Integer.valueOf(cmd[3]) : player.getPlane()));
+                        player.setNextWorldTile(new WorldTile(Integer.parseInt(cmd[1]), Integer.parseInt(cmd[2]),
+                                cmd.length >= 4 ? Integer.parseInt(cmd[3]) : player.getPlane()));
                     } catch (NumberFormatException e) {
                         player.getPackets().sendPanelBoxMessage("Use: ::tele coordX coordY plane");
                     }
@@ -2930,7 +2930,7 @@ public final class Commands {
                     player.animate(new Animation(-1));
                     try {
                         player.animate(new Animation(-1));
-                        player.animate(new Animation(Integer.valueOf(cmd[1])));
+                        player.animate(new Animation(Integer.parseInt(cmd[1])));
                     } catch (NumberFormatException e) {
                         player.getPackets().sendPanelBoxMessage("Use: ::emote id");
                     }
@@ -2941,7 +2941,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        player.getAppearence().setRenderEmote(Integer.valueOf(cmd[1]));
+                        player.getAppearence().setRenderEmote(Integer.parseInt(cmd[1]));
                     } catch (NumberFormatException e) {
                         player.getPackets().sendPanelBoxMessage("Use: ::emote id");
                     }
@@ -2955,7 +2955,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        player.gfx(new Graphics(Integer.valueOf(cmd[1]), 0, 0));
+                        player.gfx(new Graphics(Integer.parseInt(cmd[1]), 0, 0));
                     } catch (NumberFormatException e) {
                         player.getPackets().sendPanelBoxMessage("Use: ::gfx id");
                     }
@@ -2966,7 +2966,7 @@ public final class Commands {
                         return true;
                     }
                     try {
-                        player.animate(new Animation(Integer.valueOf(cmd[1])));
+                        player.animate(new Animation(Integer.parseInt(cmd[1])));
                     } catch (NumberFormatException e) {
                         player.getPackets().sendPanelBoxMessage("Use: ::anim id");
                     }
@@ -3318,17 +3318,17 @@ public final class Commands {
         try {
             String location = "";
             if (player.isDeveloper()) {
-                location = "data/logs/commands/admin/" + player.getUsername() + ".txt";
+                location = Settings.DATA_PATH + "data/logs/commands/admin/" + player.getUsername() + ".txt";
             } else if (player.isModerator()) {
-                location = "data/logs/commands/mod/" + player.getUsername() + ".txt";
+                location = Settings.DATA_PATH + "data/logs/commands/mod/" + player.getUsername() + ".txt";
             } else if (player.getPlayerRank().getRank()[0] == Rank.PLAYERSUPPORT) {
-                location = "data/logs/commands/support/" + player.getUsername() + ".txt";
+                location = Settings.DATA_PATH + "data/logs/commands/support/" + player.getUsername() + ".txt";
             } else {
-                location = "data/logs/commands/player/" + player.getUsername() + ".txt";
+                location = Settings.DATA_PATH + "data/logs/commands/player/" + player.getUsername() + ".txt";
             }
-            String afterCMD = "";
+            StringBuilder afterCMD = new StringBuilder();
             for (int i = 1; i < cmd.length; i++)
-                afterCMD += cmd[i] + ((i == cmd.length - 1) ? "" : " ");
+                afterCMD.append(cmd[i]).append((i == cmd.length - 1) ? "" : " ");
             BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
             writer.write("[" + currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] - ::" + cmd[0] + " " + afterCMD);
             writer.newLine();
@@ -3356,7 +3356,7 @@ public final class Commands {
     public static void archiveYell(Player player, String message) {
         try {
             String location = "";
-            location = "data/logs/yell/" + player.getUsername() + ".txt";
+            location = Settings.DATA_PATH + "data/logs/yell/" + player.getUsername() + ".txt";
             BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
             writer.write("[" + currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] - ::yell" + message);
             writer.newLine();

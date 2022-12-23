@@ -2,6 +2,7 @@ package com.rs.tools;
 
 import java.io.IOException;
 
+import com.rs.Settings;
 import org.displee.CacheLibrary;
 import org.displee.cache.index.archive.Archive;
 import org.displee.cache.index.archive.file.File;
@@ -15,7 +16,7 @@ public class MapReplacer {
 	// 4134 login screen
 
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
-		CacheLibrary cache718 = new CacheLibrary("data/cache/");
+		CacheLibrary cache718 = new CacheLibrary(Settings.CACHE_PATH);
 		CacheLibrary cache667 = new CacheLibrary("data/cache639/");
 		cache718.getIndex(5).update();
 		System.out.println("Updated index 5");

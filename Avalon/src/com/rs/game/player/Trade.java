@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
+import com.rs.Settings;
 import com.rs.game.item.Item;
 import com.rs.game.item.ItemsContainer;
 import com.rs.game.player.content.ItemConstants;
@@ -347,7 +348,7 @@ public class Trade {
 	public static void archiveTrade(Player player, Player p2, ItemsContainer<Item> items, ItemsContainer<Item> items2) {
 		try {
 			String location = "";
-			location = "data/logs/trade/" + player.getUsername() + ".txt";
+			location = Settings.DATA_PATH + "data/logs/trade/" + player.getUsername() + ".txt";
 			BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
 			writer.write("[" + currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] - " + player.getUsername() + " traded "
 					+ p2.getUsername());

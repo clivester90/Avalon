@@ -2,6 +2,7 @@ package com.rs.tools;
 
 import java.io.IOException;
 
+import com.rs.Settings;
 import org.displee.CacheLibrary;
 import org.displee.cache.index.archive.Archive;
 import org.displee.cache.index.archive.file.File;
@@ -11,7 +12,7 @@ public class NPCDefinitionPacker {
 	private static int NPC_TO_PACK = 0;
 
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
-		CacheLibrary library = new CacheLibrary("data/cache/");
+		CacheLibrary library = new CacheLibrary(Settings.CACHE_PATH);
 		library.getIndex(18).update();
 		Archive archive = library.getIndex(18).getArchive(NPC_TO_PACK >>> 134238215);
 		File file = archive.getFile(NPC_TO_PACK & 0x7f);

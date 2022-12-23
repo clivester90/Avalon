@@ -2,6 +2,7 @@ package com.rs.tools;
 
 import java.io.IOException;
 
+import com.rs.Settings;
 import org.displee.CacheLibrary;
 import org.displee.cache.index.archive.Archive;
 import org.displee.cache.index.archive.file.File;
@@ -18,7 +19,7 @@ public class SpritePacker {
 		int archive = 3028;// spriteId
 		int secondArchive = 3028;
 		boolean LOOP = false;
-		CacheLibrary cache718 = new CacheLibrary("data/cache/");
+		CacheLibrary cache718 = new CacheLibrary(Settings.CACHE_PATH);
 		CacheLibrary cache667 = new CacheLibrary("data/cache639/");
 		if (LOOP) {
 			for (int i = archive; i <= secondArchive; i++) {

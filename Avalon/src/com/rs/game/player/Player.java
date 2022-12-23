@@ -1611,7 +1611,7 @@ public class Player extends Entity {
     public static void archiveChat(Player player, String message) {
         try {
             String location = "";
-            location = "data/logs/chat/" + player.getUsername() + ".txt";
+            location = Settings.DATA_PATH + "data/logs/chat/" + player.getUsername() + ".txt";
             BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
             writer.write("[" + currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] - " + message);
             writer.newLine();
@@ -4342,7 +4342,7 @@ public class Player extends Entity {
     public static void archiveKills(Player player, Player p2) {
         try {
             String location = "";
-            location = "data/logs/kills/" + player.getUsername() + ".txt";
+            location = Settings.DATA_PATH + "data/logs/kills/" + player.getUsername() + ".txt";
             BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
             writer.write("[" + currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] - " + player.getUsername() + " killed "
                     + p2.getUsername() + "");
@@ -4357,7 +4357,7 @@ public class Player extends Entity {
     public static void archiveDeaths(Player player, Player p2) {
         try {
             String location = "";
-            location = "data/logs/kills/" + player.getUsername() + ".txt";
+            location = Settings.DATA_PATH + "data/logs/kills/" + player.getUsername() + ".txt";
             BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
             writer.write("[" + currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] - " + player.getUsername()
                     + " died to " + p2.getUsername() + "");
@@ -6408,7 +6408,7 @@ public class Player extends Entity {
     public void log(String dataPath, String data) {
         try {
             String location = "";
-            location = "data/system/" + dataPath + ".txt";
+            location = Settings.DATA_PATH + "data/system/" + dataPath + ".txt";
             BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
             writer.write("[" + Commands.currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] " + data);
             writer.newLine();

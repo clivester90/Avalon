@@ -2,6 +2,7 @@ package com.rs.tools;
 
 import java.io.IOException;
 
+import com.rs.Settings;
 import org.displee.CacheLibrary;
 import org.displee.cache.index.archive.Archive;
 import org.displee.cache.index.archive.file.File;
@@ -10,7 +11,7 @@ public class InterfaceReplacer {
 
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		int interfaceId = 320;//C:/Users/andre/Documents/GitHub/avalon/Avalon - Server/data/cache
-		CacheLibrary cache1 = new CacheLibrary("data/cache/");
+		CacheLibrary cache1 = new CacheLibrary(Settings.CACHE_PATH);
 		CacheLibrary cache2 = new CacheLibrary("data/718cache/");
 		cache1.getIndex(3).update();
 		System.out.println("Updated index 3");

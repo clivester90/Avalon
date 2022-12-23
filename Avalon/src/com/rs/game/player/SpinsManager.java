@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+
+import com.rs.Settings;
 import com.rs.game.player.Player;
 
 
@@ -20,7 +22,7 @@ public class SpinsManager {
 	public void checkIP() {
 		try {
 			ipSucess = false;
-			File file1 = new File("./data/playersaves/ipcheckspin/" + getDate()
+			File file1 = new File(Settings.DATA_PATH + "playersaves/ipcheckspin/" + getDate()
 					+ " " + player.getSession().getIP() + ".txt");
 			boolean success = file1.createNewFile();
 			if (success) {
@@ -46,7 +48,7 @@ public class SpinsManager {
 		checkIP();
 		try {
 			gotSpins = false; 
-			File file = new File("./data/playersaves/spins/" + getDate() + " "
+			File file = new File(Settings.DATA_PATH + "playersaves/spins/" + getDate() + " "
 					+ player.getUsername() + ".txt");
 			boolean success = file.createNewFile();
 			if (success) {

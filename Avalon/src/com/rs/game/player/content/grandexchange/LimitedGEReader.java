@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
+import com.rs.Settings;
 import com.rs.cache.loaders.ItemDefinitions;
 import com.rs.cache.loaders.ItemDefinitions.FileUtilities;
 import com.rs.game.item.Item;
@@ -11,8 +12,8 @@ import com.rs.game.player.content.customshops.CustomStoreData;
 
 public class LimitedGEReader {
 
-	private static ArrayList<Integer> items = new ArrayList<Integer>();
-	private final static String TXT_PATH = "./data/GE/limitedItems.txt";
+	private static ArrayList<Integer> items = new ArrayList<>();
+	private final static String TXT_PATH = Settings.DATA_PATH + "data/GE/limitedItems.txt";
 	private static FileReader fr;
 
 	public static void init() {

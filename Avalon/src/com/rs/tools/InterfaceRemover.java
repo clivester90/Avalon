@@ -2,6 +2,7 @@ package com.rs.tools;
 
 import java.io.IOException;
 
+import com.rs.Settings;
 import org.displee.CacheLibrary;
 import org.displee.cache.index.archive.Archive;
 import org.displee.cache.index.archive.file.File;
@@ -11,7 +12,7 @@ public class InterfaceRemover {
 	private static int INTERFACE_TO_REMOVE = 320;
 
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
-		CacheLibrary library = new CacheLibrary("data/cache/");
+		CacheLibrary library = new CacheLibrary(Settings.CACHE_PATH);
 		Archive toRemove = library.getIndex(3).getArchive(INTERFACE_TO_REMOVE);
 		System.out.println("Removed archive: " + INTERFACE_TO_REMOVE + " containing...");
 		for (File files : toRemove.getFiles()) {
