@@ -29,11 +29,11 @@ public class NPCDrops {
 	public Map<Integer, ArrayList<Drop>> getDropArray() {
 
 		if (dropMapx == null)
-			dropMapx = new LinkedHashMap<Integer, ArrayList<Drop>>();
+			dropMapx = new LinkedHashMap<>();
 		// dropMapx = new LinkedHashMap<Integer, ArrayList<Drop>>();
 		for (int i : npcDrops.keySet()) {
 			int npcId = i;
-			ArrayList<Drop> temp = new ArrayList<Drop>();
+			ArrayList<Drop> temp = new ArrayList<>();
 			for (Drop mainDrop : npcDrops.get(npcId)) {
 				temp.add(mainDrop);
 			}
@@ -63,7 +63,7 @@ public class NPCDrops {
 			FileChannel channel = in.getChannel();
 			ByteBuffer buffer = channel.map(MapMode.READ_ONLY, 0, channel.size());
 			int dropSize = buffer.getShort() & 0xffff;
-			npcDrops = new HashMap<Integer, Drop[]>(dropSize);
+			npcDrops = new HashMap<>(dropSize);
 			for (int i = 0; i < dropSize; i++) {
 				int npcId = buffer.getShort() & 0xffff;
 				Drop[] drops = new Drop[buffer.getShort() & 0xffff];

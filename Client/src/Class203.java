@@ -38,7 +38,7 @@ public class Class203 {
     static void method1908(ScriptEnvironment class298_sub46, int i, short i_0_) {
 	try {
 	    Object[] parameters = class298_sub46.arguements;
-	    int i_1_ = ((Integer) parameters[0]).intValue();
+	    int i_1_ = (Integer) parameters[0];
 	    ClientScript class298_sub37_sub17 = Class216.getClientScript(i_1_, (byte) 1);
 	    if (null != class298_sub37_sub17) {
 		Class403 class403 = HandshakePacket.method1950(974537460);
@@ -50,7 +50,7 @@ public class Class203 {
 		int i_4_ = 0;
 		for (int i_5_ = 1; i_5_ < parameters.length; i_5_++) {
 		    if (parameters[i_5_] instanceof Integer) {
-			int i_6_ = ((Integer) parameters[i_5_]).intValue();
+			int i_6_ = (Integer) parameters[i_5_];
 			if (-2147483647 == i_6_)
 			    i_6_ = class298_sub46.anInt7526 * 1893415363;
 			if (i_6_ == -2147483646)
@@ -76,7 +76,7 @@ public class Class203 {
 			    string = class298_sub46.aString7523;
 			class403.anObjectArray5234[i_3_++] = string;
 		    } else if (parameters[i_5_] instanceof Long) {
-			long l = ((Long) parameters[i_5_]).longValue();
+			long l = (Long) parameters[i_5_];
 			class403.aLongArray5235[i_4_++] = l;
 		    }
 		}

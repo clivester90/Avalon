@@ -530,7 +530,7 @@ public class NPC extends Entity implements Serializable {
         for (AchievementKills achievement : AchievementKills.values()) {
             if (achievement.getId() == npc.getId()) {
                 name = npc.getName();
-                if (player.getBossKillcount().get(name).intValue() == achievement.getKills()) {
+                if (player.getBossKillcount().get(name) == achievement.getKills()) {
                     player.getPackets()
                             .sendGameMessage("<col=ff0000>Congratulations, you have completed an achievement;");
                     player.getPackets()
@@ -618,7 +618,7 @@ public class NPC extends Entity implements Serializable {
     }
 
     public void handleBonecrusher(Player player, Drop drop, Item item, boolean lootShare) {
-        CopyOnWriteArrayList<Player> playersWithLs = new CopyOnWriteArrayList<Player>();
+        CopyOnWriteArrayList<Player> playersWithLs = new CopyOnWriteArrayList<>();
         String dropName = ItemDefinitions.getItemDefinitions(drop.getItemId()).getName().toLowerCase();
         if (lootShare) {
             player.sm(String.format(("<col=216902>Your bonecrusher crushed: %s x %s. </col>"),
@@ -638,7 +638,7 @@ public class NPC extends Entity implements Serializable {
     }
 
     public void handleHerbicide(Player player, Drop drop, Item item, boolean lootshare) {
-        CopyOnWriteArrayList<Player> playersWithLs = new CopyOnWriteArrayList<Player>();
+        CopyOnWriteArrayList<Player> playersWithLs = new CopyOnWriteArrayList<>();
         String dropName = ItemDefinitions.getItemDefinitions(drop.getItemId()).getName();
         if (lootshare) {
             player.sm(String.format(("<col=216902>Your herbicide burnt: %s x %s. </col>"),
@@ -669,13 +669,13 @@ public class NPC extends Entity implements Serializable {
         /* LootShare/CoinShare */
         FriendChatsManager fc = player.getCurrentFriendChat();
         if (fc != null) {
-            CopyOnWriteArrayList<Player> players = new CopyOnWriteArrayList<Player>();
+            CopyOnWriteArrayList<Player> players = new CopyOnWriteArrayList<>();
             for (String fcPlayers : fc.getPlayers()) {
                 if (fcPlayers == null)
                     continue;
                 players.add(World.getPlayerByDisplayName(fcPlayers));
             }
-            CopyOnWriteArrayList<Player> playersWithLs = new CopyOnWriteArrayList<Player>();
+            CopyOnWriteArrayList<Player> playersWithLs = new CopyOnWriteArrayList<>();
             for (Player p : players) {
                 if (p.isToogleLootShare() && p.getRegionId() == player.getRegionId())
                     playersWithLs.add(p);
@@ -986,7 +986,7 @@ public class NPC extends Entity implements Serializable {
 
     public ArrayList<Entity> getPossibleTargets(boolean checkNPCs, boolean checkPlayers) {
         int size = getSize();
-        ArrayList<Entity> possibleTarget = new ArrayList<Entity>();
+        ArrayList<Entity> possibleTarget = new ArrayList<>();
         int attackStyle = getCombatDefinitions().getAttackStyle();
         for (int regionId : getMapRegionsIds()) {
             if (checkPlayers) {

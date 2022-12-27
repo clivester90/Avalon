@@ -23,7 +23,7 @@ import com.rs.utils.WeaponTypesLoader.WeaponType;
 @SuppressWarnings("serial")
 public class FleshspoilerHaasghenahk extends DungeonBoss {
 
-	private List<FleshspoilerSpawn> creatures = new CopyOnWriteArrayList<FleshspoilerSpawn>();
+	private List<FleshspoilerSpawn> creatures = new CopyOnWriteArrayList<>();
 
 	private Entity cachedTarget;
 	private boolean secondStage, useMagicOnly;
@@ -58,7 +58,7 @@ public class FleshspoilerHaasghenahk extends DungeonBoss {
 
 	private void addFleshCreatures() {
 		final WorldTile centerTile = getManager().getTile(getReference(), 8, 7);
-		final List<WorldTile> tiles = new LinkedList<WorldTile>();
+		final List<WorldTile> tiles = new LinkedList<>();
 		for (int i = 0; i < 5; i++) {
 			WorldTile tile = Utils.getFreeTile(centerTile, 6);
 			World.sendProjectile(this, tile, 2765, 150, 0, 30, 1, 40, 0);

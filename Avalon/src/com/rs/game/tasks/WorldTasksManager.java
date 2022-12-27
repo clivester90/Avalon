@@ -7,7 +7,7 @@ import java.util.List;
 public class WorldTasksManager {
 
 	private static final List<WorldTaskInformation> tasks = Collections
-			.synchronizedList(new LinkedList<WorldTaskInformation>());
+			.synchronizedList(new LinkedList<>());
 
 	public static void processTasks() {
 		for (WorldTaskInformation taskInformation : tasks.toArray(new WorldTaskInformation[tasks.size()])) {

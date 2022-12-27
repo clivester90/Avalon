@@ -127,7 +127,7 @@ public final class DungeonUtils {
 	}
 
 	public static Room[] selectPossibleBossRooms(int type, int complexity, int floorId, boolean n, boolean e, boolean s, boolean w, int rotation) {
-		ArrayList<Room> possiblities = new ArrayList<Room>();
+		ArrayList<Room> possiblities = new ArrayList<>();
 		for (BossRoom handledRoom : DungeonConstants.BOSS_ROOMS[type]) {
 			if (!handledRoom.isComplexity(complexity))
 				continue;
@@ -161,7 +161,7 @@ public final class DungeonUtils {
 	}
 
 	public static Room[] selectPossibleRooms(HandledRoom[] handledRooms, int complexity, int floorType, boolean n, boolean e, boolean s, boolean w) {
-		ArrayList<Room> possiblities = new ArrayList<Room>();
+		ArrayList<Room> possiblities = new ArrayList<>();
 		for (HandledRoom handledRoom : handledRooms) {
 			if (!handledRoom.isAvailableOnFloorType(floorType))
 				continue;
@@ -178,7 +178,7 @@ public final class DungeonUtils {
 	}
 
 	public static Room[] selectPossibleRooms(HandledRoom[] handledRooms, int complexity, int floorType, boolean n, boolean e, boolean s, boolean w, int rotation) {
-		ArrayList<Room> possiblities = new ArrayList<Room>();
+		ArrayList<Room> possiblities = new ArrayList<>();
 		for (HandledRoom handledRoom : handledRooms) {
 			if (!handledRoom.isAvailableOnFloorType(floorType))
 				continue;

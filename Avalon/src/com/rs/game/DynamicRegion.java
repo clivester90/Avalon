@@ -197,7 +197,7 @@ public class DynamicRegion extends Region {
 				if (clipedOnlyMap != null)
 					clipedOnlyMap.setMask(chunkZ, fullX, fullY, 0);
 
-				List<WorldObject> ro = new ArrayList<WorldObject>(removedOriginalObjects);
+				List<WorldObject> ro = new ArrayList<>(removedOriginalObjects);
 				// List<WorldObject> ao = new
 				// ArrayList<WorldObject>(spawnedObjects);
 				for (WorldObject removed : ro)

@@ -9,7 +9,7 @@ public abstract class QuestJournal implements Serializable {
 
 	public abstract QuestJournal display(int stage);
 	
-	private final List<Entry> ENTRIES = new ArrayList<Entry>();
+	private final List<Entry> ENTRIES = new ArrayList<>();
 	
 	public void addLog(Entry... entry) {
 		for (Entry e : entry)

@@ -10,7 +10,7 @@ import com.rs.io.OutputStream;
 @SuppressWarnings("unused")
 public final class NPCDefinitions {
 
-	private static final ConcurrentHashMap<Integer, NPCDefinitions> npcDefinitions = new ConcurrentHashMap<Integer, NPCDefinitions>();
+	private static final ConcurrentHashMap<Integer, NPCDefinitions> npcDefinitions = new ConcurrentHashMap<>();
 
 	private int id;
 	public HashMap<Integer, Object> clientScriptData;
@@ -252,7 +252,7 @@ public final class NPCDefinitions {
 																						int i = stream
 																								.readUnsignedByte();
 																						if (clientScriptData == null) {
-																							clientScriptData = new HashMap<Integer, Object>(
+																							clientScriptData = new HashMap<>(
 																									i);
 																						}
 																						for (int i_60_ = 0; i > i_60_; i_60_++) {

@@ -88,7 +88,7 @@ public class SquealOfFortune implements Serializable {
 	private int[] uncommon;
 
 	public SquealOfFortune(Player player) {
-		items = new ItemsContainer<Item>(13, false);
+		items = new ItemsContainer<>(13, false);
 	}
 
 	public void setPlayer(Player player) {

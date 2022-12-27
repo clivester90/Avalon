@@ -44,11 +44,11 @@ public class XPHR implements Serializable {
 	public XPHR(Player player) {
 		this.player = player;
 		if (Skill == null)
-			Skill = new HashMap<String, Integer>();
+			Skill = new HashMap<>();
 		if (Configuration == null)
-			Configuration = new HashMap<String, Boolean>();
+			Configuration = new HashMap<>();
 		if (TempValues == null)
-			TempValues = new HashMap<String, Integer>();
+			TempValues = new HashMap<>();
 		TempValues.put("TempSessionXP", 0);
 		TempValues.put("TempXPHR", 0);
 		Configuration.put("Timer", false);

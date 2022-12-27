@@ -80,7 +80,7 @@ public class Class481_Sub1 extends Class481 {
 		    if (object != null) {
 			Method method_6_ = (var_class.getDeclaredMethod("supportsPreemptiveAuthorization", new Class[0]));
 			method_6_.setAccessible(true);
-			if (((Boolean) method_6_.invoke(object, new Object[0])).booleanValue()) {
+			if ((Boolean) method_6_.invoke(object, new Object[0])) {
 			    Method method_7_ = var_class.getDeclaredMethod("getHeaderName", new Class[0]);
 			    method_7_.setAccessible(true);
 			    Method method_8_ = (var_class.getDeclaredMethod("getHeaderValue", (new Class[] { java.net.URL.class, java.lang.String.class })));

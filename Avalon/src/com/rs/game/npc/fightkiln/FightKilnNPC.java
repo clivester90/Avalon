@@ -83,7 +83,7 @@ public class FightKilnNPC extends NPC {
 
 	@Override
 	public ArrayList<Entity> getPossibleTargets() {
-		ArrayList<Entity> possibleTarget = new ArrayList<Entity>(1);
+		ArrayList<Entity> possibleTarget = new ArrayList<>(1);
 		List<Integer> playerIndexes = World.getRegion(getRegionId()).getPlayerIndexes();
 		if (playerIndexes != null) {
 			for (int npcIndex : playerIndexes) {

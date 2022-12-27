@@ -26,7 +26,7 @@ public class SorceressGarden extends Controler {
 		private int levelReq;
 		private WorldTile inside, outside;
 
-		private static Map<Integer, Gate> Gates = new HashMap<Integer, Gate>();
+		private static Map<Integer, Gate> Gates = new HashMap<>();
 
 		private Gate(int objectId, int lvlReq, WorldTile inside, WorldTile outside) {
 			this.objectId = objectId;

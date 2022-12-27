@@ -29,7 +29,7 @@ public class Class337 {
 	    if (integer == null)
 		i_1_ = 0;
 	    else
-		i_1_ = integer.intValue();
+		i_1_ = integer;
 	    class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919 - 1)] = i_1_;
 	}
 	catch (RuntimeException runtimeexception) {

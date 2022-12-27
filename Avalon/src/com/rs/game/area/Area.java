@@ -7,7 +7,7 @@ import com.rs.game.player.Player;
 
 public abstract class Area {
 
-	private transient List<Player> players = new LinkedList<Player>();
+	private transient List<Player> players = new LinkedList<>();
 
 	public abstract Area update();
 

@@ -61,9 +61,9 @@ public class SecurityManager implements Serializable {
 	 * Instantiates a new security manager. - Constructor
 	 */
 	public SecurityManager() {
-		TrustedIPS = new ArrayList<String>();
-		Email = new ArrayList<String>();
-		IPS = new ArrayList<String>();
+		TrustedIPS = new ArrayList<>();
+		Email = new ArrayList<>();
+		IPS = new ArrayList<>();
 	}
 
 	/**

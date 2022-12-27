@@ -21,7 +21,7 @@ public final class Notes implements Serializable {
 	 * Instantiates a new notes.
 	 */
 	public Notes() {
-		notes = new ArrayList<Note>(30);
+		notes = new ArrayList<>(30);
 	}
 
 	/**

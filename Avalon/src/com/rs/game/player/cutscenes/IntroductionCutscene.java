@@ -20,7 +20,7 @@ public class IntroductionCutscene extends Cutscene {
 	@Override
 	public CutsceneAction[] getActions(Player player) {
 
-		ArrayList<CutsceneAction> actionsList = new ArrayList<CutsceneAction>();
+		ArrayList<CutsceneAction> actionsList = new ArrayList<>();
 		return actionsList.toArray(new CutsceneAction[actionsList.size()]);
 	}
 }

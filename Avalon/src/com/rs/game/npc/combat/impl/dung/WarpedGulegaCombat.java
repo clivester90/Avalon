@@ -37,7 +37,7 @@ public class WarpedGulegaCombat extends CombatScript {
 		case 3://reg aeo melee
 			npc.animate(new Animation(15004));
 
-			final List<WorldTile> attackTiles = new LinkedList<WorldTile>();
+			final List<WorldTile> attackTiles = new LinkedList<>();
 			for (Entity t : boss.getPossibleTargets(true, true))
 				attackTiles.add(new WorldTile(t));
 			WorldTasksManager.schedule(new WorldTask() {

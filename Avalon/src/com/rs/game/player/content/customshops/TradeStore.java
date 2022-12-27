@@ -30,8 +30,8 @@ public class TradeStore {
 
 	public TradeStore(Player player) {
 		this.player = player; // player reference
-		items = new ItemsContainer<Item>(28, false);
-		rewardItems = new ItemsContainer<Item>(28, false);
+		items = new ItemsContainer<>(28, false);
+		rewardItems = new ItemsContainer<>(28, false);
 	}
 
 	/*

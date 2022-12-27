@@ -46,7 +46,7 @@ public class FriendsIgnores implements Serializable {
 		if (friendsChatRanks == null) {// temporary
 			whoCanKickOnChat = 7;
 			whoCanShareloot = -1;
-			friendsChatRanks = new HashMap<String, Integer>(200);
+			friendsChatRanks = new HashMap<>(200);
 			for (String friend : friends)
 				friendsChatRanks.put(friend, 0);
 		}
@@ -100,9 +100,9 @@ public class FriendsIgnores implements Serializable {
 	}
 
 	public FriendsIgnores() {
-		friends = new ArrayList<String>(200);
-		ignores = new ArrayList<String>(100);
-		friendsChatRanks = new HashMap<String, Integer>(200);
+		friends = new ArrayList<>(200);
+		ignores = new ArrayList<>(100);
+		friendsChatRanks = new HashMap<>(200);
 		whoCanKickOnChat = 7;
 		whoCanShareloot = -1;
 	}
@@ -506,7 +506,7 @@ public class FriendsIgnores implements Serializable {
 	}
 
 	public void init() {
-		tillLogoutIgnores = new ArrayList<String>(100);
+		tillLogoutIgnores = new ArrayList<>(100);
 		player.getPackets().sendFriends();
 		player.getPackets().sendIgnores();
 		if (privateStatus != 2)

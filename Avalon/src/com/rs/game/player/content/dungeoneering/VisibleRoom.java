@@ -35,7 +35,7 @@ public class VisibleRoom {
 		else {
 			musicId = new int[]
 			{ DungeonUtils.getSafeMusic(type), DungeonUtils.getDangerousMusic(type) };
-			guardians = new ArrayList<NPC>();
+			guardians = new ArrayList<>();
 		}
 	}
 

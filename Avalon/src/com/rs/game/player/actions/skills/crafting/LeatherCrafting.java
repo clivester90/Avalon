@@ -33,7 +33,7 @@ public class LeatherCrafting extends Action {
 
 		;
 
-		private static Map<Integer, Craft> crafting = new HashMap<Integer, Craft>();
+		private static Map<Integer, Craft> crafting = new HashMap<>();
 
 		public static Craft forId(int id) {
 			return crafting.get(id);

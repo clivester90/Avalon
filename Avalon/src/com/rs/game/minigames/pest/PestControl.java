@@ -35,7 +35,7 @@ public class PestControl {
 	private int[] pestCounts = new int[5];
 
 	private transient List<Player> team;
-	private List<NPC> brawlers = new LinkedList<NPC>();
+	private List<NPC> brawlers = new LinkedList<>();
 	private PestPortal[] portals = new PestPortal[4];
 
 	private PestPortal knight;
@@ -128,7 +128,7 @@ public class PestControl {
 	}
 
 	public void endGame() {
-		final List<Player> team = new LinkedList<Player>();
+		final List<Player> team = new LinkedList<>();
 		team.addAll(this.team);
 		this.team.clear();
 		for (final Player player : team) {

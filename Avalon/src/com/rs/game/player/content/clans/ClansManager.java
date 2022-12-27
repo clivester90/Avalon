@@ -30,7 +30,7 @@ public class ClansManager {
 	private static HashMap<String, ClansManager> cachedClans;
 
 	public static void init() {
-		cachedClans = new HashMap<String, ClansManager>();
+		cachedClans = new HashMap<>();
 	}
 
 	public static void viewClanmateDetails(Player player, ClanMember member) {
@@ -51,9 +51,9 @@ public class ClansManager {
 
 	public ClansManager(Clan clan) {
 		this.clan = clan;
-		this.channelPlayers = new ArrayList<String>();
-		this.membersOnline = new ArrayList<String>();
-		this.bannedChannelPlayers = new HashMap<String, Long>();
+		this.channelPlayers = new ArrayList<>();
+		this.membersOnline = new ArrayList<>();
+		this.bannedChannelPlayers = new HashMap<>();
 		generateClanSettingsDataBlock();
 		generateClanChannelDataBlock();
 	}
@@ -117,7 +117,7 @@ public class ClansManager {
 
 	public void kickAllChannelPlayers() {
 		synchronized (this) {
-			for (String names : new ArrayList<String>(channelPlayers)) {
+			for (String names : new ArrayList<>(channelPlayers)) {
 				Player player = World.getPlayerByDisplayName(names);
 				if (player != null)
 					disconnect(player, !membersOnline.contains(names));

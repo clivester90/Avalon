@@ -190,7 +190,7 @@ public class DungManager implements Serializable {
 	public void reset() {
 		currentProgress = new boolean[DungeonConstants.FLOORS_COUNT];
 		previousProgress = 0;
-		bindedItems = new ItemsContainer<Item>(10, false);
+		bindedItems = new ItemsContainer<>(10, false);
 		maxFloor = maxComplexity = 1;
 		visitedResources = new boolean[ResourceDungeon.values().length];
 		cVersion = version;

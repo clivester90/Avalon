@@ -28,7 +28,7 @@ public class GraphicDefinitions {
 	// added
 	public int intValue;
 
-	private static final ConcurrentHashMap<Integer, GraphicDefinitions> animDefs = new ConcurrentHashMap<Integer, GraphicDefinitions>();
+	private static final ConcurrentHashMap<Integer, GraphicDefinitions> animDefs = new ConcurrentHashMap<>();
 
 	public static final GraphicDefinitions getAnimationDefinitions(int emoteId) {
 		GraphicDefinitions defs = animDefs.get(emoteId);

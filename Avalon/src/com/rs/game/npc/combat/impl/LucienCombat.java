@@ -32,7 +32,7 @@ public class LucienCombat extends CombatScript {
 
 		if (Utils.getRandom(10) == 0) {
 			ArrayList<Entity> possibleTargets = npc.getPossibleTargets();
-			final HashMap<String, int[]> tiles = new HashMap<String, int[]>();
+			final HashMap<String, int[]> tiles = new HashMap<>();
 			for (Entity t : possibleTargets) {
 				if (t instanceof Player) {
 					Player p = (Player) t;

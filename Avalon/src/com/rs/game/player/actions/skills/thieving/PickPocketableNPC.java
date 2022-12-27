@@ -164,7 +164,7 @@ public enum PickPocketableNPC {
 	 * A hashmap containing all the npc pickpocketing data.
 	 */
 
-	private static final Map<Short, PickPocketableNPC> NPCS = new HashMap<Short, PickPocketableNPC>();
+	private static final Map<Short, PickPocketableNPC> NPCS = new HashMap<>();
 
 	/**
 	 * Gets the pickpocketing data from the mapping, depending on the NPC id.

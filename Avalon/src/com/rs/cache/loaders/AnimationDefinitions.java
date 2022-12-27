@@ -32,7 +32,7 @@ public class AnimationDefinitions {
 	public int[] anIntArray1362;
 	public boolean effect2Sound;
 
-	private static final ConcurrentHashMap<Integer, AnimationDefinitions> animDefs = new ConcurrentHashMap<Integer, AnimationDefinitions>();
+	private static final ConcurrentHashMap<Integer, AnimationDefinitions> animDefs = new ConcurrentHashMap<>();
 
 	public static final AnimationDefinitions getAnimationDefinitions(int emoteId) {
 		try {

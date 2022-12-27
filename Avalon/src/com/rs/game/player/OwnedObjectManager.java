@@ -15,7 +15,7 @@ public class OwnedObjectManager {
 
 	public static final AtomicLong keyMaker = new AtomicLong();
 
-	private static final Map<String, OwnedObjectManager> ownedObjects = new ConcurrentHashMap<String, OwnedObjectManager>();
+	private static final Map<String, OwnedObjectManager> ownedObjects = new ConcurrentHashMap<>();
 
 	private transient Player player;
 	private WorldObject[] objects;

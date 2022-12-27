@@ -27,7 +27,7 @@ public class ChargesManager implements Serializable {
 	private HashMap<Integer, Integer> charges;
 
 	public ChargesManager() {
-		charges = new HashMap<Integer, Integer>();
+		charges = new HashMap<>();
 	}
 
 	public void setPlayer(Player player) {

@@ -29,7 +29,7 @@ public class QuestManager implements Serializable {
 	private transient Quest current;
 
 	private int questPoints;
-	private List<Quest> quests = new ArrayList<Quest>(Quests.values().length);
+	private List<Quest> quests = new ArrayList<>(Quests.values().length);
 
 	public QuestManager(Player player) {
 		this.setPlayer(player);

@@ -519,7 +519,7 @@ public class TreasureTrailsManager implements Serializable {
 		}
 		int base = BASE_PIECES[getBasePiece(itemId)];
 		if (pieces == null) {
-			pieces = new ArrayList<Item>(PUZZLE_SIZE);
+			pieces = new ArrayList<>(PUZZLE_SIZE);
 			for (int index = 0; index < PUZZLE_SIZE - 1; index++)
 				pieces.add(new Item(base + index, 1));
 			pieces.add(new Item(-1, 1));
@@ -622,8 +622,8 @@ public class TreasureTrailsManager implements Serializable {
 			player.getTreasureTrailCompleted().put(LEVEL[level], 1);
 		} else
 			player.getTreasureTrailCompleted().put(LEVEL[level],
-					player.getTreasureTrailCompleted().get(LEVEL[level]).intValue() + 1);
-		if (player.getTreasureTrailCompleted().get(LEVEL[level]).intValue() % 50 == 0)
+                    player.getTreasureTrailCompleted().get(LEVEL[level]) + 1);
+		if (player.getTreasureTrailCompleted().get(LEVEL[level]) % 50 == 0)
 			player.getAdventureLog()
 					.addActivity("I have completed "
 							+ player.getTreasureTrailCompleted().get(LEVEL[level])
@@ -633,7 +633,7 @@ public class TreasureTrailsManager implements Serializable {
 				+ " " + LEVEL[level].toLowerCase() + " treasure trails.");
 		player.sm("Your treasure is worth around "
 				+ HexColours.getShortMessage(Colour.RED, Utils.getFormattedNumber(totalValue, ',') + "") + " coins!");
-		if (player.getTreasureTrailCompleted().get(LEVEL[level]).intValue() == 100) {
+		if (player.getTreasureTrailCompleted().get(LEVEL[level]) == 100) {
 			player.getPackets().sendGameMessage(
 					"<col=ff0000>Congratulations, you have completed a completionist cape requirement;");
 			player.getPackets().sendGameMessage("<col=ff0000>Complete 100 treasure trails.");
@@ -662,7 +662,7 @@ public class TreasureTrailsManager implements Serializable {
 					}
 
 				}
-				player.setClueScrollRewards(new ItemsContainer<Item>(10, true));
+				player.setClueScrollRewards(new ItemsContainer<>(10, true));
 			}
 		});
 	}

@@ -17,7 +17,7 @@ public final class ClientScriptMap {
 	private int defaultIntValue;
 	private HashMap<Long, Object> values;
 
-	private static final ConcurrentHashMap<Integer, ClientScriptMap> interfaceScripts = new ConcurrentHashMap<Integer, ClientScriptMap>();
+	private static final ConcurrentHashMap<Integer, ClientScriptMap> interfaceScripts = new ConcurrentHashMap<>();
 
 	public static void main(String[] args) throws IOException {
 		// Cache.STORE = new Store("C:/.jagex_cache_32/runescape/");
@@ -150,7 +150,7 @@ public final class ClientScriptMap {
 			int count = stream.readUnsignedShort();
 			int loop = opcode == 7 || opcode == 8 ? stream.readUnsignedShort() : count;
 			if (values == null)
-				values = new HashMap<Long, Object>(Utils.getHashMapSize(count));
+				values = new HashMap<>(Utils.getHashMapSize(count));
 			for (int i = 0; i < loop; i++) {
 				int key = opcode == 7 || opcode == 8 ? stream.readUnsignedShort() : stream.readInt();
 				Object value = opcode == 5 || opcode == 7 ? stream.readString() : stream.readInt();

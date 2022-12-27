@@ -111,7 +111,7 @@ public class Class301 {
 					method3700(class_ra, i_6_, i_16_, i_8_, i_18_, i_21_, i_22_, aByteArray3246[i_20_], (class298_sub54.anIntArray7621), (class298_sub54.aByteArray7620), true);
 				} else {
 				    Integer integer = (Integer) object;
-				    anIntArray3231[0] = integer.intValue();
+				    anIntArray3231[0] = integer;
 				    aByteArray3232[0] = aByteArray3250[i_20_];
 				    method3700(class_ra, i_6_, i_16_, i_8_, i_18_, i_21_, i_22_, aByteArray3246[i_20_], anIntArray3231, aByteArray3232, true);
 				}
@@ -144,7 +144,7 @@ public class Class301 {
 					    method3701(class_ra, i_24_, i_29_, i_26_, i_31_, (class298_sub54.anIntArray7621), (class298_sub54.aByteArray7620));
 				    } else {
 					Integer integer = (Integer) object;
-					anIntArray3231[0] = integer.intValue();
+					anIntArray3231[0] = integer;
 					aByteArray3232[0] = (aByteArray3250[i_27_ + i_32_ * anInt3239]);
 					method3701(class_ra, i_24_, i_29_, i_26_, i_31_, anIntArray3231, aByteArray3232);
 				    }
@@ -742,7 +742,7 @@ public class Class301 {
 			}
 		    } else {
 			Integer integer = (Integer) object;
-			ObjectDefinitions class432 = aClass433_3220.getObjectDefinitions(integer.intValue());
+			ObjectDefinitions class432 = aClass433_3220.getObjectDefinitions(integer);
 			int i_198_ = class432.anInt5399 * -1422593103;
 			if (class432.anIntArray5366 != null) {
 			    class432 = class432.method5777(anInterface23_3223, 1079072044);

@@ -67,7 +67,7 @@ public class BirdNest {
 			return chance;
 		}
 
-		private static Map<Integer, Nest> nests = new HashMap<Integer, Nest>();
+		private static Map<Integer, Nest> nests = new HashMap<>();
 
 		public static Nest forId(int itemId) {
 			return nests.get(itemId);

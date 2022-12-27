@@ -20,7 +20,7 @@ public class MiscStoreDialogue extends Action {
 		
 		SKILLING2(new Item(221), 1);
 
-		private static Map<Integer, MiscStores> shops = new HashMap<Integer, MiscStores>();
+		private static Map<Integer, MiscStores> shops = new HashMap<>();
 
 		public static MiscStores forId(int buttonId) {
 			return shops.get(buttonId);

@@ -38,7 +38,7 @@ public class Toolbelt implements Serializable {
 	 */
 	public Toolbelt() {
 		if (toolbeltItems == null)
-			toolbeltItems = new HashMap<Integer, Boolean>();
+			toolbeltItems = new HashMap<>();
 		for (int items : TOOLBELT_ITEMS)
 			toolbeltItems.put(items, false);
 
@@ -59,7 +59,7 @@ public class Toolbelt implements Serializable {
 
 	public void reset() {
 		toolbeltItems.clear();
-		toolbeltItems = new HashMap<Integer, Boolean>();
+		toolbeltItems = new HashMap<>();
 		for (int items : TOOLBELT_ITEMS)
 			toolbeltItems.put(items, false);
 		player.sm("Toolbelt items reset.");

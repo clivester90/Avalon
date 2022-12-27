@@ -34,15 +34,15 @@ public class Ranks {
 		private String title;
 		private double xpBoost;
 
-		private Rank(String rankName) {
+		Rank(String rankName) {
 			this(rankName, 1.0, null);
 		}
 		
-		private Rank(String rankName, double xpBoost) {
+		Rank(String rankName, double xpBoost) {
 			this(rankName, xpBoost, null);
 		}
 
-		private Rank(String rankName, double xpBoost, String title) {
+		Rank(String rankName, double xpBoost, String title) {
 			this.rankName = rankName;
 			this.xpBoost = xpBoost;
 			this.title = title;

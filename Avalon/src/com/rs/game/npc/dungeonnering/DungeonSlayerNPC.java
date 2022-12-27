@@ -23,7 +23,7 @@ public class DungeonSlayerNPC extends DungeonNPC {
 	public void drop() {
 		super.drop();
 		int size = getSize();
-		ArrayList<Item> drops = new ArrayList<Item>();
+		ArrayList<Item> drops = new ArrayList<>();
 		if (getId() == 10694) {
 			if (Utils.random(2) == 0)
 				drops.add(new Item(17261));

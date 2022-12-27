@@ -21,8 +21,8 @@ public class BobBarter {
 	private int maxPots = 1000000;
 
 	public void decant() {
-		potsList = new ArrayList<ArrayList>();
-		delete = new ArrayList<Integer>();
+		potsList = new ArrayList<>();
+		delete = new ArrayList<>();
 		int totalVials = 0;
 		for (int i = 0; i < player.getInventory().getItemsContainerSize(); i++) {
 			Item item = player.getInventory().getItem(i);

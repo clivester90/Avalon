@@ -32,7 +32,7 @@ public class SerializableFilesManager {
 				return null;
 			}
 		} else {
-			return new HashMap<Long, Offer>();
+			return new HashMap<>();
 		}
 	}
 
@@ -46,7 +46,7 @@ public class SerializableFilesManager {
 				return null;
 			}
 		} else {
-			return new ArrayList<OfferHistory>();
+			return new ArrayList<>();
 		}
 	}
 
@@ -60,7 +60,7 @@ public class SerializableFilesManager {
 				return null;
 			}
 		} else {
-			return new HashMap<Integer, Integer>();
+			return new HashMap<>();
 		}
 	}
 
@@ -145,7 +145,7 @@ public class SerializableFilesManager {
 				return null;
 			}
 		} else {
-			return new ArrayList<String>();
+			return new ArrayList<>();
 		}
 	}
 

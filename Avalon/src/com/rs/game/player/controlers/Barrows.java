@@ -115,7 +115,7 @@ public final class Barrows extends Controler {
     }
 
     public int getRandomBrother() {
-        List<Integer> bros = new ArrayList<Integer>();
+        List<Integer> bros = new ArrayList<>();
         for (int i = 0; i < Hills.values().length; i++) {
             if (player.getKilledBarrowBrothers()[i] || player.getHiddenBrother() == i)
                 continue;

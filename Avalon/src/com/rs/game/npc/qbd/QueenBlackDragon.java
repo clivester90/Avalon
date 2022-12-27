@@ -145,12 +145,12 @@ public final class QueenBlackDragon extends NPC {
 	/**
 	 * The list of tortured souls.
 	 */
-	private final List<TorturedSoul> souls = new ArrayList<TorturedSoul>();
+	private final List<TorturedSoul> souls = new ArrayList<>();
 
 	/**
 	 * The list of worms.
 	 */
-	private final List<NPC> worms = new ArrayList<NPC>();
+	private final List<NPC> worms = new ArrayList<>();
 
 	/**
 	 * If the Queen Black Dragon is spawning worms.
@@ -516,7 +516,7 @@ public final class QueenBlackDragon extends NPC {
 				rewards.add(new Item(24371));
 			}
 		}
-		List<Item> rewardTable = new ArrayList<Item>();
+		List<Item> rewardTable = new ArrayList<>();
 		for (int[] reward : REWARDS) {
 			Item item = new Item(reward[0], reward[1] + Utils.random(reward[2] - reward[1]));
 			for (int i = 0; i < reward[3]; i++) {

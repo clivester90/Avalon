@@ -18,7 +18,7 @@ public class Lander {
 	private static final int AUTO_GAME = 25;
 	private static final int TIME = 45;
 
-	private transient List<Player> lobby = Collections.synchronizedList(new LinkedList<Player>());
+	private transient List<Player> lobby = Collections.synchronizedList(new LinkedList<>());
 	private LobbyTimer timer;
 	private LanderRequirement landerRequirement;
 
@@ -54,7 +54,7 @@ public class Lander {
 	}
 
 	private void passPlayersToGame() {
-		final List<Player> playerList = new LinkedList<Player>();
+		final List<Player> playerList = new LinkedList<>();
 		playerList.addAll(Collections.synchronizedList(lobby));
 		lobby.clear();
 		if (playerList.size() > AUTO_GAME) {
@@ -112,7 +112,7 @@ public class Lander {
 
 		VETERAN(2, 100, new WorldTile(2635, 2653, 0), new WorldTile(2638, 2653, 0));
 
-		private static Map<Integer, LanderRequirement> landers = new HashMap<Integer, LanderRequirement>();
+		private static Map<Integer, LanderRequirement> landers = new HashMap<>();
 
 		public static LanderRequirement forId(int id) {
 			return landers.get(id);

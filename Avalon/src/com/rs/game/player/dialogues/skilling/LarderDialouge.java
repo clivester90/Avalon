@@ -13,7 +13,7 @@ public class LarderDialouge extends Dialogue {
 	private static final String[] LARDER_NAMES =
 	{ "Tea leaves", "Bucket of Milk", "Eggs", "Pot of Flour", "Potato", "Garlic", "Onion", "Cheese" };
 
-	private final List<String> currentOptions = new LinkedList<String>();
+	private final List<String> currentOptions = new LinkedList<>();
 	private int max_index;
 
 	@Override

@@ -208,7 +208,7 @@ public class LividFarmControler extends Controler {
 
 	}
 
-	public ArrayList<WorldObject> plantList = new ArrayList<WorldObject>();
+	public ArrayList<WorldObject> plantList = new ArrayList<>();
 
 	public void sendPlantInterface(WorldObject object, Player player) {
 		player.getDialogueManager().startDialogue(new Dialogue() {

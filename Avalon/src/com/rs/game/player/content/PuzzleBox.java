@@ -73,9 +73,9 @@ public class PuzzleBox implements Serializable {
 	}
 
 	public void generatePuzzle() {
-		ItemsContainer<Item> pieces = new ItemsContainer<Item>(24, false);
-		completePuzzle = new ItemsContainer<Item>(24, false);
-		currentPuzzle = new ItemsContainer<Item>(25, false);
+		ItemsContainer<Item> pieces = new ItemsContainer<>(24, false);
+		completePuzzle = new ItemsContainer<>(24, false);
+		currentPuzzle = new ItemsContainer<>(25, false);
 		for (int i = 0; i < 24; i++) {
 			completePuzzle.add(new Item(puzzleId + i, 1));
 			pieces.add(new Item(puzzleId + i, 1));

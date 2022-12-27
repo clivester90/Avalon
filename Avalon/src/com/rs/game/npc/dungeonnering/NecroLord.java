@@ -22,7 +22,7 @@ public class NecroLord extends DungeonBoss {
 		super(id, tile, manager, reference, 0.6D);
 		setCantFollowUnderCombat(true); //force can't walk
 		setLureDelay(Integer.MAX_VALUE);//doesn't stop focusing on target
-		skeletons = new CopyOnWriteArrayList<SkeletalMinion>();
+		skeletons = new CopyOnWriteArrayList<>();
 	}
 
 	@Override

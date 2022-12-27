@@ -43,8 +43,8 @@ public class Clan implements Serializable {
 
 	public Clan(String clanName, Player leader) {
 		setDefaults();
-		this.members = new ArrayList<ClanMember>();
-		this.bannedUsers = new ArrayList<String>();
+		this.members = new ArrayList<>();
+		this.bannedUsers = new ArrayList<>();
 		setClanLeaderUsername(addMember(leader, LEADER));
 		init(clanName);
 	}

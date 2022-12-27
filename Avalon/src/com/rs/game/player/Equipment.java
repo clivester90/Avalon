@@ -24,7 +24,7 @@ public final class Equipment implements Serializable {
 	static final int[] DISABLED_SLOTS = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0};
 
 	public Equipment() {
-		items = new ItemsContainer<Item>(15, false);
+		items = new ItemsContainer<>(15, false);
 	}
 
 	public void setPlayer(Player player) {

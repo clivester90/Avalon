@@ -9,7 +9,7 @@ import com.rs.utils.Logger;
 
 public class TaskManager {
 
-	private ArrayList<Tasks> tasks = new ArrayList<Tasks>(
+	private ArrayList<Tasks> tasks = new ArrayList<>(
 			com.rs.game.player.content.tasksystem.TaskManager.Tasks.values().length);
 
 	public TaskManager(Player player) {
@@ -52,7 +52,7 @@ public class TaskManager {
 
 	public static class Tasks {
 
-		private static final Map<Object, Class<Task>> tasks = new HashMap<Object, Class<Task>>(1);
+		private static final Map<Object, Class<Task>> tasks = new HashMap<>(1);
 
 		public static Task getTask(Object task) {
 			if (task instanceof Task) {

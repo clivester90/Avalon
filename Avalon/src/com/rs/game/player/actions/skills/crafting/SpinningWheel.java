@@ -28,7 +28,7 @@ public class SpinningWheel extends Action {
 		
 		;
 
-		private static Map<Integer, Products> prods = new HashMap<Integer, Products>();
+		private static Map<Integer, Products> prods = new HashMap<>();
 
 		public static Products forId(int buttonId) {
 			return prods.get(buttonId);

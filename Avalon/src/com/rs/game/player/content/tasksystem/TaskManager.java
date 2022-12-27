@@ -24,7 +24,7 @@ public class TaskManager implements Serializable {
 	public static String HARD = "hard";
 	public static String ELITE = "elite";
 
-	public static enum Tasks {
+	public enum Tasks {
 
 		/*
 		 * Easy Tasks
@@ -65,11 +65,11 @@ public class TaskManager implements Serializable {
 		private String difficulity;
 		private int amount;
 
-		private Tasks(String difficulity) {
+		Tasks(String difficulity) {
 			this.difficulity = difficulity;
 		}
 
-		private Tasks(String difficulity, int amount) {
+		Tasks(String difficulity, int amount) {
 			this.difficulity = difficulity;
 			this.setAmount(amount);
 		}
@@ -87,7 +87,7 @@ public class TaskManager implements Serializable {
 		}
 	}
 
-	public static enum Rewards {
+	public enum Rewards {
 
 		/*
 		 * Easy Rewards
@@ -125,7 +125,7 @@ public class TaskManager implements Serializable {
 		private int itemId;
 		private String difficulity;
 
-		private Rewards(int itemId, String difficulity) {
+		Rewards(int itemId, String difficulity) {
 			this.itemId = itemId;
 			this.difficulity = difficulity;
 		}
@@ -147,13 +147,13 @@ public class TaskManager implements Serializable {
 	 * Instantiates a new task manager.
 	 */
 	public TaskManager() {
-		completedTasks = new ArrayList<Tasks>();
+		completedTasks = new ArrayList<>();
 	}
 
 	public void setPlayer(Player player) {
 		this.player = player;
 		if (taskStages == null)
-			taskStages = new HashMap<Tasks, Integer>();
+			taskStages = new HashMap<>();
 	}
 
 	private transient final String[] finishTaskMessages = { "Nice job!", "Great job!", "Awesome,", "Well done!", "Cool!",
@@ -208,20 +208,18 @@ public class TaskManager implements Serializable {
 	public boolean hasCompletedTasks(String d) {
 		boolean completed = true;
 		for (Tasks tasks : Tasks.values()) {
-			if (tasks.getDifficulity() == d) {
+			if (tasks.getDifficulity().equals(d)) {
 				if (!player.getTaskManager().completedTask(tasks)) {
 					completed = false;
 				}
 			}
 		}
-		if (completed)
-			return true;
-		return false;
+		return completed;
 	}
 
 	public void getRewards(String d) {
 		for (Rewards rewards : Rewards.values()) {
-			if (rewards.getDifficulity() != d) {
+			if (!rewards.getDifficulity().equals(d)) {
 				for (Item equipment : player.getEquipment().getItems().getContainerItems()) {
 					if (equipment == null)
 						continue;
@@ -310,23 +308,23 @@ public class TaskManager implements Serializable {
 	}
 
 	public void sendReward(Tasks task, int amount) {
-		if (task.getDifficulity() == EASY) {
+		if (task.getDifficulity().equals(EASY)) {
 			player.getMoneyPouch().addMoney(50000, false);
 		}
-		if (task.getDifficulity() == MEDIUM) {
+		if (task.getDifficulity().equals(MEDIUM)) {
 			player.getMoneyPouch().addMoney(100000, false);
 		}
-		if (task.getDifficulity() == HARD) {
+		if (task.getDifficulity().equals(HARD)) {
 			player.getMoneyPouch().addMoney(150000, false);
 		}
-		if (task.getDifficulity() == ELITE) {
+		if (task.getDifficulity().equals(ELITE)) {
 			player.getMoneyPouch().addMoney(250000, false);
 		}
 	}
 
 	public boolean hasCompletedAllTasks() {
 		List<Tasks> tasks = Arrays.asList(Tasks.values());
-		return (completedTasks.containsAll(tasks) ? true : false);
+		return (completedTasks.containsAll(tasks));
 	}
 
 	public void setTaskStage(Tasks task, int stage) {
@@ -366,7 +364,7 @@ public class TaskManager implements Serializable {
 		if (player.getInterfaceManager().containsInterface(3002)) {
 			if (player.getTemporaryAttributes().get("ACHIEVEMENTTAB") != null) {
 				if ((int) player.getTemporaryAttributes().get("ACHIEVEMENTTAB") == 0) {
-					if ((String) player.getTemporaryAttributes().get("ACHIEVEMENTCATEGORY") != null) {
+					if (player.getTemporaryAttributes().get("ACHIEVEMENTCATEGORY") != null) {
 						AchievementsTab.openTasks(player, (String) player.getTemporaryAttributes().get("ACHIEVEMENTCATEGORY"));
 					} else {
 						AchievementsTab.open(player);

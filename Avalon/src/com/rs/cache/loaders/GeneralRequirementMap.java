@@ -11,7 +11,7 @@ public final class GeneralRequirementMap {
 
 	private HashMap<Long, Object> values;
 
-	private static final ConcurrentHashMap<Integer, GeneralRequirementMap> maps = new ConcurrentHashMap<Integer, GeneralRequirementMap>();
+	private static final ConcurrentHashMap<Integer, GeneralRequirementMap> maps = new ConcurrentHashMap<>();
 
 	public static void main(String[] args) throws IOException {
 
@@ -103,7 +103,7 @@ public final class GeneralRequirementMap {
 		if (opcode == 249) {
 			int length = stream.readUnsignedByte();
 			if (values == null)
-				values = new HashMap<Long, Object>(length);
+				values = new HashMap<>(length);
 			for (int index = 0; index < length; index++) {
 				boolean stringInstance = stream.readUnsignedByte() == 1;
 				int key = stream.read24BitInt();

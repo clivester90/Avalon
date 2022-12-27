@@ -44,7 +44,7 @@ public class Smelting extends Action {
 
 		ABYSSSALBANE(80, 50, new Item[] { new Item(21782) }, new Item(21786, 1), 12);
 
-		private static Map<Integer, SmeltingBar> bars = new HashMap<Integer, SmeltingBar>();
+		private static Map<Integer, SmeltingBar> bars = new HashMap<>();
 
 		public static SmeltingBar forId(int buttonId) {
 			return bars.get(buttonId);

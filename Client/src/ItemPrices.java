@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class ItemPrices {
 
-    public static final Map<Integer, Integer> PRICES = new HashMap<Integer, Integer>();
+    public static final Map<Integer, Integer> PRICES = new HashMap<>();
     public static boolean originalPrices = false;
 
     public static void init() {

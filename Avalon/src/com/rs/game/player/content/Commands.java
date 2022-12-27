@@ -103,8 +103,8 @@ public final class Commands {
             switch (cmd[0]) {
                 case "flowertest":
                     String[] flowers = {"red", "blue", "yellow", "orange", "pastel", "rainbow"};
-                    Map<String, Integer> map1 = new HashMap<String, Integer>();
-                    Map<String, Integer> map2 = new HashMap<String, Integer>();
+                    Map<String, Integer> map1 = new HashMap<>();
+                    Map<String, Integer> map2 = new HashMap<>();
                     String flowerType = null;
                     String flowerType2 = null;
                     for (int i = 0; i < flowers.length; i++) {
@@ -114,8 +114,8 @@ public final class Commands {
                     for (int i = 1; i <= 5; i++) {
                         flowerType = flowers[Utils.getRandom(flowers.length)];
                         flowerType2 = flowers[Utils.getRandom(flowers.length)];
-                        map1.put(flowerType, map1.get(flowerType).intValue() + 1);
-                        map2.put(flowerType2, map2.get(flowerType2).intValue() + 1);
+                        map1.put(flowerType, map1.get(flowerType) + 1);
+                        map2.put(flowerType2, map2.get(flowerType2) + 1);
                         System.out.println("flowerType: " + flowerType + ", flowerType2: " + flowerType2);
                     }
                     for (Map.Entry<String, Integer> flowa : map1.entrySet()) {

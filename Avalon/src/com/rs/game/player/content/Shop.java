@@ -364,10 +364,9 @@ public class Shop {
 		}
 		if (price <= 0) {
 			if (isBuying)
-				player.getPackets()
-						.sendGameMessage(item.getDefinitions().getName() + ": shop will sell this item for free.");
+				player.getPackets().sendGameMessage(item.getDefinitions().getName() + ": shop will buy this item for 0 coins.");
 			else
-				player.getPackets().sendGameMessage(item.getDefinitions().getName() + " is free.");
+				player.getPackets().sendGameMessage(item.getDefinitions().getName() + " current do not cost anything.");
 		} else
 			player.getPackets().sendGameMessage(item.getDefinitions().getName() + ": shop will "
 					+ (isBuying ? "sell" : "buy") + " for "

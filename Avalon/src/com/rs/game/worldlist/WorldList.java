@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class WorldList {
 
-	public static final HashMap<Integer, WorldEntry> WORLDS = new HashMap<Integer, WorldEntry>();
+	public static final HashMap<Integer, WorldEntry> WORLDS = new HashMap<>();
 
 	//String activity, String ip, int countryId, String countryName, boolean members
 	public static void init() {

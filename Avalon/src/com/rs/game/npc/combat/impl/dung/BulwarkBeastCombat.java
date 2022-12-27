@@ -53,7 +53,7 @@ public class BulwarkBeastCombat extends CombatScript {
 
 				@Override
 				public void run() {
-					KalphiteQueenCombat.attackMageTarget(new ArrayList<Player>(), npc, npc, target, 2398, 2399);
+					KalphiteQueenCombat.attackMageTarget(new ArrayList<>(), npc, npc, target, 2398, 2399);
 				}
 
 			});

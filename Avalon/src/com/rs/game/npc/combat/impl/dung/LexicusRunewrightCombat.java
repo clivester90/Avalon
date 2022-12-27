@@ -77,7 +77,7 @@ public class LexicusRunewrightCombat extends CombatScript {
 
 	public static void sendBookBarrage(final LexicusRunewright npc) {
 
-		final List<WorldObject> cases = new ArrayList<WorldObject>();
+		final List<WorldObject> cases = new ArrayList<>();
 		for (int x = 0; x < 16; x++) {
 			for (int y = 0; y < 16; y++) {
 				WorldObject o = npc.getManager().getObjectWithType(npc.getReference(), 10, x, y);
@@ -90,7 +90,7 @@ public class LexicusRunewrightCombat extends CombatScript {
 		WorldTasksManager.schedule(new WorldTask() {
 
 			private int cycle = 0;
-			private LinkedList<WorldTile> targets = new LinkedList<WorldTile>();
+			private LinkedList<WorldTile> targets = new LinkedList<>();
 
 			@Override
 			public void run() {

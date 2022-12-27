@@ -76,7 +76,7 @@ public class NightGazerKhighorahkCombat extends CombatScript {
 				WorldTasksManager.schedule(new WorldTask() {
 
 					private int ticks;
-					private List<WorldTile> tiles = new LinkedList<WorldTile>();
+					private List<WorldTile> tiles = new LinkedList<>();
 
 					@Override
 					public void run() {

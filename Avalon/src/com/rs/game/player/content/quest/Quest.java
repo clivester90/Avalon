@@ -18,9 +18,9 @@ public abstract class Quest implements Serializable  {
 	
 	private static final long serialVersionUID = 8650378406511612117L;
 
-private Map<String, String> data = new HashMap<String, String>();
+private Map<String, String> data = new HashMap<>();
 	
-	private Map<Integer, Dialogue> dialogues = new HashMap<Integer, Dialogue>();
+	private Map<Integer, Dialogue> dialogues = new HashMap<>();
 	
 	protected transient Player player;
 	protected int stage = 0;

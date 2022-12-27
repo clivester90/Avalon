@@ -591,7 +591,7 @@ public final class DominionTower implements Serializable {
             growFace();
             return;
         }
-        rewards = new ItemsContainer<Item>(getDominionFactor() > 100000 ? 20 : getDominionFactor() / 5000, true);
+        rewards = new ItemsContainer<>(getDominionFactor() > 100000 ? 20 : getDominionFactor() / 5000, true);
         for (int i = 0; i < rewards.getSize(); i++) {
             Item item = new Item(REWARD_CHEST[Utils.random(REWARD_CHEST.length)]);
             if (item.getId() == 22358 || item.getId() == 22362 || item.getId() == 22366)
@@ -693,7 +693,7 @@ public final class DominionTower implements Serializable {
     public void addFactor(int value) {
         if (player.getSavedVarBits().get(9990) == null)
             player.getSavedVarBits().put(9990, 0);
-        int factor = player.getSavedVarBits().get(9990).intValue();
+        int factor = player.getSavedVarBits().get(9990);
         factor += value;
         player.getVarsManager().sendVarBit(9990, factor, true);
     }
@@ -705,7 +705,7 @@ public final class DominionTower implements Serializable {
     public int getDominionFactor() {
         if (player.getSavedVarBits().get(9990) == null)
             player.getSavedVarBits().put(9990, 0);
-        int factor = player.getSavedVarBits().get(9990).intValue();
+        int factor = player.getSavedVarBits().get(9990);
         return factor;
     }
 

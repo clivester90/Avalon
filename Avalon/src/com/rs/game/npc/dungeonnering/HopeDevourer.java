@@ -66,7 +66,7 @@ public class HopeDevourer extends DungeonBoss {
 		if (getAttackedBy() == null)
 			return targets;
 		else {
-			ArrayList<Entity> possibleTargets = new ArrayList<Entity>();
+			ArrayList<Entity> possibleTargets = new ArrayList<>();
 			for (Entity t : targets) {
 				if (t.getAttackedByDelay() > Utils.currentTimeMillis())
 					possibleTargets.add(t);

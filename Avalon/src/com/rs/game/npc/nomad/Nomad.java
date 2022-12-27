@@ -180,7 +180,7 @@ public class Nomad extends NPC {
 		WorldTasksManager.schedule(new WorldTask() {
 			@Override
 			public void run() {
-				copies = new ArrayList<NPC>();
+				copies = new ArrayList<>();
 				transformIntoNPC(8529);
 				for (int i = 0; i < 4; i++) {
 					NPC n;

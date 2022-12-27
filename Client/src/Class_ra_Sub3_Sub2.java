@@ -569,7 +569,7 @@ public class Class_ra_Sub3_Sub2 extends Class_ra_Sub3 {
 	    d3dpresent_parameters.BackBufferHeight = canvas.getHeight();
 	    d3dpresent_parameters.BackBufferCount = 1;
 	    d3dpresent_parameters.PresentationInterval = -2147483648;
-	    if (!method5551(i, i_42_, l, integer.intValue(), d3dpresent_parameters))
+	    if (!method5551(i, i_42_, l, integer, d3dpresent_parameters))
 		throw new RuntimeException("");
 	    int i_43_ = 0;
 	    if ((d3dcaps.DevCaps & 0x100000) != 0)
@@ -581,7 +581,7 @@ public class Class_ra_Sub3_Sub2 extends Class_ra_Sub3 {
 	    catch (u var_u) {
 		l_44_ = IDirect3D.CreateDeviceContext(l, i, i_42_, canvas, i_43_ & ~0x100000 | 0x20, d3dpresent_parameters);
 	    }
-	    class_ra_sub3_sub2 = new Class_ra_Sub3_Sub2(i, i_42_, l, l_44_, d3dpresent_parameters, d3dcaps, interface_ma, class243, integer.intValue());
+	    class_ra_sub3_sub2 = new Class_ra_Sub3_Sub2(i, i_42_, l, l_44_, d3dpresent_parameters, d3dcaps, interface_ma, class243, integer);
 	    if (!class_ra_sub3_sub2.aHashtable5313.containsKey(canvas)) {
 		Class298_Sub19_Sub3.method3041(canvas, (short) 3524);
 		class_ra_sub3_sub2.method5151(canvas, new Class52_Sub2_Sub2_Sub2(class_ra_sub3_sub2, canvas, canvas.getWidth(), canvas.getHeight(), true), (byte) -32);
@@ -1042,7 +1042,7 @@ public class Class_ra_Sub3_Sub2 extends Class_ra_Sub3 {
 	    d3dpresent_parameters.BackBufferHeight = canvas.getHeight();
 	    d3dpresent_parameters.BackBufferCount = 1;
 	    d3dpresent_parameters.PresentationInterval = -2147483648;
-	    if (!method5551(i, i_69_, l, integer.intValue(), d3dpresent_parameters))
+	    if (!method5551(i, i_69_, l, integer, d3dpresent_parameters))
 		throw new RuntimeException("");
 	    int i_70_ = 0;
 	    if ((d3dcaps.DevCaps & 0x100000) != 0)
@@ -1054,7 +1054,7 @@ public class Class_ra_Sub3_Sub2 extends Class_ra_Sub3 {
 	    catch (u var_u) {
 		l_71_ = IDirect3D.CreateDeviceContext(l, i, i_69_, canvas, i_70_ & ~0x100000 | 0x20, d3dpresent_parameters);
 	    }
-	    class_ra_sub3_sub2 = new Class_ra_Sub3_Sub2(i, i_69_, l, l_71_, d3dpresent_parameters, d3dcaps, interface_ma, class243, integer.intValue());
+	    class_ra_sub3_sub2 = new Class_ra_Sub3_Sub2(i, i_69_, l, l_71_, d3dpresent_parameters, d3dcaps, interface_ma, class243, integer);
 	    if (!class_ra_sub3_sub2.aHashtable5313.containsKey(canvas)) {
 		Class298_Sub19_Sub3.method3041(canvas, (short) 20418);
 		class_ra_sub3_sub2.method5151(canvas, new Class52_Sub2_Sub2_Sub2(class_ra_sub3_sub2, canvas, canvas.getWidth(), canvas.getHeight(), true), (byte) -30);
@@ -2173,7 +2173,7 @@ public class Class_ra_Sub3_Sub2 extends Class_ra_Sub3 {
 	    d3dpresent_parameters.BackBufferHeight = canvas.getHeight();
 	    d3dpresent_parameters.BackBufferCount = 1;
 	    d3dpresent_parameters.PresentationInterval = -2147483648;
-	    if (!method5551(i, i_148_, l, integer.intValue(), d3dpresent_parameters))
+	    if (!method5551(i, i_148_, l, integer, d3dpresent_parameters))
 		throw new RuntimeException("");
 	    int i_149_ = 0;
 	    if ((d3dcaps.DevCaps & 0x100000) != 0)
@@ -2185,7 +2185,7 @@ public class Class_ra_Sub3_Sub2 extends Class_ra_Sub3 {
 	    catch (u var_u) {
 		l_150_ = IDirect3D.CreateDeviceContext(l, i, i_148_, canvas, i_149_ & ~0x100000 | 0x20, d3dpresent_parameters);
 	    }
-	    class_ra_sub3_sub2 = new Class_ra_Sub3_Sub2(i, i_148_, l, l_150_, d3dpresent_parameters, d3dcaps, interface_ma, class243, integer.intValue());
+	    class_ra_sub3_sub2 = new Class_ra_Sub3_Sub2(i, i_148_, l, l_150_, d3dpresent_parameters, d3dcaps, interface_ma, class243, integer);
 	    if (!class_ra_sub3_sub2.aHashtable5313.containsKey(canvas)) {
 		Class298_Sub19_Sub3.method3041(canvas, (short) 4620);
 		class_ra_sub3_sub2.method5151(canvas, new Class52_Sub2_Sub2_Sub2(class_ra_sub3_sub2, canvas, canvas.getWidth(), canvas.getHeight(), true), (byte) -2);

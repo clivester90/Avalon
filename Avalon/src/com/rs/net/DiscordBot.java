@@ -45,7 +45,7 @@ public class DiscordBot {
 	public DiscordBot() {
 		api = Javacord.getApi(token, true);
 		api.setGame("Avalon");
-		api.connect(new FutureCallback<DiscordAPI>() {
+		api.connect(new FutureCallback<>() {
 			@Override
 			public void onSuccess(DiscordAPI api) throws StringIndexOutOfBoundsException {
 				server = api.getServerById(serverId);

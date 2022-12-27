@@ -58,7 +58,7 @@ public class FarmingManager implements Serializable {
     private transient Player player;
 
     public FarmingManager() {
-        spots = new CopyOnWriteArrayList<FarmingSpot>();
+        spots = new CopyOnWriteArrayList<>();
     }
 
     public void setPlayer(Player player) {
@@ -171,7 +171,7 @@ public class FarmingManager implements Serializable {
         Calquat(5503, 72, 5980, 0, 129.5, 12096, 160, 8, CALQUAT)
         ;
 
-        private static Map<Short, ProductInfo> products = new HashMap<Short, ProductInfo>();
+        private static Map<Short, ProductInfo> products = new HashMap<>();
 
         public static ProductInfo getProduct(int itemId) {
             return products.get((short) itemId);
@@ -283,7 +283,7 @@ public class FarmingManager implements Serializable {
         Calquat(7807, CALQUAT)
         ;
 
-        private static Map<Short, SpotInfo> informations = new HashMap<Short, SpotInfo>();
+        private static Map<Short, SpotInfo> informations = new HashMap<>();
 
         public static SpotInfo getInfo(int objectId) {
             return informations.get((short) objectId);

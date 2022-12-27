@@ -27,7 +27,7 @@ public class BeastOfBurden implements Serializable {
 	public ItemsContainer<Item> beastItems;
 
 	public BeastOfBurden(int size) {
-		beastItems = new ItemsContainer<Item>(size, false);
+		beastItems = new ItemsContainer<>(size, false);
 	}
 
 	public void setEntitys(Player player, Familiar familiar) {

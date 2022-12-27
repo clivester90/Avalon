@@ -125,7 +125,7 @@ public class ArmourSets {
 			this.items = items;
 		}
 
-		private static Map<Integer, Sets> sets = new HashMap<Integer, Sets>();
+		private static Map<Integer, Sets> sets = new HashMap<>();
 
 		public static Sets forId(int itemId) {
 			return sets.get(itemId);

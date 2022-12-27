@@ -24,8 +24,8 @@ public class InterfaceManager {
 	public static final int RESIZABLE_INV_TAB_ID = 108;
 	public transient Player player;
 
-	private final ConcurrentHashMap<Integer, int[]> openedinterfaces = new ConcurrentHashMap<Integer, int[]>();
-	private final ConcurrentHashMap<Integer, Integer> openedinterfacesb = new ConcurrentHashMap<Integer, Integer>();
+	private final ConcurrentHashMap<Integer, int[]> openedinterfaces = new ConcurrentHashMap<>();
+	private final ConcurrentHashMap<Integer, Integer> openedinterfacesb = new ConcurrentHashMap<>();
 
 	public boolean resizableScreen;
 	private int windowsPane;

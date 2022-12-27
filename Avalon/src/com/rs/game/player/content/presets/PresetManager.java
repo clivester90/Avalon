@@ -27,7 +27,7 @@ public final class PresetManager implements Serializable {
 	}
 
 	public PresetManager() {
-		PRESET_SETUPS = new HashMap<String, Preset>();
+		PRESET_SETUPS = new HashMap<>();
 	}
 
 	private final int getMaxSize() {

@@ -95,7 +95,7 @@ public class ClientScriptMap {
 	    Object object = method6126(i, (short) 31709);
 	    if (null == object)
 		return this.anInt6038 * -1363462381;
-	    return ((Integer) object).intValue();
+	    return (Integer) object;
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw Class346.method4175(runtimeexception, new StringBuilder().append("tx.b(").append(')').toString());
@@ -200,7 +200,7 @@ public class ClientScriptMap {
 		Iterator iterator_12_ = list.iterator();
 		while (iterator_12_.hasNext()) {
 		    Integer integer = (Integer) iterator_12_.next();
-		    is[i_11_++] = integer.intValue();
+		    is[i_11_++] = integer;
 		}
 		this.aHashMap6039.put(entry.getKey(), is);
 	    }

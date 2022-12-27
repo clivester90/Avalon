@@ -266,7 +266,7 @@ public class Summoning {
 
 		CLAY_BEAST5(-1, 14430, 0, 0, 1800000, 10);
 
-		private static final Map<Integer, Pouch> pouches = new HashMap<Integer, Pouch>();
+		private static final Map<Integer, Pouch> pouches = new HashMap<>();
 
 		static {
 			for (Pouch pouch : Pouch.values()) {

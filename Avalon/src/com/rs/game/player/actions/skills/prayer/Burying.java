@@ -64,7 +64,7 @@ public class Burying {
 		private double experience;
 		private boolean ash;
 
-		private static Map<Integer, Bone> bones = new HashMap<Integer, Bone>();
+		private static Map<Integer, Bone> bones = new HashMap<>();
 
 		static {
 			for (Bone bone : Bone.values()) {

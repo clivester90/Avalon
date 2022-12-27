@@ -33,7 +33,7 @@ public final class MusicsManager implements Serializable {
 	private transient boolean shuffleOn;
 
     public MusicsManager() {
-        unlockedMusics = new ArrayList<Integer>();
+        unlockedMusics = new ArrayList<>();
         // auto unlock all musics - pixel
               for (int i = 0; i < 1200; i++)
                      unlockedMusics.add(i);

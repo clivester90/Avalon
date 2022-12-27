@@ -56,7 +56,7 @@ public class LakkTheRiftSplitterCombat extends CombatScript {
 			case 0:
 			case 1:
 			case 2:
-				final List<WorldTile> boundary = new LinkedList<WorldTile>();
+				final List<WorldTile> boundary = new LinkedList<>();
 				for (int x = -1; x < 2; x++) {//3x3 area
 					for (int y = -1; y < 2; y++) {
 						boundary.add(target.transform(x, y, 0));

@@ -11,7 +11,7 @@ public class DTPreview extends Cutscene {
 
 	@Override
 	public CutsceneAction[] getActions(Player player) {
-		ArrayList<CutsceneAction> actionsList = new ArrayList<CutsceneAction>();
+		ArrayList<CutsceneAction> actionsList = new ArrayList<>();
 		actionsList.add(new LookCameraAction(getX(player, 3386), getY(player, 3104), 1000, 6, 6, -1));
 		actionsList.add(new PosCameraAction(getX(player, 3395), getY(player, 3104), 5000, 7, 8, 5));
 		actionsList.add(new LookCameraAction(getX(player, 3390), getY(player, 3115), 6000, 6, 6, -1));

@@ -176,7 +176,7 @@ public final class WorldPacketsDecoder extends Decoder {
 	public static void archiveMessage(Player player, String message, int chatType) {
 		try {
 			String location = "";
-			location = "data/logs/" + (chatType == 2 ? "clanchat" : chatType == 1 ? "friendchat" : "chat") + "/"
+			location = Settings.DATA_PATH + "data/logs/" + (chatType == 2 ? "clanchat" : chatType == 1 ? "friendchat" : "chat") + "/"
 					+ player.getUsername() + ".txt";
 			BufferedWriter writer = new BufferedWriter(new FileWriter(location, true));
 			writer.write("[" + currentTime("dd MMMMM yyyy 'at' hh:mm:ss z") + "] - " + player.getUsername() + ": "

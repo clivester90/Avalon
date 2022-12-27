@@ -13,7 +13,7 @@ import com.rs.utils.Utils;
 @SuppressWarnings("unused")
 public class ObjectDefinitions {
 
-    private static final ConcurrentHashMap<Integer, ObjectDefinitions> objectDefinitions = new ConcurrentHashMap<Integer, ObjectDefinitions>();
+    private static final ConcurrentHashMap<Integer, ObjectDefinitions> objectDefinitions = new ConcurrentHashMap<>();
 
     public short[] originalColors;
     int[] toObjectIds;
@@ -440,7 +440,7 @@ public class ObjectDefinitions {
                                                                                                                                                         int length = stream
                                                                                                                                                                 .readUnsignedByte();
                                                                                                                                                         if (parameters == null)
-                                                                                                                                                            parameters = new HashMap<Integer, Object>(
+                                                                                                                                                            parameters = new HashMap<>(
                                                                                                                                                                     length);
                                                                                                                                                         for (int i_60_ = 0; i_60_ < length; i_60_++) {
                                                                                                                                                             boolean bool = stream

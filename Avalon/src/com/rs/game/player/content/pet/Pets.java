@@ -385,17 +385,17 @@ public enum Pets {
     /**
      * The baby pets mapping.
      */
-    private static final Map<Integer, Pets> babyPets = new HashMap<Integer, Pets>();
+    private static final Map<Integer, Pets> babyPets = new HashMap<>();
 
     /**
      * The grown pets mapping.
      */
-    private static final Map<Integer, Pets> grownPets = new HashMap<Integer, Pets>();
+    private static final Map<Integer, Pets> grownPets = new HashMap<>();
 
     /**
      * The overgrown pets mapping.
      */
-    private static final Map<Integer, Pets> overgrownPets = new HashMap<Integer, Pets>();
+    private static final Map<Integer, Pets> overgrownPets = new HashMap<>();
 
     /**
      * Populates the mappings.

@@ -68,7 +68,7 @@ public final class KillTables implements Serializable {
 	}
 
 	public static void sort() {
-		Arrays.sort(ranks, new Comparator<KillTables>() {
+		Arrays.sort(ranks, new Comparator<>() {
 			@Override
 			public int compare(KillTables arg0, KillTables arg1) {
 				if (arg0 == null)

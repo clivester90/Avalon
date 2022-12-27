@@ -101,7 +101,7 @@ public class SlidingTilesRoom extends PuzzleRoom {
 		for (int i = 0; i < 8; i++) {
 			shuffledNpcOrder[i] = BASE_TILE[type] + i;
 		}
-		List<Integer> set = new ArrayList<Integer>();
+		List<Integer> set = new ArrayList<>();
 		boolean[] used = new boolean[9];
 		while (true) {
 			for (int i = 0; i < VALID_MOVES[freeIndex].length; i++) {

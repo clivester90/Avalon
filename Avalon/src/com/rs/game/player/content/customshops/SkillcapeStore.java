@@ -22,7 +22,7 @@ public class SkillcapeStore extends CustomStore {
 	protected static String TITLE = "Max' Skillcape Store";
 	
 	
-	protected static ArrayList<Item> capes = new ArrayList<Item>();
+	protected static ArrayList<Item> capes = new ArrayList<>();
 	
 	protected static void generateCapes(Player player) {
 		capes.clear();

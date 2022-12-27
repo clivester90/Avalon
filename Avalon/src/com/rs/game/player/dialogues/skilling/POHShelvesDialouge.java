@@ -13,7 +13,7 @@ public class POHShelvesDialouge extends Dialogue {
 	private static final String[] LARDER_NAMES =
 	{ "Kettle", "Teapot", "Tea Cup", "Beer Glass", "Bowl", "Pie dish", "Empty pot", "Chef's Hat" };
 
-	private final List<String> currentOptions = new LinkedList<String>();
+	private final List<String> currentOptions = new LinkedList<>();
 	private int max_index;
 
 	@Override

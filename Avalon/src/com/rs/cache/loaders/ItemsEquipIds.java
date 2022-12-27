@@ -6,7 +6,7 @@ import com.rs.utils.Utils;
 
 public final class ItemsEquipIds {
 
-	private static final HashMap<Integer, Integer> equipIds = new HashMap<Integer, Integer>();
+	private static final HashMap<Integer, Integer> equipIds = new HashMap<>();
 
 	public static final void init() {
 		int equipId = 0;

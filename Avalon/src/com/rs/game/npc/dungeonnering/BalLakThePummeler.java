@@ -22,7 +22,7 @@ public class BalLakThePummeler extends DungeonBoss {
 	private boolean skip;
 	private int barPercentage;
 
-	private List<PoisionPuddle> puddles = new CopyOnWriteArrayList<PoisionPuddle>();
+	private List<PoisionPuddle> puddles = new CopyOnWriteArrayList<>();
 
 	public BalLakThePummeler(int id, WorldTile tile, DungeonManager manager, RoomReference reference) {
 		super(id, tile, manager, reference);

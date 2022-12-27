@@ -69,7 +69,7 @@ public class Iterate {
 	public static final File[] getFiles(String path) {
 		final File[] files = new File(path).listFiles();
 		if (files != null && files.length > 0) {
-			final List<File> fileList = new ArrayList<File>();
+			final List<File> fileList = new ArrayList<>();
 			for (File f : files) {
 				if (f == null)
 					continue;

@@ -32,7 +32,7 @@ public class GodWarMinion extends NPC {
 
 	@Override
 	public ArrayList<Entity> getPossibleTargets() {
-		ArrayList<Entity> possibleTarget = new ArrayList<Entity>();
+		ArrayList<Entity> possibleTarget = new ArrayList<>();
 		for (int regionId : getMapRegionsIds()) {
 			List<Integer> playerIndexes = World.getRegion(regionId).getPlayerIndexes();
 			if (playerIndexes != null) {

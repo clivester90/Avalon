@@ -121,7 +121,7 @@ import com.rs.utils.Utils;
 public class DungeonManager {
 
 	private static final Map<Object, DungeonManager> cachedDungeons = Collections
-			.synchronizedMap(new HashMap<Object, DungeonManager>());
+			.synchronizedMap(new HashMap<>());
 	public static final AtomicLong keyMaker = new AtomicLong();
 
 	private DungeonPartyManager party;
@@ -157,10 +157,10 @@ public class DungeonManager {
 		this.party = party;
 		tutorialMode = party.getMaxComplexity() < 6;
 		load(seed);
-		keyList = new CopyOnWriteArrayList<KeyDoors>();
-		farmKeyList = new CopyOnWriteArrayList<String>();
-		mastyxTraps = new CopyOnWriteArrayList<MastyxTrap>();
-		partyDeaths = new ConcurrentHashMap<String, Integer>();
+		keyList = new CopyOnWriteArrayList<>();
+		farmKeyList = new CopyOnWriteArrayList<>();
+		mastyxTraps = new CopyOnWriteArrayList<>();
+		partyDeaths = new ConcurrentHashMap<>();
 	}
 
 	public void clearKeyList() {
@@ -512,7 +512,7 @@ public class DungeonManager {
 			}
 		}
 		if (party.getComplexity() >= 2) { // sets fish spot
-			List<int[]> fishSpots = new ArrayList<int[]>();
+			List<int[]> fishSpots = new ArrayList<>();
 			for (int x = 0; x < 16; x++) {
 				for (int y = 0; y < 16; y++) {
 					WorldObject o = World.getObjectWithType(new WorldTile(toChunkX * 8 + x, toChunkY * 8 + y, 0), 10);
@@ -1341,7 +1341,7 @@ public class DungeonManager {
 	}
 
 	public Integer[] getAchievements(Player player) { // TODO
-		List<Integer> achievements = new ArrayList<Integer>();
+		List<Integer> achievements = new ArrayList<>();
 
 		DungeonControler controller = (DungeonControler) player.getControlerManager().getControler();
 

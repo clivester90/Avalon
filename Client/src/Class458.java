@@ -173,7 +173,7 @@ public class Class458 {
 		try {
 		    Object object = Class212.aClass212_2429.method1954(-1654113322);
 		    if (object != null)
-			bool = ((Boolean) object).booleanValue();
+			bool = (Boolean) object;
 		}
 		catch (Throwable throwable) {
 		    /* empty */

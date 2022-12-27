@@ -37,7 +37,7 @@ public final class FireWallAttack implements QueenAttack {
 			waves = 3;
 		}
 		npc.animate(ANIMATION);
-		final List<Integer> wallIds = new ArrayList<Integer>();
+		final List<Integer> wallIds = new ArrayList<>();
 		for (int id : WALL_GRAPHIC_IDS) {
 			wallIds.add(id);
 		}

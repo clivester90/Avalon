@@ -65,8 +65,8 @@ public class BoxAction extends Action {
         private HunterEquipment hunter;
         private Animation catchAnim, successCatchAnim, failCatchAnim;
 
-        static final Map<Integer, HunterNPC> npc = new HashMap<Integer, HunterNPC>();
-        static final Map<Integer, HunterNPC> object = new HashMap<Integer, HunterNPC>();
+        static final Map<Integer, HunterNPC> npc = new HashMap<>();
+        static final Map<Integer, HunterNPC> object = new HashMap<>();
 
         public static HunterNPC forId(int id) {
             return npc.get(id);

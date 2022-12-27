@@ -10,7 +10,7 @@ import com.rs.game.WorldTile;
 
 public class GlobalObjectAddition {
 
-    private static ArrayList<WorldObject> objects = new ArrayList<WorldObject>();
+    private static ArrayList<WorldObject> objects = new ArrayList<>();
 
     public static void init() {
         try {

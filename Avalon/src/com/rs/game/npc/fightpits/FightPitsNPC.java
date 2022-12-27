@@ -26,7 +26,7 @@ public class FightPitsNPC extends NPC {
 
 	@Override
 	public ArrayList<Entity> getPossibleTargets() {
-		ArrayList<Entity> possibleTarget = new ArrayList<Entity>();
+		ArrayList<Entity> possibleTarget = new ArrayList<>();
 		for (Player player : FightPits.arena)
 			possibleTarget.add(player);
 		return possibleTarget;

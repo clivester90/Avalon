@@ -8,7 +8,7 @@ import com.rs.io.InputStream;
 
 public final class ConfigDefinitions {
 
-	private static final ConcurrentHashMap<Integer, ConfigDefinitions> configDefs = new ConcurrentHashMap<Integer, ConfigDefinitions>();
+	private static final ConcurrentHashMap<Integer, ConfigDefinitions> configDefs = new ConcurrentHashMap<>();
 
 	public int configId;
 	public int anInt2021;

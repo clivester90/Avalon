@@ -23,7 +23,7 @@ import com.rs.utils.Logger;
 
 public class ControlerHandler {
 
-	private static final HashMap<Object, Class<Controler>> handledControlers = new HashMap<Object, Class<Controler>>();
+	private static final HashMap<Object, Class<Controler>> handledControlers = new HashMap<>();
 
 	@SuppressWarnings("unchecked")
 	public static final void init() {

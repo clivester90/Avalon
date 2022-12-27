@@ -30,7 +30,7 @@ public class CharacterDesign {
 		if (componentId == 137 || componentId == 139)
 			player.temporaryAttribute().put("customizing_stage", componentId != 139 ? 0 : 1);
 		if (componentId == 138) {
-			int set = ((Integer) player.temporaryAttribute().get("customizing_set")).intValue();
+			int set = (Integer) player.temporaryAttribute().get("customizing_set");
 			if (set == -1)
 				set = 0;
 			setPlayerSet(player, set);
@@ -38,7 +38,7 @@ public class CharacterDesign {
 			player.getPackets().sendWindowsPane(player.getInterfaceManager().hasRezizableScreen() ? 746 : 548, 0);
 			player.hasDesign = true;
 		}
-		switch (((Integer) player.temporaryAttribute().get("customizing_stage")).intValue()) {
+		switch ((Integer) player.temporaryAttribute().get("customizing_stage")) {
 		default:
 			break;
 
@@ -167,7 +167,7 @@ public class CharacterDesign {
 	private static void setPlayerSet(Player player, int set) {
 		int doubleSet = -1;
 		if (set < 4)
-			doubleSet = ((Integer) player.temporaryAttribute().get("extra_set")).intValue();
+			doubleSet = (Integer) player.temporaryAttribute().get("extra_set");
 		player.getAppearence()
 				.setLookStyles(SETS[player.getAppearence().isMale() ? 0 : 1][set][doubleSet != -1 ? doubleSet * 2 : 0]);
 		player.getAppearence().setColours(

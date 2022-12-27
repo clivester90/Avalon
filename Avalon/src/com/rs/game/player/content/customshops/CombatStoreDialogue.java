@@ -28,7 +28,7 @@ public class CombatStoreDialogue extends Action {
 
 		BARROWS_STORE(new Item(4720), 5);
 
-		private static Map<Integer, CombatStores> shops = new HashMap<Integer, CombatStores>();
+		private static Map<Integer, CombatStores> shops = new HashMap<>();
 
 		public static CombatStores forId(int buttonId) {
 			return shops.get(buttonId);

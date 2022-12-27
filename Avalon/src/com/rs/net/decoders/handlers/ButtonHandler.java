@@ -3103,9 +3103,9 @@ public class ButtonHandler {
 
     public static Integer[][] getItemSlotsKeptOnDeath(final Player player, boolean atWilderness, boolean skulled,
                                                       boolean protectPrayer) {
-        ArrayList<Integer> droppedItems = new ArrayList<Integer>();
-        ArrayList<Integer> protectedItems = new ArrayList<Integer>();
-        ArrayList<Integer> lostItems = new ArrayList<Integer>();
+        ArrayList<Integer> droppedItems = new ArrayList<>();
+        ArrayList<Integer> protectedItems = new ArrayList<>();
+        ArrayList<Integer> lostItems = new ArrayList<>();
         boolean inRiskArea = FfaZone.inRiskArea(player);
         int keptAmount = (player.hasSkull() || inRiskArea) ? 0 : 3;
         if (protectPrayer)
@@ -3127,7 +3127,7 @@ public class ButtonHandler {
         if (droppedItems.size() < keptAmount)
             keptAmount = droppedItems.size();
 
-        Collections.sort(droppedItems, new Comparator<Integer>() {
+        Collections.sort(droppedItems, new Comparator<>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 Item i1 = o1 >= 16 ? player.getInventory().getItem(o1 - 16) : player.getEquipment().getItem(o1 - 1);
@@ -3151,8 +3151,8 @@ public class ButtonHandler {
     }
 
     public static Item[][] getItemsKeptOnDeath(Player player, Integer[][] slots) {
-        ArrayList<Item> droppedItems = new ArrayList<Item>();
-        ArrayList<Item> keptItems = new ArrayList<Item>();
+        ArrayList<Item> droppedItems = new ArrayList<>();
+        ArrayList<Item> keptItems = new ArrayList<>();
         for (int i : slots[0]) { // items kept on death
             Item item = i >= 16 ? player.getInventory().getItem(i - 16) : player.getEquipment().getItem(i - 1);
             if (item == null) // shouldn't
@@ -3221,7 +3221,7 @@ public class ButtonHandler {
         player.getVarsManager().sendVarBit(9226, (wilderness || inFfa) ? 1 : 0);
         if (!inFfa)
             player.getVarsManager().sendVarBit(9229, player.hasSkull() ? 1 : 0);
-        StringBuffer text = new StringBuffer();
+        StringBuilder text = new StringBuilder();
         text.append("Items kept on death:").append("<br><br>");
         for (Item item : items[0]) {
             text.append(item.getName()).append("<br>").append("<br>");
@@ -3481,6 +3481,6 @@ public class ButtonHandler {
         player.getInterfaceManager().sendInterface(499);
     }
 
-    private static String[] names = {"Stab", "Slash", "Crush", "Magic", "Ranged", "Summoning", "Absorb Melee",
+    private static final String[] names = {"Stab", "Slash", "Crush", "Magic", "Ranged", "Summoning", "Absorb Melee",
             "Absorb Magic", "Absorb Ranged", "Strength", "Ranged Strength", "Prayer", "Magic Damage"};
 }

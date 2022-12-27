@@ -145,7 +145,7 @@ public final class Nex extends NPC {
 	}
 
 	public ArrayList<Entity> calculatePossibleTargets(WorldTile current, WorldTile position, boolean northSouth) {
-		ArrayList<Entity> list = new ArrayList<Entity>();
+		ArrayList<Entity> list = new ArrayList<>();
 		for (Entity e : getPossibleTargets()) {
 			if (e.inArea(current.getX(), current.getY(), position.getX() + (northSouth ? 2 : 0),
 					position.getY() + (!northSouth ? 2 : 0))

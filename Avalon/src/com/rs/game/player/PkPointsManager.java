@@ -44,7 +44,7 @@ public class PkPointsManager {
 
 	public PkPointsManager(Player player) {
 		this.player = player;
-		pkpItems = new ItemsContainer<Item>(28, false);
+		pkpItems = new ItemsContainer<>(28, false);
 	}
 
 	public void openPKPointShop() {

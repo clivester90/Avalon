@@ -9,7 +9,7 @@ import com.rs.game.WorldTile;
 
 public class GlobalObjectDeletion {
 
-	private static ArrayList<WorldTile> tiles = new ArrayList<WorldTile>();
+	private static ArrayList<WorldTile> tiles = new ArrayList<>();
 
 	public static void init() {
 		try {

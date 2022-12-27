@@ -125,12 +125,12 @@ public abstract class Entity extends WorldTile {
 
 	public final void initEntity() {
 		hashCode = hashCodeGenerator.getAndIncrement();
-		mapRegionsIds = new CopyOnWriteArrayList<Integer>();
-		walkSteps = new ConcurrentLinkedQueue<Object[]>();
-		receivedHits = new ConcurrentLinkedQueue<Hit>();
-		receivedDamage = new ConcurrentHashMap<Entity, Integer>();
-		temporaryAttributes = new ConcurrentHashMap<Object, Object>();
-		nextHits = new ArrayList<Hit>();
+		mapRegionsIds = new CopyOnWriteArrayList<>();
+		walkSteps = new ConcurrentLinkedQueue<>();
+		receivedHits = new ConcurrentLinkedQueue<>();
+		receivedDamage = new ConcurrentHashMap<>();
+		temporaryAttributes = new ConcurrentHashMap<>();
+		nextHits = new ArrayList<>();
 		nextWalkDirection = nextRunDirection - 1;
 		lastFaceEntity = -1;
 		nextFaceEntity = -2;

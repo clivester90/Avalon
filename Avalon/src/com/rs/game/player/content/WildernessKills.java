@@ -24,7 +24,7 @@ import com.rs.utils.Utils;
 public class WildernessKills {
 
 	/** The Kills. */
-	private static List<String> Kills = new ArrayList<String>();
+	private static List<String> Kills = new ArrayList<>();
 
 	/** The Constant File_Path. */
 	private static final String File_Path = "data/wilderness/recentkills.txt";

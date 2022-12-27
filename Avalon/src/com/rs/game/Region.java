@@ -44,9 +44,9 @@ public class Region {
 
 	public Region(int regionId) {
 		this.regionId = regionId;
-		this.spawnedObjects = new CopyOnWriteArrayList<WorldObject>();
-		this.removedOriginalObjects = new CopyOnWriteArrayList<WorldObject>();
-		this.projectiles = new CopyOnWriteArrayList<Projectile>();
+		this.spawnedObjects = new CopyOnWriteArrayList<>();
+		this.removedOriginalObjects = new CopyOnWriteArrayList<>();
+		this.projectiles = new CopyOnWriteArrayList<>();
 		loadMusicIds();
 		// indexes null by default cuz we dont want them on mem for regions that
 		// players cant go in
@@ -435,7 +435,7 @@ public class Region {
 	public List<WorldObject> getAllObjects() {
 		if (objects == null)
 			return null;
-		List<WorldObject> list = new ArrayList<WorldObject>();
+		List<WorldObject> list = new ArrayList<>();
 		for (int z = 0; z < 4; z++)
 			for (int x = 0; x < 64; x++)
 				for (int y = 0; y < 64; y++) {
@@ -451,7 +451,7 @@ public class Region {
 	public List<WorldObject> getAllObjectsByType(int type) {
 		if (objects == null)
 			return null;
-		List<WorldObject> list = new ArrayList<WorldObject>();
+		List<WorldObject> list = new ArrayList<>();
 		for (int z = 0; z < 4; z++)
 			for (int x = 0; x < 64; x++)
 				for (int y = 0; y < 64; y++) {
@@ -652,7 +652,7 @@ public class Region {
 	 */
 	public List<FloorItem> getGroundItemsSafe() {
 		if (groundItems == null)
-			groundItems = new CopyOnWriteArrayList<FloorItem>();
+			groundItems = new CopyOnWriteArrayList<>();
 		return groundItems;
 	}
 
@@ -671,14 +671,14 @@ public class Region {
 	public void addPlayerIndex(int index) {
 		// creates list if doesnt exist
 		if (playersIndexes == null)
-			playersIndexes = new CopyOnWriteArrayList<Integer>();
+			playersIndexes = new CopyOnWriteArrayList<>();
 		playersIndexes.add(index);
 	}
 
 	public void addNPCIndex(int index) {
 		// creates list if doesnt exist
 		if (npcsIndexes == null)
-			npcsIndexes = new CopyOnWriteArrayList<Integer>();
+			npcsIndexes = new CopyOnWriteArrayList<>();
 		npcsIndexes.add(index);
 	}
 

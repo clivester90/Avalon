@@ -38,7 +38,7 @@ public class CombatEventNPC extends NPC {
 		if (player.isMember()) {
 			return;
 		}
-		List<CombatEventNPCS> events = new ArrayList<CombatEventNPCS>();
+		List<CombatEventNPCS> events = new ArrayList<>();
 		player.animate(new Animation(-1));
 		for (CombatEventNPCS e : CombatEventNPCS.values()) {
 			if (e.skill == skill || e.skill == -1 || (e.skill == -2

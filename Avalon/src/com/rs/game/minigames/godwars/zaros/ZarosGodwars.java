@@ -19,7 +19,7 @@ import com.rs.utils.Utils;
 
 public final class ZarosGodwars {
 
-	private transient static final List<Player> playersOn = Collections.synchronizedList(new ArrayList<Player>());
+	private transient static final List<Player> playersOn = Collections.synchronizedList(new ArrayList<>());
 	// private static final Object LOCK = new Object();
 
 	public static Nex nex;
@@ -113,7 +113,7 @@ public final class ZarosGodwars {
 
 	public static ArrayList<Entity> getPossibleTargets() {
 		// synchronized(LOCK) {
-		ArrayList<Entity> possibleTarget = new ArrayList<Entity>(playersOn.size());
+		ArrayList<Entity> possibleTarget = new ArrayList<>(playersOn.size());
 		for (Player player : playersOn) {
 			if (player == null || player.isDead() || player.hasFinished() || !player.isRunning())
 				continue;

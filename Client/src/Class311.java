@@ -136,7 +136,7 @@ public class Class311 {
 		class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919) - 1] = 0;
 	    else {
 		int i_11_ = (-1635784577 * class520.anInt6278 == 31 ? -1 : (1 << -1635784577 * class520.anInt6278 + 1) - 1);
-		class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919) - 1] = ((integer.intValue() & i_11_) >>> -1673918633 * class520.anInt6275);
+		class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919) - 1] = ((integer & i_11_) >>> -1673918633 * class520.anInt6275);
 	    }
 	}
 	catch (RuntimeException runtimeexception) {

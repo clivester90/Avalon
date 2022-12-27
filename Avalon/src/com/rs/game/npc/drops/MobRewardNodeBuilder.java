@@ -25,7 +25,7 @@ import com.rs.utils.Utils.SafeMathNumberOperation;
  */
 public abstract class MobRewardNodeBuilder {
 
-    public static final ArrayList<Integer> RARE_ITEMS = new ArrayList<Integer>();
+    public static final ArrayList<Integer> RARE_ITEMS = new ArrayList<>();
 
     /**
      * Clue scroll type identifier.

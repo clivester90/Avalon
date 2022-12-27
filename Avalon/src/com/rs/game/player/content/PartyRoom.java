@@ -10,7 +10,7 @@ public class PartyRoom {
 
 	public static int PARTY_CHEST_INTERFACE = 647;
 	public static int INVENTORY_INTERFACE = 336;
-	private static ItemsContainer<Item> items = new ItemsContainer<Item>(100, false);
+	private static ItemsContainer<Item> items = new ItemsContainer<>(100, false);
 	private static final int CHEST_INTERFACE_ITEMS_KEY = ItemSetsKeyGenerator.generateKey();
 
 	public static void openPartyChest(final Player player) {

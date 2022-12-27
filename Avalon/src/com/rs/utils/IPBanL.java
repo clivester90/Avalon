@@ -23,7 +23,7 @@ public final class IPBanL {
 			} catch (Throwable e) {
 				Logger.handle(e);
 			}
-		ipList = new CopyOnWriteArrayList<String>();
+		ipList = new CopyOnWriteArrayList<>();
 	}
 
 	public static final void save() {

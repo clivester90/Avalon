@@ -22,7 +22,7 @@ public class HamTrapdoor extends ObjectScript {
 		Integer config = player.getTemporaryVarBits().get(object.getConfigByFile());
 		if (config == null)
 			player.getTemporaryVarBits().put(object.getConfigByFile(), 0);
-		int configValue = player.getTemporaryVarBits().get(object.getConfigByFile()).intValue();
+		int configValue = player.getTemporaryVarBits().get(object.getConfigByFile());
 		if (configValue == 0)
 			player.sm("This trapdoor is locked.");
 		else {

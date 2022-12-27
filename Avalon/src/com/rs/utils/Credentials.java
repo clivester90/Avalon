@@ -14,8 +14,8 @@ import java.util.List;
  **/
 public class Credentials {
 	
-	public static List<String> blocked = new ArrayList<String>();
-	public static List<String> common = new ArrayList<String>();
+	public static List<String> blocked = new ArrayList<>();
+	public static List<String> common = new ArrayList<>();
 	
 	public static void init() {
 		loadUsernames();

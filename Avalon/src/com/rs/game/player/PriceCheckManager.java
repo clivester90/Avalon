@@ -12,7 +12,7 @@ public class PriceCheckManager {
 
 	public PriceCheckManager(Player player) {
 		this.player = player;
-		pcInv = new ItemsContainer<Item>(28, false);
+		pcInv = new ItemsContainer<>(28, false);
 	}
 
 	public void openPriceCheck() {

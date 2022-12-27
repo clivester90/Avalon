@@ -44,7 +44,7 @@ public class EnchantingBolts extends Action {
 
 		ONYX(9342, 9245, 9.7, 87, new Item(COSMIC_RUNE, 1), new Item(FIRE_RUNE, 20), new Item(DEATH_RUNE, 1));
 
-		private static Map<Integer, Enchant> enchanting = new HashMap<Integer, Enchant>();
+		private static Map<Integer, Enchant> enchanting = new HashMap<>();
 
 		public static Enchant forId(int id) {
 			return enchanting.get(id);

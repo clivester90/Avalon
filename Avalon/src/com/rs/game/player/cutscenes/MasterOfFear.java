@@ -17,7 +17,7 @@ public class MasterOfFear extends Cutscene {
 
 	@Override
 	public CutsceneAction[] getActions(Player player) {
-		ArrayList<CutsceneAction> actionsList = new ArrayList<CutsceneAction>();
+		ArrayList<CutsceneAction> actionsList = new ArrayList<>();
 		actionsList.add(new InterfaceAction(115, 2));
 		actionsList
 				.add(new PosCameraAction(getX(player, player.getX() + 5), getY(player, player.getY() + 3), 1500, -1));

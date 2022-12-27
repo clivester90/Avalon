@@ -65,7 +65,7 @@ public class DungeonNPC extends NPC {
 
 	@Override
 	public ArrayList<Entity> getPossibleTargets() {
-		ArrayList<Entity> targets = new ArrayList<Entity>();
+		ArrayList<Entity> targets = new ArrayList<>();
 		for (Entity t : super.getPossibleTargets()) {
 			if (DungeonConstants.isVisible(this, t, false))
 				targets.add(t);
@@ -138,7 +138,7 @@ public class DungeonNPC extends NPC {
 	@Override
 	public void drop() {
 		int size = getSize();
-		ArrayList<Item> drops = new ArrayList<Item>();
+		ArrayList<Item> drops = new ArrayList<>();
 		if (getId() != 10831 && getId() != 10821) //nature & ghost
 			drops.add(new Item(getBones()));
 		for (int i = 0; i < 1 + Utils.random(10); i++)

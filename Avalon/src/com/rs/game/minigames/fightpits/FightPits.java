@@ -25,8 +25,8 @@ public final class FightPits {
 
 	private static final int THHAAR_MEJ_KAH = 2618;
 
-	private transient static final List<Player> lobby = new ArrayList<Player>();
-	public transient static final List<Player> arena = new ArrayList<Player>();
+	private transient static final List<Player> lobby = new ArrayList<>();
+	public transient static final List<Player> arena = new ArrayList<>();
 	public static final Object lock = new Object();
 	private static GameTask gameTask;
 
@@ -55,7 +55,7 @@ public final class FightPits {
 								player.getDialogueManager().startDialogue("SimpleNPCMessage", THHAAR_MEJ_KAH, "FIGHT!");
 						} else if (minutes == 5) { // spawn tz-kih
 							// spawns
-							spawns = new ArrayList<NPC>();
+							spawns = new ArrayList<>();
 							for (int i = 0; i < 10; i++)
 								spawns.add(new FightPitsNPC(2734,
 										new WorldTile(GAME_TELEPORTS[Utils.random(GAME_TELEPORTS.length)], 3)));

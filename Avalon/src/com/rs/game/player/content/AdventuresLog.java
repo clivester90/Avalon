@@ -52,9 +52,9 @@ public class AdventuresLog implements Serializable {
 	 * Instantiates a new adventures log.
 	 */
 	public AdventuresLog() {
-		Activities = new ArrayList<String>();
-		ActivitiesTime = new ArrayList<String>();
-		ActivitiesDate = new ArrayList<String>();
+		Activities = new ArrayList<>();
+		ActivitiesTime = new ArrayList<>();
+		ActivitiesDate = new ArrayList<>();
 	}
 
 	/**

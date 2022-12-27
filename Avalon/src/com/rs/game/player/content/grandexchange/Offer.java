@@ -25,7 +25,7 @@ public class Offer extends Item {
 		super(id, ammount);
 		this.price = price;
 		buying = buy;
-		receivedItems = new ItemsContainer<Item>(2, true);
+		receivedItems = new ItemsContainer<>(2, true);
 	}
 
 	// offer will contain the owner, its the most efficient way to update in

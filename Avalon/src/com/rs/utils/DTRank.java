@@ -67,7 +67,7 @@ public final class DTRank implements Serializable {
 	}
 
 	public static void sort() {
-		Arrays.sort(ranks, new Comparator<DTRank>() {
+		Arrays.sort(ranks, new Comparator<>() {
 			@Override
 			public int compare(DTRank arg0, DTRank arg1) {
 				if (arg0 == null)

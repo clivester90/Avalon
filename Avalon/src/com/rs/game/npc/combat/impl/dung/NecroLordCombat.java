@@ -33,7 +33,7 @@ public class NecroLordCombat extends CombatScript {
 
 		if (Utils.random(10) == 0) {
 			final int skeletonCount = boss.getManager().getParty().getTeam().size();
-			final List<WorldTile> projectileTile = new LinkedList<WorldTile>();
+			final List<WorldTile> projectileTile = new LinkedList<>();
 			WorldTasksManager.schedule(new WorldTask() {
 				int cycles;
 

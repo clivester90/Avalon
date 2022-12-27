@@ -8,7 +8,7 @@ import java.util.Set;
 public class EntityList<T extends Entity> extends AbstractCollection<T> {
 	private static final int MIN_VALUE = 1;
 	public Object[] entities;
-	public Set<Integer> indicies = new HashSet<Integer>();
+	public Set<Integer> indicies = new HashSet<>();
 	public int curIndex = MIN_VALUE;
 	public int capacity;
 	private final Object lock = new Object();
@@ -79,7 +79,7 @@ public class EntityList<T extends Entity> extends AbstractCollection<T> {
 	@Override
 	public Iterator<T> iterator() {
 		synchronized (lock) {
-			return new EntityListIterator<T>(entities, indicies, this);
+			return new EntityListIterator<>(entities, indicies, this);
 		}
 	}
 

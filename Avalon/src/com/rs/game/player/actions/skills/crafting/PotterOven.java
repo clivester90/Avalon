@@ -20,7 +20,7 @@ public class PotterOven extends Action {
 
 		BOWL(8, 15, new Item(1791), new Item(1923), 2);
 
-		private static Map<Integer, Products> prods = new HashMap<Integer, Products>();
+		private static Map<Integer, Products> prods = new HashMap<>();
 
 		public static Products forId(int buttonId) {
 			return prods.get(buttonId);

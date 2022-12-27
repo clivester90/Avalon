@@ -24,7 +24,7 @@ public class FireLighter {
 			this.logId = logId;
 		}
 
-		private static Map<Integer, Lighters> firelighters = new HashMap<Integer, Lighters>();
+		private static Map<Integer, Lighters> firelighters = new HashMap<>();
 
 		public static Lighters forId(int itemId) {
 			return firelighters.get(itemId);

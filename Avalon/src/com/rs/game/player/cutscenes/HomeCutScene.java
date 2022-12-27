@@ -34,7 +34,7 @@ public class HomeCutScene extends Cutscene {
 
 	@Override
 	public CutsceneAction[] getActions(Player player) {
-		ArrayList<CutsceneAction> actionsList = new ArrayList<CutsceneAction>();
+		ArrayList<CutsceneAction> actionsList = new ArrayList<>();
 		// first part
 		actionsList.add(new ConstructMapAction(360, 482, 3, 3));
 		actionsList.add(new PlayerMusicEffectAction(215, -1));

@@ -1,21 +1,8 @@
 package com.rs.cache.loaders;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-
 import com.alex.utils.Constants;
 import com.rs.Settings;
 import com.rs.cache.Cache;
-import com.rs.cache.loaders.ItemDefinitions.FileUtilities;
 import com.rs.game.item.Item;
 import com.rs.game.player.Equipment;
 import com.rs.game.player.Player;
@@ -23,9 +10,15 @@ import com.rs.game.player.Skills;
 import com.rs.game.player.content.ItemConstants;
 import com.rs.game.player.content.grandexchange.LimitedGEReader;
 import com.rs.io.InputStream;
-import com.rs.io.Stream;
 import com.rs.utils.ItemExamines;
 import com.rs.utils.Utils;
+
+import java.io.*;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 @SuppressWarnings("unused")
 public final class ItemDefinitions {
@@ -118,7 +111,7 @@ public final class ItemDefinitions {
 	private HashMap<Integer, Object> clientScriptData;
 	public HashMap<Integer, Integer> itemRequiriments;
 
-	public static final ItemDefinitions getItemDefinitions(int itemId) {
+	public static ItemDefinitions getItemDefinitions(int itemId) {
 		if (itemId < 0 || itemId >= itemsDefinitions.length)
 			itemId = 0;
 		ItemDefinitions def = itemsDefinitions[itemId];
@@ -127,7 +120,7 @@ public final class ItemDefinitions {
 		return def;
 	}
 
-	public static final void clearItemsDefinitions() {
+	public static void clearItemsDefinitions() {
 		for (int i = 0; i < itemsDefinitions.length; i++)
 			itemsDefinitions[i] = null;
 	}
@@ -375,7 +368,7 @@ public final class ItemDefinitions {
 	public HashMap<Integer, Integer> getCreateItemRequirements() {
 		if (clientScriptData == null)
 			return null;
-		HashMap<Integer, Integer> items = new HashMap<Integer, Integer>();
+		HashMap<Integer, Integer> items = new HashMap<>();
 		int requiredId = -1;
 		int requiredAmount = -1;
 		for (int key : clientScriptData.keySet()) {
@@ -400,7 +393,7 @@ public final class ItemDefinitions {
 	public List<Item> getCreateItemRequirements(boolean infusingScroll) {
 		if (clientScriptData == null)
 			return null;
-		List<Item> items = new ArrayList<Item>();
+		List<Item> items = new ArrayList<>();
 		int requiredId = -1;
 		int requiredAmount = -1;
 		for (int key : clientScriptData.keySet()) {
@@ -440,7 +433,7 @@ public final class ItemDefinitions {
 		if (clientScriptData == null)
 			return null;
 		if (itemRequiriments == null) {
-			HashMap<Integer, Integer> skills = new HashMap<Integer, Integer>();
+			HashMap<Integer, Integer> skills = new HashMap<>();
 			for (int i = 0; i < 10; i++) {
 				Integer skill = (Integer) clientScriptData.get(749 + (i * 2));
 				if (skill != null) {
@@ -701,7 +694,7 @@ public final class ItemDefinitions {
 		} else if (opcode == 249) {
 			int length = stream.readUnsignedByte();
 			if (clientScriptData == null)
-				clientScriptData = new HashMap<Integer, Object>(length);
+				clientScriptData = new HashMap<>(length);
 			for (int index = 0; index < length; index++) {
 				boolean stringInstance = stream.readUnsignedByte() == 1;
 				int key = stream.read24BitInt();
@@ -850,7 +843,7 @@ public final class ItemDefinitions {
 
 	public int getTipitPrice() {
 		try {
-			for (String lines : FileUtilities.readFile("./prices/prices.txt")) {
+			for (String lines : FileUtilities.readFile(Settings.DATA_PATH + "data/prices/prices.txt")) {
 				String[] data = lines.split(" - ");
 				if (lines.contains("originalPrices"))
 					continue;
@@ -951,7 +944,7 @@ public final class ItemDefinitions {
 
 		public static LinkedList<String> readFile(String directory) throws IOException {
 
-			LinkedList<String> fileLines = new LinkedList<String>();
+			LinkedList<String> fileLines = new LinkedList<>();
 
 			BufferedReader reader = null;
 
@@ -991,8 +984,6 @@ public final class ItemDefinitions {
 	}
 
 	public boolean isTradeable() {
-		if (ItemConstants.isTradeable(new Item(id)))
-			return true;
-		return false;
+		return ItemConstants.isTradeable(new Item(id));
 	}
 }

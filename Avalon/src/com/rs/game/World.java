@@ -70,10 +70,10 @@ public final class World {
 
 
     private static TimerRepository timers = new TimerRepository();
-    private transient static final EntityList<Player> players = new EntityList<Player>(Settings.PLAYERS_LIMIT);
+    private transient static final EntityList<Player> players = new EntityList<>(Settings.PLAYERS_LIMIT);
 
-    private static final EntityList<NPC> npcs = new EntityList<NPC>(Settings.NPCS_LIMIT);
-    private static final Map<Integer, Region> regions = Collections.synchronizedMap(new HashMap<Integer, Region>());
+    private static final EntityList<NPC> npcs = new EntityList<>(Settings.NPCS_LIMIT);
+    private static final Map<Integer, Region> regions = Collections.synchronizedMap(new HashMap<>());
 
     public static boolean isInUpdate;
 
@@ -758,7 +758,7 @@ public final class World {
     }
 
     public static Player[] getNearPlayers(Player player, int distance, int maxTargets) {
-        List<Entity> possibleTargets = new ArrayList<Entity>();
+        List<Entity> possibleTargets = new ArrayList<>();
         stop:
         for (int regionId : player.getMapRegionsIds()) {
             Region region = World.getRegion(regionId);
@@ -2679,7 +2679,7 @@ public final class World {
         return WildernessControler.isAtWild(tile) || EdgevillePvPControler.isAtPvP(tile);
     }
 
-    private transient static final EntityList<Player> lobbyPlayers = new EntityList<Player>(Settings.PLAYERS_LIMIT);
+    private transient static final EntityList<Player> lobbyPlayers = new EntityList<>(Settings.PLAYERS_LIMIT);
 
     public static final Player getLobbyPlayerByDisplayName(String username) {
         String formatedUsername = Utils.formatPlayerNameForDisplay(username);

@@ -27,7 +27,7 @@ public final class PetManager implements Serializable {
     /**
      * The pet details mapping, sorted by item id.
      */
-    private final Map<Integer, PetDetails> petDetails = new HashMap<Integer, PetDetails>();
+    private final Map<Integer, PetDetails> petDetails = new HashMap<>();
 
     /**
      * The player.

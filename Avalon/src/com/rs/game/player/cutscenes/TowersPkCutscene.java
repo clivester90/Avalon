@@ -11,7 +11,7 @@ public class TowersPkCutscene extends Cutscene {
 
 	@Override
 	public CutsceneAction[] getActions(Player player) {
-		ArrayList<CutsceneAction> actionsList = new ArrayList<CutsceneAction>();
+		ArrayList<CutsceneAction> actionsList = new ArrayList<>();
 
 		actionsList.add(
 				new PosCameraAction(getX(player, player.getX() - 5), getY(player, player.getY() + 7), 8000, 6, 6, -1));

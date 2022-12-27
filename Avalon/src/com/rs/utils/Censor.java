@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Censor {
 
-	private final static List<String> censoredWords = new ArrayList<String>();
+	private final static List<String> censoredWords = new ArrayList<>();
 	private final static String PACKED_PATH = "data/censor/packedCensoredWords.e";
 	private final static String UNPACKED_PATH = "data/censor/unpackedWords.txt";
 

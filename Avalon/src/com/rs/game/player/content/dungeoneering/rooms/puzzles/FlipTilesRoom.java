@@ -115,7 +115,7 @@ public class FlipTilesRoom extends PuzzleRoom {
 	}
 
 	private Set<WorldObject> getAdjacent(int x, int y) {
-		Set<WorldObject> set = new HashSet<WorldObject>();
+		Set<WorldObject> set = new HashSet<>();
 
 		set.add(tiles[x][y]);
 		if (x > 0)

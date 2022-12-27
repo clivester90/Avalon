@@ -81,7 +81,7 @@ public class Smithing extends Action {
 						new Item(1269, 1) },
 				new double[] { 37.5, 75, 112.5, 187.5 }, new int[] { 66, 98, 162, 210, 267 });
 
-		private static Map<Integer, ForgingBar> bars = new HashMap<Integer, ForgingBar>();
+		private static Map<Integer, ForgingBar> bars = new HashMap<>();
 
 		static {
 			for (ForgingBar bar : ForgingBar.values()) {

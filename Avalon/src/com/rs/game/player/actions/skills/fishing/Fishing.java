@@ -128,7 +128,7 @@ public class Fishing extends Action {
 		private final int id, option, tool, bait;
 		private final Animation animation;
 
-		static final Map<Integer, FishingSpots> spot = new HashMap<Integer, FishingSpots>();
+		static final Map<Integer, FishingSpots> spot = new HashMap<>();
 
 		public static FishingSpots forId(int id) {
 			return spot.get(id);

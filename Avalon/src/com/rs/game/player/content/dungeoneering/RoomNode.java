@@ -22,7 +22,7 @@ public class RoomNode {
 	public RoomNode(RoomNode parent, int x, int y) {
 		this.key = -1;
 		this.lock = -1;
-		this.children = new ArrayList<RoomNode>();
+		this.children = new ArrayList<>();
 		this.parent = parent;
 		if (parent != null) //Base doesn't have a parent
 			parent.children.add(this);
@@ -66,7 +66,7 @@ public class RoomNode {
 	}
 	
 	public List<RoomNode> pathToBase() {
-		List<RoomNode> path = new LinkedList<RoomNode>();
+		List<RoomNode> path = new LinkedList<>();
 		RoomNode p = this;
 		while(p != null) {
 			path.add(p);

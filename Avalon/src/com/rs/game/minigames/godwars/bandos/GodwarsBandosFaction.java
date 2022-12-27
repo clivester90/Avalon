@@ -28,7 +28,7 @@ public class GodwarsBandosFaction extends NPC {
 			return super.getPossibleTargets();
 		else {
 			ArrayList<Entity> targets = getPossibleTargets(true, true);
-			ArrayList<Entity> targetsCleaned = new ArrayList<Entity>();
+			ArrayList<Entity> targetsCleaned = new ArrayList<>();
 			for (Entity t : targets) {
 				if (t instanceof GodwarsBandosFaction || (t instanceof Player && hasGodItem((Player) t)) || t instanceof Familiar)
 					continue;

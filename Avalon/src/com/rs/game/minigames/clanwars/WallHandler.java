@@ -26,7 +26,7 @@ public final class WallHandler {
 	 */
 	public static void loadWall(ClanWars c) {
 		WorldTile base = c.getBaseLocation();
-		List<WorldObject> objects = new ArrayList<WorldObject>();
+		List<WorldObject> objects = new ArrayList<>();
 		switch (c.getAreaType()) {
 		case CLASSIC_AREA: // TODO: Real classic area.
 			int objectOffset = 0;

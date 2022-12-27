@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public final class AntiFlood {
 
-	private static ArrayList<String> connections = new ArrayList<String>(3);
+	private static ArrayList<String> connections = new ArrayList<>(3);
 
 	public static void add(String ip) {
 		connections.add(ip);

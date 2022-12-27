@@ -23,7 +23,7 @@ import com.rs.utils.Utils;
 
 public final class Woodcutting extends Action {
 
-    public static enum TreeDefinitions {
+    public enum TreeDefinitions {
 
         NORMAL(1, 25, 1511, 10, 4, 8, 100), // TODO
 
@@ -86,7 +86,7 @@ public final class Woodcutting extends Action {
         private int respawnDelay;
         private int randomLifeProbability;
 
-        private TreeDefinitions(int level, double xp, int logsId, int logBaseTime, int logRandomTime, int respawnDelay,
+        TreeDefinitions(int level, double xp, int logsId, int logBaseTime, int logRandomTime, int respawnDelay,
                                 int randomLifeProbability) {
             this.level = level;
             this.xp = xp;
@@ -148,7 +148,7 @@ public final class Woodcutting extends Action {
 
         private int itemId, levelRequried, axeTime, emoteId;
 
-        private HatchetDefinitions(int itemId, int levelRequried, int axeTime, int emoteId) {
+        HatchetDefinitions(int itemId, int levelRequried, int axeTime, int emoteId) {
             this.itemId = itemId;
             this.levelRequried = levelRequried;
             this.axeTime = axeTime;

@@ -7,7 +7,7 @@ import com.rs.utils.Utils;
 
 public final class DialogueNPCHandler {
 
-	private static final HashMap<Object, Class<? extends Dialogue>> handledDialogues = new HashMap<Object, Class<? extends Dialogue>>();
+	private static final HashMap<Object, Class<? extends Dialogue>> handledDialogues = new HashMap<>();
 
 	@SuppressWarnings(
 	{ "unchecked" })

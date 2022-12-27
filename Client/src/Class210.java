@@ -39,7 +39,7 @@ public class Class210 {
 	    if (null == var_long)
 		l = -1L;
 	    else
-		l = var_long.longValue();
+		l = var_long;
 	    class403.aLongArray5251[((class403.anInt5245 += -682569305) * 1685767703 - 1)] = l;
 	}
 	catch (RuntimeException runtimeexception) {

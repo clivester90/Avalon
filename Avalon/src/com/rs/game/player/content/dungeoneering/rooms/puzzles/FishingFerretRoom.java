@@ -109,7 +109,7 @@ public class FishingFerretRoom extends PuzzleRoom {
 			}
 		}
 
-		vileFishes = new LinkedList<FloorItem>();
+		vileFishes = new LinkedList<>();
 		boolean invertChunks = Utils.random(2) == 0;
 		int[] cornerChunks = possibleCorners[Utils.random(possibleCorners.length)];
 		pressurePlate = manager.getRotatedTile(reference, cornerChunks[invertChunks ? 2 : 0], cornerChunks[invertChunks ? 3 : 1]);

@@ -306,7 +306,7 @@ public class Fletching extends Action {
 
 		;
 
-		private static Map<Integer, Fletch> fletching = new HashMap<Integer, Fletch>();
+		private static Map<Integer, Fletch> fletching = new HashMap<>();
 
 		public static Fletch forId(int id) {
 			return fletching.get(id);

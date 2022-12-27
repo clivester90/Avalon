@@ -49,7 +49,7 @@ public class RenderAnimDefinitions {
 	public int anInt993;
 	public int anInt994;
 
-	private static final ConcurrentHashMap<Integer, RenderAnimDefinitions> renderAimDefs = new ConcurrentHashMap<Integer, RenderAnimDefinitions>();
+	private static final ConcurrentHashMap<Integer, RenderAnimDefinitions> renderAimDefs = new ConcurrentHashMap<>();
 
 	public static final RenderAnimDefinitions getRenderAnimDefinitions(int emoteId) {
 		RenderAnimDefinitions defs = renderAimDefs.get(emoteId);

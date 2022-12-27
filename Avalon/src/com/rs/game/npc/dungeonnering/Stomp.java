@@ -42,7 +42,7 @@ public final class Stomp extends DungeonBoss {
 		super(id, tile, manager, reference);
 		setCantFollowUnderCombat(true); //force cant walk
 		lodestones = new boolean[2];
-		shadows = new ArrayList<int[]>();
+		shadows = new ArrayList<>();
 	}
 
 	@Override

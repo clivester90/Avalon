@@ -14,7 +14,7 @@ public class AreaManager {
 
 	public static void init() {
 		try {
-			areas(new ArrayList<Area>());
+			areas(new ArrayList<>());
 			areas().add(new Multi());
 			areas().add(new WildyAgilityArea());
 			areas().add(new Godwars());

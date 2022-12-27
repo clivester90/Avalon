@@ -315,7 +315,7 @@ public class PlayerCombat extends Action {
     }
 
     public Entity[] getMultiAttackTargets(Player player, int maxDistance, int maxAmtTargets) {
-        List<Entity> possibleTargets = new ArrayList<Entity>();
+        List<Entity> possibleTargets = new ArrayList<>();
         possibleTargets.add(target);
         if (target.isAtMultiArea()) {
             for (int regionId : target.getMapRegionsIds()) {

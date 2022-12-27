@@ -24,7 +24,7 @@ public class DoughCooking extends Action {
 		MEAT_PIZZA(2289, 2142, -1, new int[] { 2293 }, new int[] { 45 }, new double[] { 26 }), 
 		ANCHOVY_PIZZA(2289, 319, -1, new int[] { 2297 }, new int[] { 55 }, new double[] { 39 });
 
-		private static Map<Integer, Cook> cooking = new HashMap<Integer, Cook>();
+		private static Map<Integer, Cook> cooking = new HashMap<>();
 
 		public static Cook forId(int id) {
 			return cooking.get(id);

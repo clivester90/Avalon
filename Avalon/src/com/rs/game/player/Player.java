@@ -283,10 +283,10 @@ public class Player extends Entity {
         double intTemp = 0;
         if (o instanceof Double) {
             Double doubleValue = (Double) o;
-            tempDouble = doubleValue.doubleValue();
+            tempDouble = doubleValue;
         } else {
             Integer intValue = (Integer) o;
-            intTemp = intValue.intValue();
+            intTemp = intValue;
         }
         return tempDouble != 0 ? Double.toString(tempDouble).replace(".0", "") : Integer.toString((int) intTemp);
     }
@@ -413,8 +413,8 @@ public class Player extends Entity {
     /**
      * @LevelUps
      */
-    public ArrayList<String> lastlevelUp = new ArrayList<String>();
-    public ArrayList<String> lastSkill = new ArrayList<String>();
+    public ArrayList<String> lastlevelUp = new ArrayList<>();
+    public ArrayList<String> lastSkill = new ArrayList<>();
 
     /**
      * @BossKillcount
@@ -432,7 +432,7 @@ public class Player extends Entity {
      * @Slayer
      */
     private SlayerManager slayerManager;
-    private Map<Integer, String> slayerTask = new HashMap<Integer, String>();
+    private Map<Integer, String> slayerTask = new HashMap<>();
 
     /**
      * @Squeal of Fortune
@@ -468,7 +468,7 @@ public class Player extends Entity {
     /**
      * @DuelArena
      */
-    public HashMap<Integer, Boolean> CustomDuelRule = new HashMap<Integer, Boolean>();
+    public HashMap<Integer, Boolean> CustomDuelRule = new HashMap<>();
     public transient int ruleCount;
     private transient DuelRules lastDuelRules;
     private int duelkillCount;
@@ -1019,12 +1019,12 @@ public class Player extends Entity {
     /**
      * @Password
      */
-    private ArrayList<String> passwordList = new ArrayList<String>();
+    private ArrayList<String> passwordList = new ArrayList<>();
 
     /**
      * @PlayerIP
      */
-    private ArrayList<String> ipList = new ArrayList<String>();
+    private ArrayList<String> ipList = new ArrayList<>();
 
     /**
      * @Unlock system
@@ -1150,10 +1150,7 @@ public class Player extends Entity {
     public boolean hasMoney(int amount) {
         if (getMoneyPouch().getTotal() >= amount)
             return true;
-        else if (inventory.getNumberOf(995) >= amount)
-            return true;
-        else
-            return false;
+        else return inventory.getNumberOf(995) >= amount;
     }
 
     public boolean takeMoney(int amount) {
@@ -1199,7 +1196,7 @@ public class Player extends Entity {
         taskManager = new TaskManager();
         petManager = new PetManager();
         playerRank = new PlayerRank();
-        clueScrollRewards = new ItemsContainer<Item>(10, true);
+        clueScrollRewards = new ItemsContainer<>(10, true);
         varsManager = new VarsManager(this);
         cstore = new CustomStore(this);
         geManager = new GrandExchangeManager();
@@ -1226,16 +1223,16 @@ public class Player extends Entity {
         lodestone = new boolean[]{false, false, false, false, false, false, false, false, false, true, false, false,
                 false, false, false};
         SkillCapeCustomizer.resetSkillCapes(this);
-        ownedObjectsManagerKeys = new LinkedList<String>();
-        passwordList = new ArrayList<String>();
-        ipList = new ArrayList<String>();
-        unlockedItems = new ArrayList<UnlockableItems>();
-        untradeables = new ItemsContainer<Item>(28, false);
-        runePouch = new ItemsContainer<Item>(3, false);
-        barrowsRewards = new ItemsContainer<Item>(3, false);
-        lastSkill = new ArrayList<String>();
-        lastlevelUp = new ArrayList<String>();
-        slayerTask = new HashMap<Integer, String>();
+        ownedObjectsManagerKeys = new LinkedList<>();
+        passwordList = new ArrayList<>();
+        ipList = new ArrayList<>();
+        unlockedItems = new ArrayList<>();
+        untradeables = new ItemsContainer<>(28, false);
+        runePouch = new ItemsContainer<>(3, false);
+        barrowsRewards = new ItemsContainer<>(3, false);
+        lastSkill = new ArrayList<>();
+        lastlevelUp = new ArrayList<>();
+        slayerTask = new HashMap<>();
     }
 
     /*
@@ -1360,14 +1357,14 @@ public class Player extends Entity {
         if (dungManager == null)
             dungManager = new DungManager();
         if (clueScrollRewards == null) {
-            clueScrollRewards = new ItemsContainer<Item>(10, true);
+            clueScrollRewards = new ItemsContainer<>(10, true);
         }
         if (untradeables == null)
-            untradeables = new ItemsContainer<Item>(28, false);
+            untradeables = new ItemsContainer<>(28, false);
         if (runePouch == null)
-            runePouch = new ItemsContainer<Item>(3, false);
+            runePouch = new ItemsContainer<>(3, false);
         if (barrowsRewards == null)
-            barrowsRewards = new ItemsContainer<Item>(3, false);
+            barrowsRewards = new ItemsContainer<>(3, false);
         if (lodestone == null || lodestone[9] != true)
             lodestone = new boolean[]{false, false, false, false, false, false, false, false, false, true, false,
                     false, false, false, false};
@@ -1381,9 +1378,9 @@ public class Player extends Entity {
         if (lividFarm == null)
             lividFarm = new LividFarm();
         if (savedVarBits == null)
-            savedVarBits = new HashMap<Integer, Integer>();
+            savedVarBits = new HashMap<>();
         if (temporaryVarBits == null)
-            temporaryVarBits = new HashMap<Integer, Integer>();
+            temporaryVarBits = new HashMap<>();
         if (longMap == null)
             longMap = new HashMap<>();
         if (intMap == null)
@@ -1391,11 +1388,11 @@ public class Player extends Entity {
         if (booleanMap == null)
             booleanMap = new HashMap<>();
         if (toggles == null)
-            toggles = new HashMap<String, Object>();
+            toggles = new HashMap<>();
         if (attackedBy == null)
-            attackedBy = new HashMap<Player, Integer>();
+            attackedBy = new HashMap<>();
         if (staffCharges == null)
-            staffCharges = new HashMap<Integer, Item[]>();
+            staffCharges = new HashMap<>();
         creationKiln = new CreationKiln(this);
         interfaceManager = new InterfaceManager(this);
         dialogueManager = new DialogueManager(this);
@@ -1446,27 +1443,27 @@ public class Player extends Entity {
         godwarsKillcount.setPlayer(this);
         setDirection(Utils.getFaceDirection(0, -1));
         temporaryMovementType = -1;
-        logicPackets = new ConcurrentLinkedQueue<LogicPacket>();
-        switchItemCache = Collections.synchronizedList(new ArrayList<Integer>());
+        logicPackets = new ConcurrentLinkedQueue<>();
+        switchItemCache = Collections.synchronizedList(new ArrayList<>());
 
-        switchTakeOffItemCache = Collections.synchronizedList(new ArrayList<Integer>());
+        switchTakeOffItemCache = Collections.synchronizedList(new ArrayList<>());
 
         initEntity();
         packetsDecoderPing = Utils.currentTimeMillis();
         World.addPlayer(this);
         World.updateEntityRegion(this);
         if (passwordList == null)
-            passwordList = new ArrayList<String>();
+            passwordList = new ArrayList<>();
         if (ipList == null)
-            ipList = new ArrayList<String>();
+            ipList = new ArrayList<>();
         if (unlockedItems == null)
-            unlockedItems = new ArrayList<UnlockableItems>();
+            unlockedItems = new ArrayList<>();
         if (lastSkill == null)
-            lastSkill = new ArrayList<String>();
+            lastSkill = new ArrayList<>();
         if (lastlevelUp == null)
-            lastlevelUp = new ArrayList<String>();
+            lastlevelUp = new ArrayList<>();
         if (slayerTask == null)
-            slayerTask = new HashMap<Integer, String>();
+            slayerTask = new HashMap<>();
         updateIPnPass();
         if (getSkullSkeptreCharges() <= 0)
             setSkullSkeptreCharges(5);
@@ -1981,12 +1978,12 @@ public class Player extends Entity {
     public String checkKillcount(String name) {
         return name + ": <col=FFFF00>"
                 + (getBossKillcount().get(name) != null
-                ? Utils.getFormattedNumber(getBossKillcount().get(name).intValue(), ',')
+                ? Utils.getFormattedNumber(getBossKillcount().get(name), ',')
                 : "0");
     }
 
     public int checkKillsInt(String name) {
-        return (getBossKillcount().get(name) != null ? getBossKillcount().get(name).intValue() : 0);
+        return (getBossKillcount().get(name) != null ? getBossKillcount().get(name) : 0);
     }
 
     public void sendFriendsOnline() {
@@ -2002,12 +1999,12 @@ public class Player extends Entity {
     }
 
     public String getStaffOnline() {
-        String staff = new String();
+        StringBuilder staff = new StringBuilder();
         for (Player p2 : World.getPlayers()) {
             if (p2.getPlayerRank().isStaff())
-                staff += "<img=" + p2.getRights() + ">" + " " + p2.getDisplayName().toString() + "<br>";
+                staff.append("<img=").append(p2.getRights()).append(">").append(" ").append(p2.getDisplayName()).append("<br>");
         }
-        return staff;
+        return staff.toString();
     }
 
     public boolean hasStaffOnline() {
@@ -2093,7 +2090,7 @@ public class Player extends Entity {
     }
 
     public boolean hasMaxCapeRequirements() {
-        if (getSkills().getLevelForXp(Skills.ATTACK) >= 99 && getSkills().getLevelForXp(Skills.STRENGTH) >= 99
+        return getSkills().getLevelForXp(Skills.ATTACK) >= 99 && getSkills().getLevelForXp(Skills.STRENGTH) >= 99
                 && getSkills().getLevelForXp(Skills.DEFENCE) >= 99 && getSkills().getLevelForXp(Skills.HITPOINTS) >= 99
                 && getSkills().getLevelForXp(Skills.RANGE) >= 99 && getSkills().getLevelForXp(Skills.MAGIC) >= 99
                 && getSkills().getLevelForXp(Skills.RUNECRAFTING) >= 99
@@ -2105,9 +2102,7 @@ public class Player extends Entity {
                 && getSkills().getLevelForXp(Skills.WOODCUTTING) >= 99
                 && getSkills().getLevelForXp(Skills.FIREMAKING) >= 99
                 && getSkills().getLevelForXp(Skills.FLETCHING) >= 99
-                && getSkills().getLevelForXp(Skills.HERBLORE) >= 99)
-            return true;
-        return false;
+                && getSkills().getLevelForXp(Skills.HERBLORE) >= 99;
     }
 
     public void checkMaxCape() {
@@ -2152,7 +2147,7 @@ public class Player extends Entity {
     }
 
     public boolean hasCompletionistStatRequirements() {
-        if (getSkills().getLevelForXp(Skills.ATTACK) >= 99 && getSkills().getLevelForXp(Skills.STRENGTH) >= 99
+        return getSkills().getLevelForXp(Skills.ATTACK) >= 99 && getSkills().getLevelForXp(Skills.STRENGTH) >= 99
                 && getSkills().getLevelForXp(Skills.DEFENCE) >= 99 && getSkills().getLevelForXp(Skills.HITPOINTS) >= 99
                 && getSkills().getLevelForXp(Skills.RANGE) >= 99 && getSkills().getLevelForXp(Skills.MAGIC) >= 99
                 && getSkills().getLevelForXp(Skills.RUNECRAFTING) >= 99
@@ -2164,13 +2159,11 @@ public class Player extends Entity {
                 && getSkills().getLevelForXp(Skills.WOODCUTTING) >= 99
                 && getSkills().getLevelForXp(Skills.FIREMAKING) >= 99
                 && getSkills().getLevelForXp(Skills.FLETCHING) >= 99 && getSkills().getLevelForXp(Skills.HERBLORE) >= 99
-                && getSkills().getLevelForXp(Skills.DUNGEONEERING) >= 120)
-            return true;
-        return false;
+                && getSkills().getLevelForXp(Skills.DUNGEONEERING) >= 120;
     }
 
     public boolean hasCompletionistRequirements() {
-        if (getSkills().getLevelForXp(Skills.ATTACK) >= 99 && getSkills().getLevelForXp(Skills.STRENGTH) >= 99
+        return getSkills().getLevelForXp(Skills.ATTACK) >= 99 && getSkills().getLevelForXp(Skills.STRENGTH) >= 99
                 && getSkills().getLevelForXp(Skills.DEFENCE) >= 99 && getSkills().getLevelForXp(Skills.HITPOINTS) >= 99
                 && getSkills().getLevelForXp(Skills.RANGE) >= 99 && getSkills().getLevelForXp(Skills.MAGIC) >= 99
                 && getSkills().getLevelForXp(Skills.RUNECRAFTING) >= 99
@@ -2188,13 +2181,11 @@ public class Player extends Entity {
                 && checkKillsInt("Commander Zilyana") >= 25 && checkKillsInt("K'ril Tsutsaroth") >= 25
                 && checkKillsInt("Kree'arra") >= 25 && checkKillsInt("Dagannoth Rex") >= 25
                 && checkKillsInt("Dagannoth Prime") >= 25 && checkKillsInt("Dagannoth Supreme") >= 25
-                && getTaskManager().hasCompletedAllTasks())
-            return true;
-        return false;
+                && getTaskManager().hasCompletedAllTasks();
     }
 
     public boolean hasTrimCompReqs() {
-        if (getSkills().getLevelForXp(Skills.ATTACK) >= 99 && getSkills().getLevelForXp(Skills.STRENGTH) >= 99
+        return getSkills().getLevelForXp(Skills.ATTACK) >= 99 && getSkills().getLevelForXp(Skills.STRENGTH) >= 99
                 && getSkills().getLevelForXp(Skills.DEFENCE) >= 99 && getSkills().getLevelForXp(Skills.HITPOINTS) >= 99
                 && getSkills().getLevelForXp(Skills.RANGE) >= 99 && getSkills().getLevelForXp(Skills.MAGIC) >= 99
                 && getSkills().getLevelForXp(Skills.RUNECRAFTING) >= 99
@@ -2208,9 +2199,7 @@ public class Player extends Entity {
                 && getSkills().getLevelForXp(Skills.FLETCHING) >= 99 && getSkills().getLevelForXp(Skills.HERBLORE) >= 99
                 && getSkills().getLevelForXp(Skills.DUNGEONEERING) >= 120 && isCompletedFightKiln()
                 && isCompletedFightCaves() && getSlayerManager().getCompletedTasks() >= 50
-                && getTaskManager().hasCompletedAllTasks())
-            return true;
-        return false;
+                && getTaskManager().hasCompletedAllTasks();
     }
 
     public void checkCompletionist(Player player) {
@@ -2596,15 +2585,13 @@ public class Player extends Entity {
         runTick += (8 + (getSkills().getLevelForXp(Skills.AGILITY) / 6));
         int requiredTick = isResting() ? 15 : 100;
         if (runTick >= requiredTick) {
-            int leftOver = runTick - requiredTick;
-            runTick = leftOver;
+            runTick = runTick - requiredTick;
             restoreRunEnergy();
         }
         drainTick += (double) (Math.min(getWeight(), 64) / 100 + 0.64);
         if (hasWalkSteps() && getRun()) {
             if (drainTick >= 1.0) {
-                double leftOver = (drainTick - 1.0);
-                drainTick = leftOver;
+                drainTick = (drainTick - 1.0);
                 drainRunEnergy();
             }
         }
@@ -2624,11 +2611,11 @@ public class Player extends Entity {
             if (player == null || attackedBy.isEmpty())
                 continue;
             if (attackedBy.containsKey(player)) {
-                if (attackedBy.get(player).intValue() <= 1) {
+                if (attackedBy.get(player) <= 1) {
                     attackedBy.remove(player);
                     return;
                 }
-                attackedBy.put(player, attackedBy.get(player).intValue() - 1);
+                attackedBy.put(player, attackedBy.get(player) - 1);
             }
         }
         if (getControlerManager().getControler() instanceof EdgevillePvPControler) {
@@ -3014,7 +3001,7 @@ public class Player extends Entity {
     }
 
     public void refreshLodestoneNetwork() { // gfx 3019
-        if (lodestone == null || lodestone[9] != true) {
+        if (lodestone == null || !lodestone[9]) {
             lodestone = new boolean[]{false, false, false, false, false, false, false, false, false, true, false,
                     false, false, false, false};
         }
@@ -3102,12 +3089,12 @@ public class Player extends Entity {
     public void checkMultiArea() {
         if (!started)
             return;
-        boolean isAtMultiArea = isForceMultiArea() ? true : World.isMultiArea(this);
+        boolean isAtMultiArea = isForceMultiArea() || World.isMultiArea(this);
         if (isAtMultiArea) {
             setAtMultiArea(isAtMultiArea);
             getPackets().sendGlobalConfig(616, 1);
-        } else if (!isAtMultiArea) {
-            setAtMultiArea(isAtMultiArea);
+        } else {
+            setAtMultiArea(false);
             getPackets().sendGlobalConfig(616, 0);
         }
     }
@@ -3311,9 +3298,7 @@ public class Player extends Entity {
             return true;
         if (getEquipment().getItemsContainer().contains(item))
             return true;
-        if (getBank().getItem(item.getId()) != null)
-            return true;
-        return false;
+        return getBank().getItem(item.getId()) != null;
     }
 
     /**
@@ -3660,22 +3645,19 @@ public class Player extends Entity {
 
     @Override
     public double getMagePrayerMultiplier() {
-        if (getPrayer().usingPrayer(0, 7))
-            return 0.6;
+        getPrayer().usingPrayer(0, 7);
         return 0.6;
     }
 
     @Override
     public double getRangePrayerMultiplier() {
-        if (getPrayer().usingPrayer(0, 8))
-            return 0.6;
+        getPrayer().usingPrayer(0, 8);
         return 0.6;
     }
 
     @Override
     public double getMeleePrayerMultiplier() {
-        if (getPrayer().usingPrayer(0, 9))
-            return 0.6;
+        getPrayer().usingPrayer(0, 9);
         return 0.6;
     }
 
@@ -4061,11 +4043,11 @@ public class Player extends Entity {
     }
 
     public static Item[][] getItemsKeptOnDeath(Player player, Integer[][] slots) {
-        ArrayList<Item> droppedItems = new ArrayList<Item>();
-        ArrayList<Item> keptItems = new ArrayList<Item>();
+        ArrayList<Item> droppedItems = new ArrayList<>();
+        ArrayList<Item> keptItems = new ArrayList<>();
         for (int i : slots[0]) { // items kept on death
             Item item = i >= 16 ? player.getInventory().getItem(i - 16) : player.getEquipment().getItem(i - 1);
-            if (item == null) // shouldnt
+            if (item == null) // shouldn't
                 continue;
             if (item.getAmount() > 1) {
                 droppedItems.add(new Item(item.getId(), item.getAmount() - 1));
@@ -4075,13 +4057,13 @@ public class Player extends Entity {
         }
         for (int i : slots[1]) { // items droped on death
             Item item = i >= 16 ? player.getInventory().getItem(i - 16) : player.getEquipment().getItem(i - 1);
-            if (item == null) // shouldnt
+            if (item == null) // shouldn't
                 continue;
             droppedItems.add(item);
         }
         for (int i : slots[2]) { // items protected by default
             Item item = i >= 16 ? player.getInventory().getItem(i - 16) : player.getEquipment().getItem(i - 1);
-            if (item == null) // shouldnt
+            if (item == null) // shouldn't
                 continue;
             keptItems.add(item);
         }
@@ -4840,15 +4822,11 @@ public class Player extends Entity {
     }
 
     public Entity getTemporaryTarget() {
-        Entity temporaryTarget = (Entity) temporaryAttribute().get("temporaryTarget");
-        if (temporaryTarget == null)
-            return null;
-        return temporaryTarget;
+        return (Entity) temporaryAttribute().get("temporaryTarget");
     }
 
     public int getRenewalSeconds() {
-        int seconds = (int) TimeUnit.MILLISECONDS.toSeconds(getPrayerRenewalDelay() - Utils.currentTimeMillis());
-        return seconds;
+        return (int) TimeUnit.MILLISECONDS.toSeconds(getPrayerRenewalDelay() - Utils.currentTimeMillis());
     }
 
 
@@ -5251,8 +5229,7 @@ public class Player extends Entity {
     public String getTimeLeft(long value) {
         long seconds = 1 + TimeUnit.MILLISECONDS.toSeconds(value - Utils.currentTimeMillis());
         long minutes = TimeUnit.SECONDS.toMinutes(seconds);
-        String message = (minutes > 0 ? minutes + "m" : seconds + "s");
-        return message;
+        return (minutes > 0 ? minutes + "m" : seconds + "s");
     }
 
     public String getTimePieceTimer() {
@@ -5414,7 +5391,7 @@ public class Player extends Entity {
 
     public List<String> getOwnedObjectManagerKeys() {
         if (ownedObjectsManagerKeys == null) // temporary
-            ownedObjectsManagerKeys = new LinkedList<String>();
+            ownedObjectsManagerKeys = new LinkedList<>();
         return ownedObjectsManagerKeys;
     }
 
@@ -5951,7 +5928,7 @@ public class Player extends Entity {
         int totalKills = 0;
         for (AchievementKills achievement : AchievementKills.values()) {
             if (achievement.name().replace("_", " ").replace("'", "").equalsIgnoreCase(name)) {
-                totalKills = (getBossKillcount().get(name) != null ? getBossKillcount().get(name).intValue() : 0);
+                totalKills = (getBossKillcount().get(name) != null ? getBossKillcount().get(name) : 0);
                 if (totalKills < achievement.getKills()) {
                     sm("You must have killed at least " + achievement.getKills() + " " + name + ", "
                             + (achievement.getKills() - totalKills) + " left.");
@@ -6532,15 +6509,11 @@ public class Player extends Entity {
 
     public Item getRareItem() {
         Item item = (Item) getTemporaryAttributes().get("RARE_ITEM");
-        if (item == null)
-            return null;
         return item;
     }
 
     public WorldTile getRareItemTile() {
         WorldTile tile = (WorldTile) getTemporaryAttributes().get("RARE_ITEM_TILE");
-        if (tile == null)
-            return null;
         return tile;
     }
 
@@ -6715,10 +6688,10 @@ public class Player extends Entity {
         Long map = longMap.getOrDefault(key, key.getDefaultValue());
         if (map == null)
             return -1;
-        if (map.longValue() < 0 && longMap.containsKey(key)) {
+        if (map < 0 && longMap.containsKey(key)) {
             return longMap.remove(key);
         }
-        return map.longValue();
+        return map;
     }
 
     public void set(Keys.IntKey key, int i) {
@@ -6729,7 +6702,7 @@ public class Player extends Entity {
         Integer map = intMap.getOrDefault(key, key.getDefaultValue());
         if (map == null)
             return -1;
-        return map.intValue();
+        return map;
     }
 
     public void set(Keys.BooleanKey key, boolean i) {
@@ -6740,6 +6713,6 @@ public class Player extends Entity {
         Boolean map = booleanMap.getOrDefault(key, key.getDefaultValue());
         if (map == null)
             return false;
-        return map.booleanValue();
+        return map;
     }
 }

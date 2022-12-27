@@ -36,7 +36,7 @@ public class PestMonsters extends NPC {
 
 	@Override
 	public ArrayList<Entity> getPossibleTargets() {
-		ArrayList<Entity> possibleTarget = new ArrayList<Entity>();
+		ArrayList<Entity> possibleTarget = new ArrayList<>();
 		List<Integer> playerIndexes = World.getRegion(getRegionId()).getPlayerIndexes();
 		if (playerIndexes != null) {
 			for (int playerIndex : playerIndexes) {

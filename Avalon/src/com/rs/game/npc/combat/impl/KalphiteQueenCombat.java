@@ -69,7 +69,7 @@ public class KalphiteQueenCombat extends CombatScript {
 		if (fromEntity == null) {
 			return null;
 		}
-		ArrayList<Player> added = new ArrayList<Player>();
+		ArrayList<Player> added = new ArrayList<>();
 		for (int regionId : fromEntity.getMapRegionsIds()) {
 			List<Integer> playersIndexes = World.getRegion(regionId).getPlayerIndexes();
 			if (playersIndexes == null)
@@ -84,7 +84,7 @@ public class KalphiteQueenCombat extends CombatScript {
 		}
 		if (added.isEmpty())
 			return null;
-		Collections.sort(added, new Comparator<Player>() {
+		Collections.sort(added, new Comparator<>() {
 
 			@Override
 			public int compare(Player o1, Player o2) {
@@ -135,7 +135,7 @@ public class KalphiteQueenCombat extends CombatScript {
 
 				@Override
 				public void run() {
-					attackMageTarget(new ArrayList<Player>(), npc, npc, target);
+					attackMageTarget(new ArrayList<>(), npc, npc, target);
 				}
 
 			});

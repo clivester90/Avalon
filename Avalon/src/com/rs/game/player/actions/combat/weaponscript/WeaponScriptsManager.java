@@ -13,7 +13,7 @@ import com.rs.utils.Utils;
 
 public class WeaponScriptsManager {
 
-	public static final HashMap<Object, WeaponScript> weaponScripts = new HashMap<Object, WeaponScript>();
+	public static final HashMap<Object, WeaponScript> weaponScripts = new HashMap<>();
 
 	@SuppressWarnings("rawtypes")
 	public static final void init() {

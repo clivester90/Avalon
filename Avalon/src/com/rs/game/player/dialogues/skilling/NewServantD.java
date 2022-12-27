@@ -137,7 +137,7 @@ public class NewServantD extends Dialogue {
 	}
 
 	private String[] getPageOptions() {
-		List<String> options = new LinkedList<String>();
+		List<String> options = new LinkedList<>();
 		page = (byte) (stageInt == 12 ? 0 : page + 1);
 		int[] items = HouseConstants.BANKABLE_ITEMS[page];
 		for (int index = 0; index < items.length; index++) {

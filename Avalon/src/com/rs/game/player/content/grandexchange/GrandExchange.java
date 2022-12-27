@@ -1,22 +1,20 @@
 package com.rs.game.player.content.grandexchange;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map.Entry;
-
-import com.rs.Launcher;
 import com.rs.Settings;
 import com.rs.cache.loaders.ItemDefinitions;
 import com.rs.game.item.Item;
 import com.rs.game.player.Player;
 import com.rs.net.sql.DatabaseUtility;
-import com.rs.net.sql.impl.sendGEOffer;
 import com.rs.net.sql.impl.sendGEOfferRemoval;
 import com.rs.utils.EconomyPrices;
 import com.rs.utils.SerializableFilesManager;
 import com.rs.utils.Utils;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
 
 public class GrandExchange {
 
@@ -41,8 +39,7 @@ public class GrandExchange {
 			if (offer.getUsername().equals(player.getUsername())) {
 				if (offer.isCompleted())
 					continue;
-				grandexchangeValue += ItemDefinitions.getItemDefinitions(offer.getId()).getTipitPrice()
-						* offer.getAmount();
+				grandexchangeValue += ItemDefinitions.getItemDefinitions(offer.getId()).getTipitPrice() * offer.getAmount();
 			}
 		}
 		return grandexchangeValue;
@@ -205,9 +202,9 @@ public class GrandExchange {
 	}
 
 	public static void recalcPrices() {
-		ArrayList<OfferHistory> track = new ArrayList<OfferHistory>(getOFFERS_TRACK());
-		HashMap<Integer, BigInteger> averagePrice = new HashMap<Integer, BigInteger>();
-		HashMap<Integer, BigInteger> averageQuantity = new HashMap<Integer, BigInteger>();
+		ArrayList<OfferHistory> track = new ArrayList<>(getOFFERS_TRACK());
+		HashMap<Integer, BigInteger> averagePrice = new HashMap<>();
+		HashMap<Integer, BigInteger> averageQuantity = new HashMap<>();
 		for (OfferHistory o : track) {
 			BigInteger price = averagePrice.get(o.getId());
 			if (price != null) {
@@ -247,7 +244,7 @@ public class GrandExchange {
 		SerializableFilesManager.saveGEPrices(PRICES);
 	}
 
-	public static final void save() {
+	public static void save() {
 		if (!edited)
 			return;
 		SerializableFilesManager.saveGEOffers(OFFERS);

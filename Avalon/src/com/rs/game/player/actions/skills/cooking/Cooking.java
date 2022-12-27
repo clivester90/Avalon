@@ -280,7 +280,7 @@ public class Cooking extends Action {
 
 		VILE_FISH(new Item(17374), 1, 0, 0, new Item(-1), new Item(17375), false, true);
 
-		private static Map<Short, Cookables> ingredients = new HashMap<Short, Cookables>();
+		private static Map<Short, Cookables> ingredients = new HashMap<>();
 
 		public static Cookables forId(short itemId) {
 			return ingredients.get(itemId);

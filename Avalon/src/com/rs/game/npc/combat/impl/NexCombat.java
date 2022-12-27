@@ -48,7 +48,7 @@ public class NexCombat extends CombatScript {
 					npc.setNextForceTalk(new ForceTalk("Let the virus flow through you."));
 					nex.playSound(3296, 2);
 					npc.animate(new Animation(6987));
-					nex.sendVirusAttack(new ArrayList<Entity>(), npc.getPossibleTargets(), target);
+					nex.sendVirusAttack(new ArrayList<>(), npc.getPossibleTargets(), target);
 					return defs.getAttackDelay();
 				}
 			}
@@ -191,7 +191,7 @@ public class NexCombat extends CombatScript {
 					npc.animate(new Animation(6984));
 					npc.gfx(new Graphics(1215));
 					ArrayList<Entity> possibleTargets = nex.getPossibleTargets();
-					final HashMap<String, int[]> tiles = new HashMap<String, int[]>();
+					final HashMap<String, int[]> tiles = new HashMap<>();
 					for (Entity t : possibleTargets) {
 						String key = t.getX() + "_" + t.getY();
 						if (!tiles.containsKey(t.getX() + "_" + t.getY())) {

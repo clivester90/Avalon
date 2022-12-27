@@ -32,7 +32,7 @@ public final class MapBuilder {
 	}
 
 	private static final Object ALGORITHM_LOCK = new Object();
-	private static final List<Integer> EXISTING_MAPS = new ArrayList<Integer>();
+	private static final List<Integer> EXISTING_MAPS = new ArrayList<>();
 
 	private static final int MAX_REGION_X = 127;
 	private static final int MAX_REGION_Y = 255;

@@ -1,40 +1,18 @@
 import java.applet.Applet;
-import java.awt.AWTException;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
-import java.awt.Image;
-import java.awt.KeyboardFocusManager;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.SystemTray;
 import java.awt.Toolkit;
 import java.awt.TrayIcon;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.lang.management.ManagementFactory;
-import java.lang.management.RuntimeMXBean;
+import java.awt.event.*;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Properties;
-import java.util.TimeZone;
 
-import javax.imageio.ImageIO;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -48,7 +26,7 @@ public class Loader extends Applet implements ActionListener {
     public JFrame client_frame;
     public JPanel client_panel = new JPanel();
 
-    private static final double clientVersion = 1.0;
+    private static final double CLIENT_VERSION = 1.0;
 
     public static String host_IP = "0.0.0.0";
     public static boolean hosted = true;
@@ -105,6 +83,7 @@ public class Loader extends Applet implements ActionListener {
         panel.add(loader);
         panel.setPreferredSize(new Dimension(768, 503));
         frame.setMinimumSize(new Dimension(768, 503));
+        frame.setTitle(SERVER_NAME + " - Version: " + CLIENT_VERSION);
         panel.setBackground(Color.BLACK);
         JMenuBar bar = new JMenuBar();
 
@@ -177,18 +156,18 @@ public class Loader extends Applet implements ActionListener {
             bar.add(menu);
         }
         frame.setJMenuBar(bar);
+
+        frame.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                alignTitle(frame);
+            }
+
+        });
+
+
         frame.setFont(new Font("System", Font.PLAIN, 14));
-        Font f = frame.getFont();
-        FontMetrics fm = frame.getFontMetrics(f);
-        int x = fm.stringWidth("");
-        int y = fm.stringWidth(" ");
-        int z = frame.getWidth() / 2 - (x / 10);
-        int w = z / y;
-        String pad = "";
-        pad = String.format("%" + w + "s", pad);
-        frame.setTitle(pad + "\u00A9 " + SERVER_NAME + " - Version: " + clientVersion);
         frame.setResizable(true);
-        //frame.addWindowListener(client);
         frame.getContentPane().add(panel, "Center");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/resources/ghostBg1.png"));
@@ -200,6 +179,20 @@ public class Loader extends Applet implements ActionListener {
         client.supplyApplet(loader);
         client.init();
         client.start();
+    }
+
+    private static void alignTitle(JFrame frame) {
+        Font font = frame.getFont();
+        String currentTitle = frame.getTitle().trim();
+        FontMetrics fm = frame.getFontMetrics(font);
+        int frameWidth = frame.getWidth();
+        int titleWidth = fm.stringWidth(currentTitle);
+        int spaceWidth = fm.stringWidth(" ");
+        int centerPos = (frameWidth / 2) - (titleWidth / 2);
+        int spaceCount = centerPos / spaceWidth;
+        String pad = "";
+        pad = String.format("%" + (spaceCount + font.getSize()) + "s", pad);
+        frame.setTitle(pad + currentTitle);
     }
 
     static void setParams() {
@@ -263,7 +256,7 @@ public class Loader extends Applet implements ActionListener {
         public String name, toolTip;
         public int option;
 
-        private Option(String name, int option, String toolTip) {
+        Option(String name, int option, String toolTip) {
             this.name = name;
             this.option = option;
             this.toolTip = toolTip;
@@ -312,7 +305,7 @@ public class Loader extends Applet implements ActionListener {
         int cores = Runtime.getRuntime().availableProcessors();
         JTextArea text = new JTextArea(7, 5);
         JScrollPane scrollPane = new JScrollPane(text);
-        text.setText("Avalon - Client Version " + clientVersion + "\n\n\n � Avalon is created for educational purposes only. All credits goes to Jagex and its respective owners. " + "\n\n� Avalon is not affiliated with Jagex Ltd/RuneScape in anyway. \n \n Operating system: " + System.getProperty("os.name") + " " + System.getProperty("os.arch") + " \n Java version: " + System.getProperty("java.version") + " \n " + (cores > 1 ? "Total CPU threads: " : "CPU thread: ") + cores);
+        text.setText("Avalon - Client Version " + CLIENT_VERSION + "\n\n\n � Avalon is created for educational purposes only. All credits goes to Jagex and its respective owners. " + "\n\n� Avalon is not affiliated with Jagex Ltd/RuneScape in anyway. \n \n Operating system: " + System.getProperty("os.name") + " " + System.getProperty("os.arch") + " \n Java version: " + System.getProperty("java.version") + " \n " + (cores > 1 ? "Total CPU threads: " : "CPU thread: ") + cores);
         text.setWrapStyleWord(true);
         text.setLineWrap(true);
         text.setCaretPosition(0);

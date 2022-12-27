@@ -19,7 +19,7 @@ public class DuelRules {
 	public DuelRules(Player player, Player target) {
 		this.player = player;
 		this.target = target;
-		this.stake = new ItemsContainer<Item>(28, false);
+		this.stake = new ItemsContainer<>(28, false);
 	}
 
 	public boolean canAccept(ItemsContainer<Item> stake, ItemsContainer<Item> opponentStake) {

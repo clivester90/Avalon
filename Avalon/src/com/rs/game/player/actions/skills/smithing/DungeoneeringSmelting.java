@@ -34,7 +34,7 @@ public class DungeoneeringSmelting extends Action {
 
 		PROMETHIUM(90, 63.7, new Item[] { new Item(17648) }, new Item(17668), 9);
 
-		private static Map<Integer, SmeltingBar> bars = new HashMap<Integer, SmeltingBar>();
+		private static Map<Integer, SmeltingBar> bars = new HashMap<>();
 
 		public static SmeltingBar forId(int buttonId) {
 			return bars.get(buttonId);

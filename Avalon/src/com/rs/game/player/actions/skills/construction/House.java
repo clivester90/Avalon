@@ -84,7 +84,7 @@ public class House implements Serializable {
 	public void kickGuests() {
 		if (players == null) // still initing i guess
 			return;
-		for (Player player : new ArrayList<Player>(players)) {
+		for (Player player : new ArrayList<>(players)) {
 			if (isOwner(player))
 				continue;
 			leaveHouse(player, KICKED);
@@ -539,7 +539,7 @@ public class House implements Serializable {
 			clearChallengeNPCs();
 		else {
 			boolean pvp = isPVPMode();
-			for (Player player : new ArrayList<Player>(players)) {
+			for (Player player : new ArrayList<>(players)) {
 				player.getPackets().sendGameMessage((pvp ? "PVP" : "Challenge") + " mode is now activated.");
 				if (pvp)
 					player.setCanPvp(true);
@@ -856,7 +856,7 @@ public class House implements Serializable {
 	public House() {
 		build = 4;
 		buildMode = true;
-		roomsR = new ArrayList<RoomReference>();
+		roomsR = new ArrayList<>();
 		location = POHLocation.RIMMINGTON;
 		addRoom(HouseConstants.Room.GARDEN, 3, 3, 1, 0);
 		getRoom(3, 3, 1).addObject(Builds.CENTREPIECE, 0);
@@ -873,7 +873,7 @@ public class House implements Serializable {
 		build = 4;
 		look = 0;
 		buildMode = true;
-		roomsR = new ArrayList<RoomReference>();
+		roomsR = new ArrayList<>();
 		location = POHLocation.RIMMINGTON;
 		addRoom(HouseConstants.Room.GARDEN, 3, 3, 1, 0);
 		getRoom(3, 3, 1).addObject(Builds.CENTREPIECE, 0);
@@ -882,8 +882,8 @@ public class House implements Serializable {
 	public void init() {
 		if (build != 4)
 			reset();
-		players = new ArrayList<Player>();
-		dungeonTraps = new ArrayList<WorldObject>();
+		players = new ArrayList<>();
+		dungeonTraps = new ArrayList<>();
 		refreshBuildMode();
 		refreshArriveInPortal();
 		refreshNumberOfRooms();
@@ -1246,11 +1246,11 @@ public class House implements Serializable {
 			this.y = (byte) y;
 			this.plane = (byte) plane;
 			this.rotation = (byte) rotation;
-			objects = new ArrayList<ObjectReference>();
+			objects = new ArrayList<>();
 			if (room == Room.PORTAL_CHAMBER)
 				directedPortals = new byte[3];
 			if (isDungeon(room))
-				guardians = new ArrayList<Guard>();
+				guardians = new ArrayList<>();
 		}
 
 		private HouseConstants.Room room;
@@ -1379,7 +1379,7 @@ public class House implements Serializable {
 
 		public List<Guard> getGuardians() {
 			if (isDungeon(room) && guardians == null)
-				guardians = new ArrayList<Guard>();
+				guardians = new ArrayList<>();
 			return guardians;
 		}
 	}
@@ -1521,7 +1521,7 @@ public class House implements Serializable {
 		if (isBuildMode())
 			return;
 		if (isPVPMode()) {
-			for (Player player : new ArrayList<Player>(players))
+			for (Player player : new ArrayList<>(players))
 				player.setCanPvp(false);
 		}
 		challengeMode = isChallengeMode() ? 0 : pvp ? 2 : 1;

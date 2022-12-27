@@ -51,7 +51,7 @@ public class Class128_Sub3 extends Class128 {
 		else
 		    class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919) - 1] = -1;
 	    } else
-		class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919) - 1] = integer.intValue();
+		class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919) - 1] = integer;
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw Class346.method4175(runtimeexception, new StringBuilder().append("zx.bq(").append(')').toString());

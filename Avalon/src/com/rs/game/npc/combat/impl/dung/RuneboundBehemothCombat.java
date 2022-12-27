@@ -49,7 +49,7 @@ public class RuneboundBehemothCombat extends CombatScript {
 		}
 
 		if (Utils.random(15) == 0) {// Special attack
-			final List<WorldTile> explosions = new LinkedList<WorldTile>();
+			final List<WorldTile> explosions = new LinkedList<>();
 			boss.setNextForceTalk(new ForceTalk("Raaaaaaaaaaaaaaaaaaaaaaaaaawr!"));
 			WorldTasksManager.schedule(new WorldTask() {
 

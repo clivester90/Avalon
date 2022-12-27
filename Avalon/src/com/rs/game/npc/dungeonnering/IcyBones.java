@@ -23,7 +23,7 @@ public final class IcyBones extends DungeonBoss {
 
 	public IcyBones(int id, WorldTile tile, DungeonManager manager, RoomReference reference) {
 		super(id, tile, manager, reference);
-		spikes = new ArrayList<WorldObject>();
+		spikes = new ArrayList<>();
 	}
 
 	@Override

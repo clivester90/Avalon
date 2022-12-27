@@ -8,7 +8,7 @@ import com.rs.io.InputStream;
 
 public final class VarBitDefinitions {
 
-	private static final ConcurrentHashMap<Integer, VarBitDefinitions> varpbitDefs = new ConcurrentHashMap<Integer, VarBitDefinitions>();
+	private static final ConcurrentHashMap<Integer, VarBitDefinitions> varpbitDefs = new ConcurrentHashMap<>();
 
 	public int id;
 	public int baseVar;

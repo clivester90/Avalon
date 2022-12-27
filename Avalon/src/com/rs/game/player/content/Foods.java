@@ -308,7 +308,7 @@ public class Foods {
 		/**
 		 * A map of object ids to foods.
 		 */
-		private static Map<Integer, Food> foods = new HashMap<Integer, Food>();
+		private static Map<Integer, Food> foods = new HashMap<>();
 
 		/**
 		 * Gets a food by an object id.

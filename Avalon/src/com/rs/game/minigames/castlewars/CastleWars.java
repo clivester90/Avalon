@@ -43,9 +43,9 @@ public final class CastleWars {
 
 	public static void init() {
 		for (int i = 0; i < waiting.length; i++)
-			waiting[i] = Collections.synchronizedList(new LinkedList<Player>());
+			waiting[i] = Collections.synchronizedList(new LinkedList<>());
 		for (int i = 0; i < playing.length; i++)
-			playing[i] = Collections.synchronizedList(new LinkedList<Player>());
+			playing[i] = Collections.synchronizedList(new LinkedList<>());
 	}
 
 	public static void viewScoreBoard(Player player) {
@@ -316,8 +316,8 @@ public final class CastleWars {
 		private int[] score;
 		private int[] flagStatus;
 		private int[] barricadesCount;
-		private final LinkedList<WorldObject> spawnedObjects = new LinkedList<WorldObject>();
-		private final LinkedList<CastleWarBarricade> barricades = new LinkedList<CastleWarBarricade>();
+		private final LinkedList<WorldObject> spawnedObjects = new LinkedList<>();
+		private final LinkedList<CastleWarBarricade> barricades = new LinkedList<>();
 
 		public PlayingGame() {
 			reset();

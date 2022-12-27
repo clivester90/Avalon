@@ -14,7 +14,7 @@ public class State implements Serializable {
 
     private int state;
 
-    private static Map<Integer, QuestState> map = new HashMap<Integer, QuestState>();
+    private static Map<Integer, QuestState> map = new HashMap<>();
 
     static {
         for (QuestState stateEnum : QuestState.values()) {

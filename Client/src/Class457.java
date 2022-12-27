@@ -79,7 +79,7 @@ public class Class457 {
             try {
                 Field field = sun.awt.Win32GraphicsDevice.class.getDeclaredField("valid");
                 field.setAccessible(true);
-                boolean bool_6_ = ((Boolean) field.get(this.aGraphicsDevice5666)).booleanValue();
+                boolean bool_6_ = (Boolean) field.get(this.aGraphicsDevice5666);
                 if (bool_6_) {
                     field.set(this.aGraphicsDevice5666, Boolean.FALSE);
                     bool = true;

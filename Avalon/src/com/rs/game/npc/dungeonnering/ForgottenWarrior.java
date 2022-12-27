@@ -25,7 +25,7 @@ public class ForgottenWarrior extends Guardian {
 	public void drop() {
 		super.drop();
 		int size = getSize();
-		ArrayList<Item> drops = new ArrayList<Item>();
+		ArrayList<Item> drops = new ArrayList<>();
 		//just 1 for now
 		for (int type = 0; type < DungeonConstants.FORGOTTEN_WARRIORS.length; type++) {
 			for (int id : DungeonConstants.FORGOTTEN_WARRIORS[type])

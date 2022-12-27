@@ -81,7 +81,7 @@ public class DropLogs implements Serializable {
 
 	public DropLogs(Player player) {
 		if (drops == null) {
-			drops = new ArrayList<Item>();
+			drops = new ArrayList<>();
 			setLowestValue(1000000);
 			setLowestValueMessage(false);
 		}

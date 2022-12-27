@@ -38,7 +38,7 @@ public class GrubFootOrangeMailCutscene extends Cutscene {
 
 	@Override
 	public CutsceneAction[] getActions(Player player) {
-		ArrayList<CutsceneAction> actionsList = new ArrayList<CutsceneAction>();
+		ArrayList<CutsceneAction> actionsList = new ArrayList<>();
 				actionsList.add(new ConstructMapAction(369, 438, 10, 10));
 				actionsList.add(new MovePlayerAction(14, 57, 0, Player.TELE_MOVE_TYPE,
 						0));

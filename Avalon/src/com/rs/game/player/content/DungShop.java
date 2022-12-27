@@ -105,7 +105,7 @@ public class DungShop {
 		private int slotId;
 		private int itemId;
 
-		private static final Map<Integer, DungItem> dungItems = new HashMap<Integer, DungItem>();
+		private static final Map<Integer, DungItem> dungItems = new HashMap<>();
 
 		static {
 			for (DungItem item : DungItem.values()) {

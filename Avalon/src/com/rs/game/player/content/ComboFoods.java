@@ -63,7 +63,7 @@ public class ComboFoods {
 		private int heal;
 		private int newId;
 		private int extraHP;
-		private static Map<Integer, Food> foods = new HashMap<Integer, Food>();
+		private static Map<Integer, Food> foods = new HashMap<>();
 
 		public static Food forId(int itemId) {
 			return foods.get(itemId);

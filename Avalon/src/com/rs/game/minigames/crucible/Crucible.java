@@ -41,7 +41,7 @@ public class Crucible {
 		player.setNextWorldTile(tile);
 	}
 
-	private transient static final List<Player> playersInside = new ArrayList<Player>();
+	private transient static final List<Player> playersInside = new ArrayList<>();
 	private static final Object LOCK = new Object();
 
 	public static void removePlayer(Player player, CrucibleControler crucibleControler, boolean logout) {

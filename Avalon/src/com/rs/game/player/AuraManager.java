@@ -20,7 +20,7 @@ public class AuraManager implements Serializable {
 	public HashMap<Integer, Long> cooldowns;
 
 	public AuraManager() {
-		cooldowns = new HashMap<Integer, Long>();
+		cooldowns = new HashMap<>();
 	}
 
 	protected void setPlayer(Player player) {

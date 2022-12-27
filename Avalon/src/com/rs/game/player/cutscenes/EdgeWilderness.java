@@ -11,7 +11,7 @@ public class EdgeWilderness extends Cutscene {
 
 	@Override
 	public CutsceneAction[] getActions(Player player) {
-		ArrayList<CutsceneAction> actionsList = new ArrayList<CutsceneAction>();
+		ArrayList<CutsceneAction> actionsList = new ArrayList<>();
 
 		actionsList.add(new PosCameraAction(80, 75, 5000, 6, 6, -1));
 		actionsList.add(new LookCameraAction(30, 75, 1000, 6, 6, 10));

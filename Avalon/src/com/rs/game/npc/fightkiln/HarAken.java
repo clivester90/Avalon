@@ -32,8 +32,8 @@ public class HarAken extends NPC {
         super(id, tile, -1, true, true);
         setForceMultiArea(true);
         this.controler = controler;
-        tentacles = new ArrayList<HarAkenTentacle>();
-        tentacleSpawns = new ArrayList<WorldTile>();
+        tentacles = new ArrayList<>();
+        tentacleSpawns = new ArrayList<>();
     }
 
     @Override

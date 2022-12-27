@@ -22,7 +22,7 @@ import com.rs.utils.Utils;
 
 public class StarterProtection {
 
-	private static List<String> StarterIPS = new ArrayList<String>();
+	private static List<String> StarterIPS = new ArrayList<>();
 
 	private static final String Path = "data/starter/starterIPS.txt";
 

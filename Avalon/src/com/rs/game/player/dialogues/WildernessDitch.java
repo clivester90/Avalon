@@ -15,7 +15,7 @@ import com.rs.game.tasks.WorldTasksManager;
 
 public class WildernessDitch extends Dialogue {
 
-	private transient static final List<Player> playersOn = Collections.synchronizedList(new ArrayList<Player>());
+	private transient static final List<Player> playersOn = Collections.synchronizedList(new ArrayList<>());
 
 	private WorldObject ditch;
 

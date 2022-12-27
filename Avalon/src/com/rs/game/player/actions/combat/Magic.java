@@ -91,15 +91,15 @@ public class Magic {
 	}
 
 	public static ArrayList<Player> getPossibleTargets(Player player) {
-		ArrayList<Player> closetargets = new ArrayList<Player>();
+		ArrayList<Player> closetargets = new ArrayList<>();
 		Iterator<?> iterator = player.getMapRegionsIds().iterator();
 		while (iterator.hasNext()) {
-			int regionId = ((Integer) iterator.next()).intValue();
+			int regionId = (Integer) iterator.next();
 			List<?> playerIndexes = World.getRegion(regionId).getPlayerIndexes();
 			if (playerIndexes != null) {
 				Iterator<?> iterator_0_ = playerIndexes.iterator();
 				while (iterator_0_.hasNext()) {
-					int npcIndex = ((Integer) iterator_0_.next()).intValue();
+					int npcIndex = (Integer) iterator_0_.next();
 					Player e = (Player) World.getPlayers().get(npcIndex);
 					if (e != null && !e.isDead() && !e.hasFinished() && e.isRunning() && e.withinDistance(player, 64))
 						closetargets.add(e);

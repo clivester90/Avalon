@@ -38,7 +38,7 @@ public class LuminscentIcefiend extends DungeonBoss {
 	public LuminscentIcefiend(int id, WorldTile tile, DungeonManager manager, RoomReference reference) {
 		super(id, tile, manager, reference);
 		specialStage = FIRST_STAGE;
-		icicles = new LinkedList<WorldTile>();
+		icicles = new LinkedList<>();
 	}
 
 	@Override

@@ -7,7 +7,7 @@ import com.rs.game.npc.NPC;
 
 public class FishingSpotsHandler {
 
-	public static final HashMap<Integer, Integer> moveSpots = new HashMap<Integer, Integer>();
+	public static final HashMap<Integer, Integer> moveSpots = new HashMap<>();
 
 	public static void init() {
 		moveSpots.put(new WorldTile(2836, 3431, 0).getTileHash(), new WorldTile(2845, 3429, 0).getTileHash());

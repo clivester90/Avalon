@@ -245,7 +245,7 @@ public final class ItemsContainer<T extends Item> implements Serializable {
 	}
 
 	public ItemsContainer<Item> asItemContainer() {
-		ItemsContainer<Item> c = new ItemsContainer<Item>(data.length, this.alwaysStackable);
+		ItemsContainer<Item> c = new ItemsContainer<>(data.length, this.alwaysStackable);
 		System.arraycopy(data, 0, c.data, 0, data.length);
 		return c;
 	}

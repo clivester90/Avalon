@@ -51,7 +51,7 @@ public class ImpCatcherCutScene extends Cutscene {
 
 	@Override
 	public CutsceneAction[] getActions(final Player player) {
-		ArrayList<CutsceneAction> actionsList = new ArrayList<CutsceneAction>();
+		ArrayList<CutsceneAction> actionsList = new ArrayList<>();
 		
 		player.lock(10);
 		actionsList.add(new PosCameraAction(player.getLocalX(), player.getLocalY() - 4, 1200, 7, 8, -1));

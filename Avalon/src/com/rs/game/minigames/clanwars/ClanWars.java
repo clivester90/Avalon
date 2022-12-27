@@ -23,7 +23,7 @@ public final class ClanWars implements Serializable {
     /**
      * The list of currently active clan wars.
      */
-    private static final List<ClanWars> currentWars = new ArrayList<ClanWars>();
+    private static final List<ClanWars> currentWars = new ArrayList<>();
 
     /**
      * The serial UID.
@@ -67,22 +67,22 @@ public final class ClanWars implements Serializable {
     /**
      * The list of players ingame, of the first team.
      */
-    private transient final List<Player> firstPlayers = new ArrayList<Player>();
+    private transient final List<Player> firstPlayers = new ArrayList<>();
 
     /**
      * The list of players ingame, of the second team.
      */
-    private transient final List<Player> secondPlayers = new ArrayList<Player>();
+    private transient final List<Player> secondPlayers = new ArrayList<>();
 
     /**
      * The list of players viewing the first team.
      */
-    private transient final List<Player> firstViewers = new ArrayList<Player>();
+    private transient final List<Player> firstViewers = new ArrayList<>();
 
     /**
      * The list of players viewing the second team.
      */
-    private transient final List<Player> secondViewers = new ArrayList<Player>();
+    private transient final List<Player> secondViewers = new ArrayList<>();
 
     /**
      * The wall objects list.

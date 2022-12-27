@@ -31,7 +31,7 @@ public class MilestoneCapes extends Action {
 
 		MILESTONE_CAPE_90(90, 90, new Item(1759, 9), new Item(20762), 8);
 
-		private static Map<Integer, Products> prods = new HashMap<Integer, Products>();
+		private static Map<Integer, Products> prods = new HashMap<>();
 
 		public static Products forId(int buttonId) {
 			return prods.get(buttonId);

@@ -30,7 +30,7 @@ public class Glacor extends Glacyte {
 	public void handleHit(final Hit hit) {
 		if (glacites == null) {
 			if (getHitpoints() <= getMaxHitpoints() / 2) {
-				glacites = new ArrayList<Glacyte>(2);
+				glacites = new ArrayList<>(2);
 				createGlacites();
 			}
 		} else if (glacites.size() != 0)

@@ -27,7 +27,7 @@ public class LexicusRunewright extends DungeonBoss {
 
 	private boolean completedFirstAttack;
 	private int attackStage;
-	private List<TombOfLexicus> books = new CopyOnWriteArrayList<TombOfLexicus>();
+	private List<TombOfLexicus> books = new CopyOnWriteArrayList<>();
 
 	public LexicusRunewright(int id, WorldTile tile, DungeonManager manager, RoomReference reference) {
 		super(id, tile, manager, reference);

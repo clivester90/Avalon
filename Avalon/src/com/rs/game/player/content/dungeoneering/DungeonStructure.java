@@ -43,10 +43,10 @@ public class DungeonStructure {
 		int y = random.nextInt(rooms[0].length);
 
 		base = new RoomNode(null, x, y);
-		roomList = new LinkedList<RoomNode>();
+		roomList = new LinkedList<>();
 		addRoom(base);
 
-		List<Point> queue = new ArrayList<Point>();
+		List<Point> queue = new ArrayList<>();
 
 		queue.add(new Point(getBase().x - 1, getBase().y));
 		queue.add(new Point(getBase().x + 1, getBase().y));
@@ -90,7 +90,7 @@ public class DungeonStructure {
 		//Choose crit
 		for (int count = 0;;) {
 			//Sets only have distinct elements so no need to worry about overlapping paths
-			Set<RoomNode> critPath = new HashSet<RoomNode>();
+			Set<RoomNode> critPath = new HashSet<>();
 			boss = shuffledRooms().filter(r -> r.children.isEmpty()).findFirst().get();
 			critPath.addAll(boss.pathToBase());
 			critPath.addAll(shuffledRooms().findAny().get().pathToBase());
@@ -131,7 +131,7 @@ public class DungeonStructure {
 	}
 
 	RoomNode randomParent(int x, int y) {
-		List<RoomNode> neighbors = new LinkedList<RoomNode>();
+		List<RoomNode> neighbors = new LinkedList<>();
 		neighbors.add(getRoom(x - 1, y));
 		neighbors.add(getRoom(x + 1, y));
 		neighbors.add(getRoom(x, y - 1));
@@ -211,7 +211,7 @@ public class DungeonStructure {
 
 	public List<RoomNode> getUnrelatedRooms(RoomNode room) {
 		List<RoomNode> reachable = rooms().collect(Collectors.toList());
-		Queue<RoomNode> encounteredLocks = new LinkedList<RoomNode>();
+		Queue<RoomNode> encounteredLocks = new LinkedList<>();
 		encounteredLocks.add(room);
 		while ((room = encounteredLocks.poll()) != null) {
 			reachable.remove(room);

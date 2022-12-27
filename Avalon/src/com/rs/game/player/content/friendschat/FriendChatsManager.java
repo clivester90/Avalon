@@ -36,7 +36,7 @@ public class FriendChatsManager {
 	private static HashMap<String, FriendChatsManager> cachedFriendChats;
 
 	public static void init() {
-		cachedFriendChats = new HashMap<String, FriendChatsManager>();
+		cachedFriendChats = new HashMap<>();
 	}
 
 	public int getRank(int rights, String username) {
@@ -381,8 +381,8 @@ public class FriendChatsManager {
 		owner = player.getUsername();
 		ownerDisplayName = player.getDisplayName();
 		settings = player.getFriendsIgnores();
-		players = new CopyOnWriteArrayList<String>();
-		bannedPlayers = new ConcurrentHashMap<String, Long>();
+		players = new CopyOnWriteArrayList<>();
+		bannedPlayers = new ConcurrentHashMap<>();
 	}
 
 	public static void destroyChat(Player player) {
@@ -419,7 +419,7 @@ public class FriendChatsManager {
 		FriendChatsManager chat = player.getCurrentFriendChat();
 		if (chat == null)
 			return null;
-		List<Player> players = new ArrayList<Player>();
+		List<Player> players = new ArrayList<>();
 		for (Player p2 : World.getPlayers()) {
 			if (p2 == null)
 				continue;
@@ -432,7 +432,7 @@ public class FriendChatsManager {
 	}
 
 	public List<Player> getPlayerList(FriendChatsManager currentChat) {
-		List<Player> pl = new ArrayList<Player>();
+		List<Player> pl = new ArrayList<>();
 		for (String fc : currentChat.getPlayers()) {
 			if (fc == null)
 				continue;

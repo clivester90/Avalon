@@ -23,7 +23,7 @@ public class Trade {
 
 	public Trade(Player player) {
 		this.player = player; // player reference
-		items = new ItemsContainer<Item>(28, false);
+		items = new ItemsContainer<>(28, false);
 	}
 
 	/*

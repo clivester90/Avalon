@@ -40,8 +40,8 @@ public final class Settings {
 	/**
 	 * General client and server settings.
 	 */
-	public static final String SERVER_NAME = "Avalon";
-	public static final String FORMAL_SERVER_NAME = "Avalon";
+	public static final String SERVER_NAME = "Runescape";
+	public static final String FORMAL_SERVER_NAME = "Runescape";
 	public static final String HELP_CC_NAME = "help";
 	public static final String LASTEST_UPDATE = "";
 	public static final String DATA_PATH = System.getProperty("user.home") + "/Desktop/AvalonData/";
@@ -164,7 +164,7 @@ public final class Settings {
 			13887, 13890, 13893, 13896, 13899, 13902, 13905, 14484, 19784, 11694, 13738, 13740, 13742, 13744, 15017,
 			15018, 15019, 15020, 15220, 23659, 6570 };
 	
-	public static final String[] DEVELOPERS = { "starter", "bank", "andreas", "manager", "zed"};
+	public static final String[] DEVELOPERS = { "clive"};
 	
 	public static final String[] MODERATORS = {};
 	

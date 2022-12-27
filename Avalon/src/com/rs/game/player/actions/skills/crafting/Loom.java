@@ -24,7 +24,7 @@ public class Loom extends Action {
 
 		MILESTONE_CAPES(1, -1, new Item[] { new Item(1759, 0) }, new Item(20735), 4);
 
-		private static Map<Integer, Products> prods = new HashMap<Integer, Products>();
+		private static Map<Integer, Products> prods = new HashMap<>();
 
 		public static Products forId(int buttonId) {
 			return prods.get(buttonId);

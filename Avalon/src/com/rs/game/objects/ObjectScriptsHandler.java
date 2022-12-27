@@ -7,7 +7,7 @@ import com.rs.utils.Utils;
 
 public class ObjectScriptsHandler {
 
-	public static final HashMap<Object, ObjectScript> cachedObjectScripts = new HashMap<Object, ObjectScript>();
+	public static final HashMap<Object, ObjectScript> cachedObjectScripts = new HashMap<>();
 
 	@SuppressWarnings("rawtypes")
 	public static final void init() {

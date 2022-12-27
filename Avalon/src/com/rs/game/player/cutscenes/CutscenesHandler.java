@@ -6,7 +6,7 @@ import com.rs.utils.Logger;
 
 public class CutscenesHandler {
 
-	private static final HashMap<Object, Class<Cutscene>> handledCutscenes = new HashMap<Object, Class<Cutscene>>();
+	private static final HashMap<Object, Class<Cutscene>> handledCutscenes = new HashMap<>();
 
 	@SuppressWarnings("unchecked")
 	public static final void init() {

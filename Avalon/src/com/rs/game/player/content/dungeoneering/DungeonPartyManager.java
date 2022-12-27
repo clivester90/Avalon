@@ -21,7 +21,7 @@ public final class DungeonPartyManager {
 	private DungeonManager dungeon;
 
 	public DungeonPartyManager() {
-		team = new CopyOnWriteArrayList<Player>();
+		team = new CopyOnWriteArrayList<>();
 	}
 
 	public void setDefaults() {
@@ -112,7 +112,7 @@ public final class DungeonPartyManager {
 			if (dungeon != null)
 				return;
 			if (customseed != null)
-				dungeon = new DungeonManager(this, customseed.longValue());
+				dungeon = new DungeonManager(this, customseed);
 			else
 				dungeon = new DungeonManager(this);
 			dungeon.setHsType(hsType);

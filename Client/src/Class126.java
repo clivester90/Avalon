@@ -533,7 +533,7 @@ public class Class126 implements Interface6 {
 		else
 		    i_19_ = -1;
 	    } else
-		i_19_ = integer.intValue();
+		i_19_ = integer;
 	    class403.anIntArray5244[((class403.anInt5239 += -391880689) * 681479919 - 1)] = i_19_;
 	}
 	catch (RuntimeException runtimeexception) {

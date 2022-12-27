@@ -29,7 +29,7 @@ public class LakkTheRiftSplitter extends DungeonBoss {
 
 	public LakkTheRiftSplitter(int id, WorldTile tile, DungeonManager manager, RoomReference reference) {
 		super(id, tile, manager, reference);
-		clusters = new CopyOnWriteArrayList<PortalCluster>();
+		clusters = new CopyOnWriteArrayList<>();
 	}
 
 	@Override

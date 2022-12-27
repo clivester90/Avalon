@@ -47,7 +47,7 @@ public final class DivineSkinweaver extends DungeonBoss {
 	public DivineSkinweaver(int id, WorldTile tile, DungeonManager manager, RoomReference reference) {
 		super(id, tile, manager, reference);
 		holeClosed = new boolean[5];
-		skeletons = Collections.synchronizedList(new ArrayList<DungeonSkeletonBoss>());
+		skeletons = Collections.synchronizedList(new ArrayList<>());
 	}
 
 	public void removeSkeleton(DungeonSkeletonBoss skeleton) {
@@ -68,7 +68,7 @@ public final class DivineSkinweaver extends DungeonBoss {
 	}
 
 	private int[] getOpenHole() {
-		List<int[]> holes = new ArrayList<int[]>();
+		List<int[]> holes = new ArrayList<>();
 		for (int[] hole : HOLES) {
 			WorldObject object = getManager().getObjectWithType(getReference(), 49289, 0, hole[0], hole[1]);
 			if (object != null && object.getId() != 49289)

@@ -35,7 +35,7 @@ public class NexCutScene extends Cutscene {
 			xExtra -= 7;
 		else
 			xExtra += 7;
-		ArrayList<CutsceneAction> actionsList = new ArrayList<CutsceneAction>();
+		ArrayList<CutsceneAction> actionsList = new ArrayList<>();
 		actionsList.add(new PosCameraAction(getX(player, 2925 + xExtra), getY(player, 5203 + yExtra), 2500, -1));
 		actionsList.add(new LookCameraAction(getX(player, dir.getX()), getY(player, dir.getY()), 2500, 3));
 		return actionsList.toArray(new CutsceneAction[actionsList.size()]);

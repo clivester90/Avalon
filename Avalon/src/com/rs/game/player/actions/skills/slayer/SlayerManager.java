@@ -247,7 +247,7 @@ public class SlayerManager implements Serializable {
 			setCurrentMaster(SlayerMaster.MEDIUM);
 		else if (difficulity == 1)
 			setCurrentMaster(SlayerMaster.EASY);
-		List<SlayerTask> tasks = new LinkedList<SlayerTask>(Arrays.asList(currentMaster.getTask()));
+		List<SlayerTask> tasks = new LinkedList<>(Arrays.asList(currentMaster.getTask()));
 		for (int index = 0; index < canceledTasks.length; index++) {
 			SlayerTask task = canceledTasks[index];
 			if (task == null)
@@ -285,7 +285,7 @@ public class SlayerManager implements Serializable {
 	public boolean isValidTask(String name) {
 		if (currentTask == null)
 			return false;
-		List<SlayerTask> tasks = new LinkedList<SlayerTask>(Arrays.asList(currentTask.getAlternatives()));
+		List<SlayerTask> tasks = new LinkedList<>(Arrays.asList(currentTask.getAlternatives()));
 		tasks.add(currentTask);
 		for (SlayerTask currentTask : tasks) {
 			if (name.toLowerCase()

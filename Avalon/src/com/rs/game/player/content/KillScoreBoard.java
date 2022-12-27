@@ -6,6 +6,7 @@ import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import com.rs.Settings;
 import com.rs.game.player.Player;
 import com.rs.utils.Logger;
 import com.rs.utils.SerializableFilesManager;
@@ -22,7 +23,7 @@ public final class KillScoreBoard implements Serializable {
 
 	private static KillScoreBoard[] ranks;
 
-	private static final String PATH = "data/scoreboard/kills.ser";
+	private static final String PATH = Settings.DATA_PATH + "data/scoreboard/kills.ser";
 
 	public KillScoreBoard(Player player) {
 		this.username = player.getUsername();
@@ -77,7 +78,7 @@ public final class KillScoreBoard implements Serializable {
 	}
 
 	public static void sort() {
-		Arrays.sort(ranks, new Comparator<KillScoreBoard>() {
+		Arrays.sort(ranks, new Comparator<>() {
 			@Override
 			public int compare(KillScoreBoard arg0, KillScoreBoard arg1) {
 				if (arg0 == null)

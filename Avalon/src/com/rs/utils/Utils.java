@@ -76,7 +76,7 @@ public final class Utils {
 	}
 
 	public static List<Entity> getAroundEntities(Player conductor, WorldTile tile, int range) {
-		List<Entity> entities = new ArrayList<Entity>();
+		List<Entity> entities = new ArrayList<>();
 		for (int regionId : conductor.getMapRegionsIds()) {
 			List<Integer> npcIndexes = World.getRegion(regionId).getNPCsIndexes();
 			if (npcIndexes != null)
@@ -681,12 +681,12 @@ public final class Utils {
 		assert classLoader != null;
 		String path = packageName.replace('.', '/');
 		Enumeration<URL> resources = classLoader.getResources(path);
-		List<File> dirs = new ArrayList<File>();
+		List<File> dirs = new ArrayList<>();
 		while (resources.hasMoreElements()) {
 			URL resource = resources.nextElement();
 			dirs.add(new File(resource.getFile().replaceAll("%20", " ")));
 		}
-		ArrayList<Class> classes = new ArrayList<Class>();
+		ArrayList<Class> classes = new ArrayList<>();
 		for (File directory : dirs) {
 			classes.addAll(findClasses(directory, packageName));
 		}
@@ -702,7 +702,7 @@ public final class Utils {
 	 */
 	@SuppressWarnings("rawtypes")
 	private static List<Class> findClasses(File directory, String packageName) {
-		List<Class> classes = new ArrayList<Class>();
+		List<Class> classes = new ArrayList<>();
 		if (!directory.exists()) {
 			return classes;
 		}

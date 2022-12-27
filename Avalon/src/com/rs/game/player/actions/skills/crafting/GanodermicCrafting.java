@@ -54,7 +54,7 @@ public class GanodermicCrafting extends Action {
 		private double experience;
 		private String name;
 
-		private static Map<Integer, ArmourData> armourItems = new HashMap<Integer, ArmourData>();
+		private static Map<Integer, ArmourData> armourItems = new HashMap<>();
 
 		public static ArmourData forId(int id) {
 			return armourItems.get(id);

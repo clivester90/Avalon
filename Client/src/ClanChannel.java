@@ -154,7 +154,7 @@ public class ClanChannel extends Class298 {
 	    if (var_long == null)
 		class403.aLongArray5251[((class403.anInt5245 += -682569305) * 1685767703) - 1] = -1L;
 	    else
-		class403.aLongArray5251[((class403.anInt5245 += -682569305) * 1685767703) - 1] = var_long.longValue();
+		class403.aLongArray5251[((class403.anInt5245 += -682569305) * 1685767703) - 1] = var_long;
 	}
 	catch (RuntimeException runtimeexception) {
 	    throw Class346.method4175(runtimeexception, new StringBuilder().append("abj.bs(").append(')').toString());

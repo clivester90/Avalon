@@ -58,7 +58,7 @@ public class Hunter {
             }
         };
 
-        static final List<FlyingEntities> flyingEntities = new ArrayList<FlyingEntities>();
+        static final List<FlyingEntities> flyingEntities = new ArrayList<>();
 
         static {
             for (FlyingEntities impling : FlyingEntities.values())

@@ -23,7 +23,7 @@ public final class Inventory implements Serializable {
 	public static final int INVENTORY_INTERFACE = 679;
 
 	public Inventory() {
-		items = new ItemsContainer<Item>(28, false);
+		items = new ItemsContainer<>(28, false);
 	}
 
 	public void setPlayer(Player player) {
@@ -234,8 +234,8 @@ public final class Inventory implements Serializable {
 
 	public void deleteItems(Item[] item) {
 		Item[] itemsBefore = items.getItemsCopy();
-		for (int index = 0; index < item.length; index++) {
-			items.remove(item[index]);
+		for (Item value : item) {
+			items.remove(value);
 		}
 		refreshItems(itemsBefore);
 
@@ -310,14 +310,14 @@ public final class Inventory implements Serializable {
 	}
 
 	public boolean containsItems(Item[] item) {
-		for (int i = 0; i < item.length; i++)
-			if (!items.contains(item[i]))
+		for (Item value : item)
+			if (!items.contains(value))
 				return false;
 		return true;
 	}
 
 	public boolean containsItems(int[] itemIds, int[] ammounts) {
-		int size = itemIds.length > ammounts.length ? ammounts.length : itemIds.length;
+		int size = Math.min(itemIds.length, ammounts.length);
 		for (int i = 0; i < size; i++)
 			if (!items.contains(new Item(itemIds[i], ammounts[i])))
 				return false;
@@ -363,23 +363,22 @@ public final class Inventory implements Serializable {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Price check: ");
 		if (!isTradeable) {
-			builder.append(item.getDefinitions().getName() + " is untradeable.");
+			builder.append(item.getDefinitions().getName()).append(" is untradeable.");
 		}
 		if (isFree) {
-			builder.append(item.getDefinitions().getName() + " has no cost.");
+			builder.append(item.getDefinitions().getName()).append(" has no cost.");
 		}
 		if (isTradeable && !isFree) {
 			if ((isNoted || isStackable)) {
 				if (item.getAmount() > 1)
-					builder.append(Utils.getFormattedNumber(item.getAmount(), ',') + " x ");
+					builder.append(Utils.getFormattedNumber(item.getAmount(), ',')).append(" x ");
 				builder.append(item.getDefinitions().getName());
-				builder.append(": " + HexColours.getShortMessage(HexColours.Colour.RED, Utils.formatMillionAmount(totalPrice)) + " coins.");
+				builder.append(": ").append(HexColours.getShortMessage(HexColours.Colour.RED, Utils.formatMillionAmount(totalPrice))).append(" coins.");
 				if (item.getAmount() > 1)
-					builder.append(" (" + HexColours.getShortMessage(HexColours.Colour.RED, Utils.getFormattedNumber(EconomyPrices.getPrice(item.getId()), ','))
-							+ " coins each)");
+					builder.append(" (").append(HexColours.getShortMessage(HexColours.Colour.RED, Utils.getFormattedNumber(EconomyPrices.getPrice(item.getId()), ','))).append(" coins each)");
 			} else {
 				builder.append(item.getDefinitions().getName());
-				builder.append(": " + HexColours.getShortMessage(HexColours.Colour.RED, Utils.formatMillionAmount(totalPrice)) + " coins.");
+				builder.append(": ").append(HexColours.getShortMessage(HexColours.Colour.RED, Utils.formatMillionAmount(totalPrice))).append(" coins.");
 			}
 		}
 		player.sm(builder.toString());
@@ -387,8 +386,8 @@ public final class Inventory implements Serializable {
 		new ChatLine
 		 */
 		builder = new StringBuilder();
-		builder.append("High Alch: " + HexColours.getShortMessage(HexColours.Colour.RED, Utils.getFormattedNumber(item.getDefinitions().getHighAlchPrice(), ',')) + " coins, ");
-		builder.append("Low Alch: " + HexColours.getShortMessage(HexColours.Colour.RED, Utils.getFormattedNumber(item.getDefinitions().getLowAlchPrice(), ',')) + " coins.");
+		builder.append("High Alch: ").append(HexColours.getShortMessage(HexColours.Colour.RED, Utils.getFormattedNumber(item.getDefinitions().getHighAlchPrice(), ','))).append(" coins, ");
+		builder.append("Low Alch: ").append(HexColours.getShortMessage(HexColours.Colour.RED, Utils.getFormattedNumber(item.getDefinitions().getLowAlchPrice(), ','))).append(" coins.");
 		player.sm(builder.toString());
 		/*
 		new ChatLine
@@ -401,8 +400,8 @@ public final class Inventory implements Serializable {
 			if (bestBuyOffer == 0 && bestSellOffer == 0) {
 				builder.append("There is no grand exchange offers for this item.");
 			} else {
-				builder.append("Buy Offer: " + (bestBuyOffer == 0 ? (HexColours.getShortMessage(HexColours.Colour.RED, "None") + ", ") : HexColours.getShortMessage(HexColours.Colour.GREEN, Utils.getFormattedNumber(bestBuyOffer, ',')) + " coins. "));
-				builder.append("Sell Offer: " + (bestSellOffer == 0 ? (HexColours.getShortMessage(HexColours.Colour.RED, "None") + ", ") : HexColours.getShortMessage(HexColours.Colour.GREEN, Utils.getFormattedNumber(bestSellOffer, ',')) + " coins."));
+				builder.append("Buy Offer: ").append(bestBuyOffer == 0 ? (HexColours.getShortMessage(HexColours.Colour.RED, "None") + ", ") : HexColours.getShortMessage(HexColours.Colour.GREEN, Utils.getFormattedNumber(bestBuyOffer, ',')) + " coins. ");
+				builder.append("Sell Offer: ").append(bestSellOffer == 0 ? (HexColours.getShortMessage(HexColours.Colour.RED, "None") + ", ") : HexColours.getShortMessage(HexColours.Colour.GREEN, Utils.getFormattedNumber(bestSellOffer, ',')) + " coins.");
 			}
 			player.sm(builder.toString());
 		}
@@ -410,11 +409,11 @@ public final class Inventory implements Serializable {
 		new ChatLine
 		 */
 		builder = new StringBuilder();
-		builder.append("Description: " + ItemExamines.getExamine(item));
+		builder.append("Description: ").append(ItemExamines.getExamine(item));
 		player.sm(builder.toString());
 		if (player.isDeveloperMode()) {
 			builder = new StringBuilder();
-			builder.append("FileId: " + item.getDefinitions().getFileId() + ", ArchiveId: " + item.getDefinitions().getArchiveId());
+			builder.append("FileId: ").append(item.getDefinitions().getFileId()).append(", ArchiveId: ").append(item.getDefinitions().getArchiveId());
 			player.sm(builder.toString());
 		}
 	}

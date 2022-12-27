@@ -29,8 +29,8 @@ public final class EmotesManager implements Serializable {
 	private transient long nextEmoteEnd;
 
 	public EmotesManager() {
-		unlockedEmotes = new ArrayList<Integer>();
-		lockedEmotes = new ArrayList<Integer>();
+		unlockedEmotes = new ArrayList<>();
+		lockedEmotes = new ArrayList<>();
 		for (int emoteId = 2; emoteId < 24; emoteId++)
 			unlockedEmotes.add(emoteId);
 		unlockedEmotes.add(39); // skillcape

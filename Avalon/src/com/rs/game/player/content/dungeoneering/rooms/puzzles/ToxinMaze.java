@@ -174,7 +174,7 @@ public class ToxinMaze extends PuzzleRoom {
 	 */
 	private Barrier[][] layers;
 
-	private Set<Connector> connectors = new HashSet<Connector>();
+	private Set<Connector> connectors = new HashSet<>();
 
 	public void generate() {
 
@@ -306,7 +306,7 @@ public class ToxinMaze extends PuzzleRoom {
 	public boolean generatePath(BarrierSide current, int layer, boolean goRight) {
 		int choicesDown = 0;
 		int choicesUp = 0;
-		List<BarrierSide> options = new LinkedList<BarrierSide>();
+		List<BarrierSide> options = new LinkedList<>();
 		BarrierSide next;
 		if (goRight) {
 			next = current.right;
