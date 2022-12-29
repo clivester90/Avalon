@@ -1,5 +1,6 @@
 package com.rs.game.player.dialogues;
 
+import com.rs.Settings;
 import com.rs.cache.loaders.NPCDefinitions;
 
 public class Auras extends Dialogue {
@@ -45,11 +46,11 @@ public class Auras extends Dialogue {
 			}
 		} else if (stage == 10) {
 			if (componentId == OPTION_1) {
-				if (player.getAvalonPoints() >= 50000) {
+				if (player.getRunescapePoints() >= 50000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 50000);
+						player.setRunescapePoints(player.getRunescapePoints() - 50000);
 						player.getInventory().addItem(22899, 1);
 					} else {
 						stage = 50;
@@ -61,14 +62,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 50,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 50,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_2) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(22901, 1);
 					} else {
 						stage = 50;
@@ -80,14 +81,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_3) {
-				if (player.getAvalonPoints() >= 150000) {
+				if (player.getRunescapePoints() >= 150000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 150000);
+						player.setRunescapePoints(player.getRunescapePoints() - 150000);
 						player.getInventory().addItem(22903, 1);
 					} else {
 						stage = 50;
@@ -99,14 +100,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 150,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 150,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_4) {
-				if (player.getAvalonPoints() >= 200000) {
+				if (player.getRunescapePoints() >= 200000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 200000);
+						player.setRunescapePoints(player.getRunescapePoints() - 200000);
 						player.getInventory().addItem(23876, 1);
 					} else {
 						stage = 50;
@@ -118,7 +119,7 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 200,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 200,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_5) {
 				stage = 1;
@@ -127,11 +128,11 @@ public class Auras extends Dialogue {
 			}
 		} else if (stage == 15) {
 			if (componentId == OPTION_1) {
-				if (player.getAvalonPoints() >= 50000) {
+				if (player.getRunescapePoints() >= 50000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 50000);
+						player.setRunescapePoints(player.getRunescapePoints() - 50000);
 						player.getInventory().addItem(22905, 1);
 					} else {
 						stage = 50;
@@ -143,14 +144,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 50,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 50,000 "+ Settings.FORMAL_SERVER_NAME + " points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_2) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(22907, 1);
 					} else {
 						stage = 50;
@@ -162,14 +163,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_3) {
-				if (player.getAvalonPoints() >= 150000) {
+				if (player.getRunescapePoints() >= 150000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 150000);
+						player.setRunescapePoints(player.getRunescapePoints() - 150000);
 						player.getInventory().addItem(22909, 1);
 					} else {
 						stage = 50;
@@ -181,14 +182,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 150,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 150,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_4) {
-				if (player.getAvalonPoints() >= 200000) {
+				if (player.getRunescapePoints() >= 200000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 200000);
+						player.setRunescapePoints(player.getRunescapePoints() - 200000);
 						player.getInventory().addItem(23874, 1);
 					} else {
 						stage = 50;
@@ -200,7 +201,7 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 200,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 200,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_5) {
 				stage = 1;
@@ -209,11 +210,11 @@ public class Auras extends Dialogue {
 			}
 		} else if (stage == 20) {
 			if (componentId == OPTION_1) {
-				if (player.getAvalonPoints() >= 50000) {
+				if (player.getRunescapePoints() >= 50000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 50000);
+						player.setRunescapePoints(player.getRunescapePoints() - 50000);
 						player.getInventory().addItem(23848, 1);
 					} else {
 						stage = 50;
@@ -225,14 +226,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 50,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 50,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_2) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(23850, 1);
 					} else {
 						stage = 50;
@@ -244,14 +245,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_3) {
-				if (player.getAvalonPoints() >= 150000) {
+				if (player.getRunescapePoints() >= 150000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 150000);
+						player.setRunescapePoints(player.getRunescapePoints() - 150000);
 						player.getInventory().addItem(23852, 1);
 					} else {
 						stage = 50;
@@ -263,14 +264,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 150,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 150,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_4) {
-				if (player.getAvalonPoints() >= 200000) {
+				if (player.getRunescapePoints() >= 200000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 200000);
+						player.setRunescapePoints(player.getRunescapePoints() - 200000);
 						player.getInventory().addItem(23854, 1);
 					} else {
 						stage = 50;
@@ -282,7 +283,7 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 200,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 200,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_5) {
 				stage = 1;
@@ -291,11 +292,11 @@ public class Auras extends Dialogue {
 			}
 		} else if (stage == 25) {
 			if (componentId == OPTION_1) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(22298, 1);
 					} else {
 						stage = 50;
@@ -307,14 +308,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_2) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(22300, 1);
 					} else {
 						stage = 50;
@@ -326,14 +327,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_3) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(23862, 1);
 					} else {
 						stage = 50;
@@ -345,14 +346,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_4) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(23864, 1);
 					} else {
 						stage = 50;
@@ -364,7 +365,7 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_5) {
 				stage = 26;
@@ -372,11 +373,11 @@ public class Auras extends Dialogue {
 			}
 		} else if (stage == 26) {
 			if (componentId == OPTION_1) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(23866, 1);
 					} else {
 						stage = 50;
@@ -388,14 +389,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_2) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(22897, 1);
 					} else {
 						stage = 50;
@@ -407,7 +408,7 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_3) {
 				stage = 1;
@@ -416,11 +417,11 @@ public class Auras extends Dialogue {
 			}
 		} else if (stage == 30) {
 			if (componentId == OPTION_1) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(23858, 1);
 					} else {
 						stage = 50;
@@ -432,14 +433,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_2) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(23868, 1);
 					} else {
 						stage = 50;
@@ -451,14 +452,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_3) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(23860, 1);
 					} else {
 						stage = 50;
@@ -470,14 +471,14 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_4) {
-				if (player.getAvalonPoints() >= 100000) {
+				if (player.getRunescapePoints() >= 100000) {
 					if (player.getInventory().hasFreeSlots()) {
 						stage = 50;
 						sendPlayerDialogue(9827, "Thanks!");
-						player.setAvalonPoints(player.getAvalonPoints() - 100000);
+						player.setRunescapePoints(player.getRunescapePoints() - 100000);
 						player.getInventory().addItem(23856, 1);
 					} else {
 						stage = 50;
@@ -489,7 +490,7 @@ public class Auras extends Dialogue {
 				} else {
 					stage = 50;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need at least 100,000 avalon points." }, IS_NPC, npcId, 9827);
+							"You need at least 100,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				}
 			} else if (componentId == OPTION_5) {
 				stage = 1;

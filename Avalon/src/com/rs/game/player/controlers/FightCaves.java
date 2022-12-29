@@ -345,7 +345,7 @@ public class FightCaves extends Controler {
                     player.getDialogueManager().startDialogue("SimpleNPCMessage", THHAAR_MEJ_JAL,
                             "You even defeated Tz Tok-Jad, I am most impressed! Please accept this gift as a reward.");
                     player.getPackets().sendGameMessage("You were victorious!!");
-                    player.setAvalonPoints(player.getAvalonPoints() + 10000);
+                    player.setRunescapePoints(player.getRunescapePoints() + 10000);
                     player.getPackets().sendGameMessage("You gain 10,000 " + Settings.FORMAL_SERVER_NAME + " points for completing fight caves.");
                     World.sendWorldMessage(
                             "<img=7><col=36648b>News: " + player.getDisplayName() + " has completed the fight caves!",

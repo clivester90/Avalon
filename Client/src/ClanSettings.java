@@ -305,7 +305,7 @@ public class ClanSettings {
 	    return true;
 	}
 	catch (RuntimeException runtimeexception) {
-	    throw Class346.method4175(runtimeexception, new StringBuilder().append("gp.h(").append(')').toString());
+	    throw Class346.method4175(runtimeexception, "gp.h(" + ')');
 	}
     }
 

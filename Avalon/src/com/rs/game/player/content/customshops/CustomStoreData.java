@@ -34,7 +34,7 @@ public class CustomStoreData {
 	public static final int SKILLING_SHOP_2 = 8;
 	public static final int CONSTRUCTION = 9;
 	public static final int SUMMONING = 10;
-	public static final int AVALON_POINTS = 101;
+	public static final int RUNESCAPE_POINTS = 101;
 	public static final int PK_POINTS = 102;
 
 	public static List<Item> magic = new ArrayList<>();
@@ -48,7 +48,7 @@ public class CustomStoreData {
 	public static List<Item> summoning = new ArrayList<>();
 	protected static List<Item> slayer = new ArrayList<>();
 	public static List<Item> accessories = new ArrayList<>();
-	protected static List<Item> avalonpts = new ArrayList<>();
+	protected static List<Item> runescapepts = new ArrayList<>();
 	protected static List<Item> pkpts = new ArrayList<>();
 
 	public static void init() {
@@ -158,14 +158,14 @@ public class CustomStoreData {
 
 		magic.add(new Item("wizard boots"));
 		magic.add(new Item("dagon'hai robe bottom"));
-		magic.add(new Item("ghostly robe¤1"));
+		magic.add(new Item("ghostly robeï¿½1"));
 		magic.add(new Item("wizard robe skirt"));
 		magic.add(new Item("enchanted robe"));
 		magic.add(new Item("mystic robe bottom"));
 		magic.add(new Item("ahrim's robe skirt"));
 
 		magic.add(new Item("zamorak robe"));
-		magic.add(new Item("zamorak robe¤2"));
+		magic.add(new Item("zamorak robeï¿½2"));
 
 		magic.add(new Item("spirit shield"));
 		magic.add(new Item("blessed spirit shield"));
@@ -515,8 +515,8 @@ public class CustomStoreData {
 			return summoning;
 		case ACCESSORIES:
 			return accessories;
-		case AVALON_POINTS:
-			return avalonpts;
+		case RUNESCAPE_POINTS:
+			return runescapepts;
 		case PK_POINTS:
 			return pkpts;
 		}
@@ -524,12 +524,12 @@ public class CustomStoreData {
 	}
 
 	protected int[][] getShopType(int type) {
-		return type == 1 ? PKPointsData.ITEMS : AvalonPointsData.ITEMS;
+		return type == 1 ? PKPointsData.ITEMS : RunescapePointsData.ITEMS;
 	}
 
 	protected String getShopTitle(int type) {
 		return type == 0 ? CoinStoreData.TITLE
-				: type == 1 ? PKPointsData.TITLE : type == 2 ? AvalonPointsData.TITLE : SkillcapeStore.TITLE;
+				: type == 1 ? PKPointsData.TITLE : type == 2 ? RunescapePointsData.TITLE : SkillcapeStore.TITLE;
 	}
 
 	protected String getShopTitle(int type, int shop) {
@@ -557,23 +557,23 @@ public class CustomStoreData {
 				return "Summoning store";
 			case ACCESSORIES:
 				return "Accessories store";
-			case AVALON_POINTS:
-				return "Avalon Point store";
+			case RUNESCAPE_POINTS:
+				return Settings.FORMAL_SERVER_NAME + " Point store";
 			case PK_POINTS:
 				return "Pk Point store";
 			}
 		}
 		return type == 0 ? CoinStoreData.TITLE
-				: type == 1 ? PKPointsData.TITLE : type == 2 ? AvalonPointsData.TITLE : SkillcapeStore.TITLE;
+				: type == 1 ? PKPointsData.TITLE : type == 2 ? RunescapePointsData.TITLE : SkillcapeStore.TITLE;
 	}
 
 	protected int getCurrencySprite(int type, int shop) {
 		return shop == PK_POINTS ? PKPointsData.CURRENCY_SPRITE
-				: shop == AVALON_POINTS ? AvalonPointsData.CURRENCY_SPRITE : CoinStoreData.CURRENCY_SPRITE;
+				: shop == RUNESCAPE_POINTS ? RunescapePointsData.CURRENCY_SPRITE : CoinStoreData.CURRENCY_SPRITE;
 	}
 
 	protected String getPointsName(int type, int shop) {
-		return shop == PK_POINTS ? "Pk Points" : shop == AVALON_POINTS ? Settings.SERVER_NAME + " Points" : "Coins";
+		return shop == PK_POINTS ? "Pk Points" : shop == RUNESCAPE_POINTS ? Settings.SERVER_NAME + " Points" : "Coins";
 	}
 
 	protected void removeCurrency(Player player, int shop, int amount) {
@@ -581,8 +581,8 @@ public class CustomStoreData {
 		case PK_POINTS:
 			player.setPKP(player.getPKP() - amount);
 			break;
-		case AVALON_POINTS:
-			player.setAvalonPoints(player.getAvalonPoints() - amount);
+		case RUNESCAPE_POINTS:
+			player.setRunescapePoints(player.getRunescapePoints() - amount);
 			break;
 		default:
 			player.canBuy(amount);

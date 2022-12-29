@@ -737,7 +737,7 @@ public class Player extends Entity {
     /**
      * @AvalonPoints
      */
-    private int avalonPoints;
+    private int runescapePoints;
 
     /**
      * @TicketSystem
@@ -2820,7 +2820,7 @@ public class Player extends Entity {
         getPackets().sendDeveloperPacket();
         sendRunButtonConfig();
         if (isMember()) {
-            getDialogueManager().startDialogue("SimpleItemMessage", 617, "Welcome back Avalon Member " + Utils.formatPlayerNameForDisplay(getUsername()) + ".");
+            getDialogueManager().startDialogue("SimpleItemMessage", 617, "Welcome back "+ Settings.FORMAL_SERVER_NAME +" Member " + Utils.formatPlayerNameForDisplay(getUsername()) + ".");
         }
         getPackets().sendGameMessage("Welcome to %s.", Settings.SERVER_NAME);
         getPackets().sendWeight(getWeight());
@@ -6230,12 +6230,12 @@ public class Player extends Entity {
         return Settings.DROP_RATE;
     }
 
-    public int getAvalonPoints() {
-        return avalonPoints;
+    public int getRunescapePoints() {
+        return runescapePoints;
     }
 
-    public void setAvalonPoints(int avalonPoints) {
-        this.avalonPoints = avalonPoints;
+    public void setRunescapePoints(int runescapePoints) {
+        this.runescapePoints = runescapePoints;
     }
 
     public GrandExchangeManager getGeManager() {

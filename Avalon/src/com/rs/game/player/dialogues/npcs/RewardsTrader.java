@@ -78,8 +78,8 @@ public class RewardsTrader extends Dialogue {
 				}
 			} else if (componentId == OPTION_2) {
 				stageName = "end";
-				if (player.getAvalonPoints() >= getPrice(itemId, true)) {
-					player.setAvalonPoints(player.getAvalonPoints() - getPrice(itemId, true));
+				if (player.getRunescapePoints() >= getPrice(itemId, true)) {
+					player.setRunescapePoints(player.getRunescapePoints() - getPrice(itemId, true));
 					sendEntityDialogue(SEND_2_TEXT_CHAT, new String[] { npcName, "All done. Moveon. Please..." },
 							IS_NPC, npcId, 9827);
 					for (ItemStore data : data) {

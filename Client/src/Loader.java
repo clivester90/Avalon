@@ -38,7 +38,7 @@ public class Loader extends Applet implements ActionListener {
     public boolean takeScreeny;
     public int screenshot;
 
-    public static String SERVER_NAME = "Avalon";
+    public static String SERVER_NAME = "Runescape";
     public final static int PORT = 43594;
     public static boolean LOBBY_ENABLED = false;
     public static boolean DISABLE_XTEA_CRASH = true;
@@ -305,13 +305,13 @@ public class Loader extends Applet implements ActionListener {
         int cores = Runtime.getRuntime().availableProcessors();
         JTextArea text = new JTextArea(7, 5);
         JScrollPane scrollPane = new JScrollPane(text);
-        text.setText("Avalon - Client Version " + CLIENT_VERSION + "\n\n\n � Avalon is created for educational purposes only. All credits goes to Jagex and its respective owners. " + "\n\n� Avalon is not affiliated with Jagex Ltd/RuneScape in anyway. \n \n Operating system: " + System.getProperty("os.name") + " " + System.getProperty("os.arch") + " \n Java version: " + System.getProperty("java.version") + " \n " + (cores > 1 ? "Total CPU threads: " : "CPU thread: ") + cores);
+        text.setText(SERVER_NAME +" - Client Version " + CLIENT_VERSION + "\n\n\n � "+ SERVER_NAME +" is created for educational purposes only. All credits goes to Jagex and its respective owners. " + "\n\n� "+SERVER_NAME+" is not affiliated with Jagex Ltd/RuneScape in anyway. \n \n Operating system: " + System.getProperty("os.name") + " " + System.getProperty("os.arch") + " \n Java version: " + System.getProperty("java.version") + " \n " + (cores > 1 ? "Total CPU threads: " : "CPU thread: ") + cores);
         text.setWrapStyleWord(true);
         text.setLineWrap(true);
         text.setCaretPosition(0);
         text.setEditable(false);
         scrollPane.setPreferredSize(new Dimension(450, 175));
-        JOptionPane.showMessageDialog(null, scrollPane, "About Avalon", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, scrollPane, "About " + Loader.SERVER_NAME, JOptionPane.INFORMATION_MESSAGE);
     }
 
 	@Override

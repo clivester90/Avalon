@@ -13,7 +13,7 @@ import com.rs.game.player.dialogues.Dialogue;
 
 public class ExplorerJack extends Dialogue {
 
-	int npc = 13295;
+	int npc = 7969;
 
 	@Override
 	public void start() {

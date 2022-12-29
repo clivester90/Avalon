@@ -19,7 +19,7 @@ public class Preferences {
     public static Properties Settings = new Properties();
 
     /** The file. */
-    public static File file = new File(System.getenv("USERPROFILE") + "/Avalon.ini");
+    public static File file = new File(System.getenv("USERPROFILE") + "/718Runescape/718Runescape.ini");
 
     /**
      * Loads the file.
@@ -75,7 +75,7 @@ public class Preferences {
 	    Settings.setProperty("Slow-Drag", client.drag ? "true" : "false");
 	    System.out.print("Settings saved to " + file + ". \n");
 	    OutputStream out = new FileOutputStream(file);
-	    Settings.store(out, "Client settings - Avalon. ~true = enabled, false = disabled");
+	    Settings.store(out, "Client settings - "+Loader.SERVER_NAME+". ~true = enabled, false = disabled");
 	    out.close();
 	} catch (Exception e) {
 	    

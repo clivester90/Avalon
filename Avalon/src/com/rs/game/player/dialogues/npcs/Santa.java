@@ -1,5 +1,6 @@
 package com.rs.game.player.dialogues.npcs;
 
+import com.rs.Settings;
 import com.rs.game.player.dialogues.Dialogue;
 
 public class Santa extends Dialogue {
@@ -16,7 +17,7 @@ public class Santa extends Dialogue {
 	public void run(int interfaceId, int componentId) {
 		if (stage == -1) {
 			stage = 0;
-			sendNPCDialogue(npcId, 9840, "Happy New Year from the AvalonPK Staff Team!");
+			sendNPCDialogue(npcId, 9840, "Happy New Year from the  "+ Settings.FORMAL_SERVER_NAME +" Staff Team!");
 		} else if (stage == 0) {
 			stage = 1;
 			end();

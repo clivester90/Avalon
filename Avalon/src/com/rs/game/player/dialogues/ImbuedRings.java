@@ -1,5 +1,6 @@
 package com.rs.game.player.dialogues;
 
+import com.rs.Settings;
 import com.rs.cache.loaders.ItemDefinitions;
 import com.rs.cache.loaders.NPCDefinitions;
 
@@ -13,7 +14,7 @@ public class ImbuedRings extends Dialogue {
 		stage = 0;
 		sendEntityDialogue(SEND_1_TEXT_CHAT,
 				new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-						"To imbue rings you need, a ring to imbue, 50K Avalon points and 5 million coins." },
+						"To imbue rings you need, a ring to imbue, 50K "+ Settings.FORMAL_SERVER_NAME +" points and 5 million coins." },
 				IS_NPC, npcId, 9827);
 	}
 
@@ -30,10 +31,10 @@ public class ImbuedRings extends Dialogue {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
 							"You need to have a Berserker ring to imbue first." }, IS_NPC, npcId, 9827);
-				} else if (player.getAvalonPoints() < 50000) {
+				} else if (player.getRunescapePoints() < 50000) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need to have at least 50,000 Avalon points." }, IS_NPC, npcId, 9827);
+							"You need to have at least 50,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				} else if (!player.hasMoney(5000000)) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
@@ -45,7 +46,7 @@ public class ImbuedRings extends Dialogue {
 									"Mashal Brogan imbues your Berserker ring" },
 							IS_ITEM, 15220, -1);
 					player.takeMoney(5000000);
-					player.setAvalonPoints(player.getAvalonPoints() - 50000);
+					player.setRunescapePoints(player.getRunescapePoints() - 50000);
 					player.getInventory().deleteItem(6737, 1);
 					player.getInventory().addItem(15220, 1);
 				}
@@ -54,10 +55,10 @@ public class ImbuedRings extends Dialogue {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
 							"You need to have a Archers' ring to imbue first." }, IS_NPC, npcId, 9827);
-				} else if (player.getAvalonPoints() < 50000) {
+				} else if (player.getRunescapePoints() < 50000) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need to have at least 50,000 Avalon points." }, IS_NPC, npcId, 9827);
+							"You need to have at least 50,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				} else if (!player.hasMoney(5000000)) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
@@ -68,7 +69,7 @@ public class ImbuedRings extends Dialogue {
 							ItemDefinitions.getItemDefinitions(15019).name, "Mashal Brogan imbues your Archers' ring" },
 							IS_ITEM, 15019, -1);
 					player.takeMoney(5000000);
-					player.setAvalonPoints(player.getAvalonPoints() - 50000);
+					player.setRunescapePoints(player.getRunescapePoints() - 50000);
 					player.getInventory().deleteItem(6733, 1);
 					player.getInventory().addItem(15019, 1);
 				}
@@ -77,10 +78,10 @@ public class ImbuedRings extends Dialogue {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
 							"You need to have a Seers' ring to imbue first." }, IS_NPC, npcId, 9827);
-				} else if (player.getAvalonPoints() < 50000) {
+				} else if (player.getRunescapePoints() < 50000) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need to have at least 50,000 Avalon points." }, IS_NPC, npcId, 9827);
+							"You need to have at least 50,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				} else if (!player.hasMoney(5000000)) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
@@ -91,7 +92,7 @@ public class ImbuedRings extends Dialogue {
 							ItemDefinitions.getItemDefinitions(15018).name, "Mashal Brogan imbues your Seers' ring" },
 							IS_ITEM, 15018, -1);
 					player.takeMoney(5000000);
-					player.setAvalonPoints(player.getAvalonPoints() - 50000);
+					player.setRunescapePoints(player.getRunescapePoints() - 50000);
 					player.getInventory().deleteItem(6731, 1);
 					player.getInventory().addItem(15018, 1);
 				}
@@ -100,10 +101,10 @@ public class ImbuedRings extends Dialogue {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
 							"You need to have a Warrior ring to imbue first." }, IS_NPC, npcId, 9827);
-				} else if (player.getAvalonPoints() < 50000) {
+				} else if (player.getRunescapePoints() < 50000) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need to have at least 50,000 Avalon points." }, IS_NPC, npcId, 9827);
+							"You need to have at least 50,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				} else if (!player.hasMoney(5000000)) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
@@ -114,7 +115,7 @@ public class ImbuedRings extends Dialogue {
 							ItemDefinitions.getItemDefinitions(15020).name, "Mashal Brogan imbues your Warrior ring" },
 							IS_ITEM, 15020, -1);
 					player.takeMoney(5000000);
-					player.setAvalonPoints(player.getAvalonPoints() - 50000);
+					player.setRunescapePoints(player.getRunescapePoints() - 50000);
 					player.getInventory().deleteItem(6735, 1);
 					player.getInventory().addItem(15020, 1);
 				}
@@ -123,10 +124,10 @@ public class ImbuedRings extends Dialogue {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
 							"You need to have a Onyx ring to imbue first." }, IS_NPC, npcId, 9827);
-				} else if (player.getAvalonPoints() < 50000) {
+				} else if (player.getRunescapePoints() < 50000) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
-							"You need to have at least 50,000 Avalon points." }, IS_NPC, npcId, 9827);
+							"You need to have at least 50,000 "+ Settings.FORMAL_SERVER_NAME +" points." }, IS_NPC, npcId, 9827);
 				} else if (!player.hasMoney(5000000)) {
 					stage = 10;
 					sendEntityDialogue(SEND_1_TEXT_CHAT, new String[] { NPCDefinitions.getNPCDefinitions(npcId).name,
@@ -137,7 +138,7 @@ public class ImbuedRings extends Dialogue {
 							ItemDefinitions.getItemDefinitions(15017).name, "Mashal Brogan imbues your Onyx ring" },
 							IS_ITEM, 15017, -1);
 					player.takeMoney(5000000);
-					player.setAvalonPoints(player.getAvalonPoints() - 50000);
+					player.setRunescapePoints(player.getRunescapePoints() - 50000);
 					player.getInventory().deleteItem(6575, 1);
 					player.getInventory().addItem(15017, 1);
 				}

@@ -141,16 +141,16 @@ public class CustomStore extends CustomStoreData {
 		int totalCurrency = -1;
 		if (TYPE != null)
 			totalCurrency = SHOP == PK_POINTS ? player.getPKP()
-					: SHOP == AVALON_POINTS ? player.getAvalonPoints() : player.getTotalCoins();
+					: SHOP == RUNESCAPE_POINTS ? player.getRunescapePoints() : player.getTotalCoins();
 		if (TYPE == COINS) {
 			if (container >= getItems(TYPE, SHOP).size())
 				return;
-			int price = (SHOP == PK_POINTS || SHOP == AVALON_POINTS ? getItems(TYPE, SHOP).get(container).getAmount()
+			int price = (SHOP == PK_POINTS || SHOP == RUNESCAPE_POINTS ? getItems(TYPE, SHOP).get(container).getAmount()
 					: EconomyPrices.getPrice(getItems(TYPE, SHOP).get(container).getId()));
 			player.getPackets().sendHideIComponent(INTERFACE_ID, COMPONENTS[container], false);// unhides all boxes
 			player.getPackets().sendItems(container,
 					new Item[] { new Item(getItems(TYPE, SHOP).get(container).getId(),
-							(SHOP == PK_POINTS || SHOP == AVALON_POINTS ? 1
+							(SHOP == PK_POINTS || SHOP == RUNESCAPE_POINTS ? 1
 									: getItems(TYPE, SHOP).get(container).getAmount())) });// sends items
 			player.getPackets().sendIComponentText(INTERFACE_ID, COMPONENTS[container] + 4,
 					getItems(TYPE, SHOP).get(container).getAmount() == 0 ? "Out<br>of<br>stock<br><br><br><br><br>"
@@ -162,7 +162,7 @@ public class CustomStore extends CustomStoreData {
 			// price
 			player.getPackets().sendHideIComponent(INTERFACE_ID, COMPONENTS[container] + 3, true);// hides background of
 																									// price
-			if (SHOP == PK_POINTS || SHOP == AVALON_POINTS)
+			if (SHOP == PK_POINTS || SHOP == RUNESCAPE_POINTS)
 				player.getPackets().sendHideIComponent(INTERFACE_ID, 17, false);// unhides total currency
 			// price
 			player.getPackets().sendIComponentText(INTERFACE_ID, 17,
@@ -253,7 +253,7 @@ public class CustomStore extends CustomStoreData {
 		} else if (TYPE == COINS) {
 			for (Item item : getItems(TYPE, SHOP))
 				if (itemId == item.getId()) {
-					price = SHOP == PK_POINTS || SHOP == AVALON_POINTS ? item.getAmount()
+					price = SHOP == PK_POINTS || SHOP == RUNESCAPE_POINTS ? item.getAmount()
 							: EconomyPrices.getPrice(itemId);
 					player.getPackets()
 							.sendGameMessage(ItemDefinitions.getItemDefinitions(itemId).getName()
@@ -297,10 +297,10 @@ public class CustomStore extends CustomStoreData {
 			for (Item item : getItems(TYPE, SHOP)) {
 				if (item.getId() == itemId) {
 					canBuy = true;
-					defaultPrice = SHOP == PK_POINTS || SHOP == AVALON_POINTS ? item.getAmount()
+					defaultPrice = SHOP == PK_POINTS || SHOP == RUNESCAPE_POINTS ? item.getAmount()
 							: EconomyPrices.getPrice(itemId);
 					points = (SHOP == PK_POINTS ? player.getPKP()
-							: SHOP == AVALON_POINTS ? player.getAvalonPoints() : -1);
+							: SHOP == RUNESCAPE_POINTS ? player.getRunescapePoints() : -1);
 					continue;
 				}
 			}
@@ -309,7 +309,7 @@ public class CustomStore extends CustomStoreData {
 				if (itemId == getShopType(TYPE)[i][0]) {
 					canBuy = true;
 					defaultPrice = getShopType(TYPE)[i][2];
-					points = (SHOP == PK_POINTS ? player.getPKP() : player.getAvalonPoints());
+					points = (SHOP == PK_POINTS ? player.getPKP() : player.getRunescapePoints());
 					continue;
 				}
 		}

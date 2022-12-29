@@ -615,18 +615,15 @@ public class NPCHandler {
         player.setNextFaceEntity(npc);
         if (forceRun)
             player.setRun(forceRun);
+
         if (npc.getId() == 4296 || npc.getId() == 6362 || npc.getDefinitions().name.toLowerCase().contains("banker")
                 || npc.getDefinitions().name.toLowerCase().contains("gundai")) {
-            player.setRouteEvent(new RouteEvent(npc, new Runnable() {
-                @Override
-                public void run() {
-                    player.faceEntity(npc);
-                    if (!player.withinDistance(npc, 2))
-                        return;
-                    npc.setNextFaceWorldTile(new WorldTile(player.getX(), player.getY(), player.getPlane()));
-                    player.getBank().openBank();
+            player.setRouteEvent(new RouteEvent(npc, () -> {
+                player.faceEntity(npc);
+                if (!player.withinDistance(npc, 2))
                     return;
-                }
+                npc.setNextFaceWorldTile(new WorldTile(player.getX(), player.getY(), player.getPlane()));
+                player.getBank().openBank();
             }, true));
             return;
         }

@@ -119,7 +119,7 @@ public final class Launcher {
 		KillScoreBoard.init();
 		EdgevillePvPInstance.buildInstance();
 		//TODO - Figure why this isn't running.
-		//CityEventHandler.registerCitys();
+		CityEventHandler.registerCitys();
 		CustomStoreData.init();
 		DTRank.init();
 		try {

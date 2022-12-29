@@ -153,7 +153,7 @@ public class DungShop {
 	public static void openShop(Player player) {
 		player.getInterfaceManager().sendInterface(940);
 		player.getPackets().sendIComponentSettings(940, 2, 0, 205, 145346);
-		player.getPackets().sendIComponentText(940, 31, player.getAvalonPoints() + "");
+		player.getPackets().sendIComponentText(940, 31, player.getRunescapePoints() + "");
 
 	}
 
@@ -176,7 +176,7 @@ public class DungShop {
 
 	private static void handleBuy(Player player) {
 		DungItem item = DungItem.forId(Integer.parseInt(player.temporaryAttribute().get("dungshop").toString()));
-		if (player.getAvalonPoints() >= item.tokens) {
+		if (player.getRunescapePoints() >= item.tokens) {
 			if (item == DungItem.DUNGEONEERING_EXPERIENCE) {
 				player.temporaryAttribute().put("exp_lamp", true);
 				player.getPackets().sendRunScript(108,
@@ -198,7 +198,7 @@ public class DungShop {
 				player.getPackets().sendGameMessage("You already bought Rapid renewal once.");
 				player.getPackets().sendHideIComponent(940, 42, true);
 			} else if (player.getInventory().getFreeSlots() > 0) {
-				player.setAvalonPoints(player.getAvalonPoints() - item.tokens);
+				player.setRunescapePoints(player.getRunescapePoints() - item.tokens);
 				player.getInventory().addItem(item.getItemId(), 1);
 				player.getPackets().sendGameMessage(
 						"You purchased a " + ItemDefinitions.getItemDefinitions(item.getItemId()).getName() + ".");
@@ -213,7 +213,7 @@ public class DungShop {
 			player.getPackets().sendGameMessage("You do not have enough " + Settings.SERVER_NAME + " points to purchase that item.");
 			player.getPackets().sendHideIComponent(940, 42, true);
 		}
-		player.getPackets().sendIComponentText(940, 31, player.getAvalonPoints() + "");
+		player.getPackets().sendIComponentText(940, 31, player.getRunescapePoints() + "");
 	}
 
 	public static boolean bankContains(Player player, int itemId) {

@@ -168,7 +168,7 @@ public abstract class Class291 implements Interface14, Runnable, FocusListener, 
 		/* empty */
 	    }
 	    Class216.aStringArray6657 = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", Class83.aString765, "/tmp/", "" };
-	    Class68.aStringArray679 = (new String[] { new StringBuilder().append(".Avalon").append(Class139.anInt1548 * -518493991).toString(), new StringBuilder().append(".file_store_").append(-518493991 * Class139.anInt1548).toString() });
+	    Class68.aStringArray679 = (new String[] { new StringBuilder().append(".718Runescape").append(Class139.anInt1548 * -518493991).toString(), new StringBuilder().append(".file_store_").append(-518493991 * Class139.anInt1548).toString() });
 	    while_73_: for (int i_10_ = 0; i_10_ < 4; i_10_++) {
 		aFile6500 = method2783(string, string_5_, i_10_, (short) 8683);
 		if (!aFile6500.exists())
@@ -933,14 +933,14 @@ public abstract class Class291 implements Interface14, Runnable, FocusListener, 
 	    aBoolean6481 = false;
 	}
 	catch (RuntimeException runtimeexception) {
-	    throw Class346.method4175(runtimeexception, new StringBuilder().append("mc.focusLost(").append(')').toString());
+	    throw Class346.method4175(runtimeexception, "mc.focusLost(" + ')');
 	}
     }
 
     File method2783(String string, String string_27_, int i, short i_28_) {
 	try {
-	    String string_29_ = (i == 0 ? "" : new StringBuilder().append("").append(i).toString());
-	    Class180.aFile6528 = new File(Class83.aString765, new StringBuilder().append(string).append("_").append(string_27_).append(string_29_).append(".dat").toString());
+	    String string_29_ = (i == 0 ? "" : "" + i);
+	    Class180.aFile6528 = new File(Class83.aString765, string + "_" + string_27_ + string_29_ + ".dat");
 	    String string_30_ = null;
 	    String string_31_ = null;
 	    boolean bool = false;
@@ -957,7 +957,7 @@ public abstract class Class291 implements Interface14, Runnable, FocusListener, 
 		    class298_sub53.index = 0;
 		    i_32_ = class298_sub53.readUnsignedByte();
 		    if (i_32_ < 1 || i_32_ > 2)
-			throw new IOException(new StringBuilder().append("").append(i_32_).toString());
+			throw new IOException("" + i_32_);
 		    int i_33_ = 0;
 		    if (i_32_ > 1)
 			i_33_ = class298_sub53.readUnsignedByte();
@@ -983,7 +983,7 @@ public abstract class Class291 implements Interface14, Runnable, FocusListener, 
 	    if (string_30_ == null && 0 == i) {
 		while_74_: for (int i_34_ = 0; i_34_ < Class68.aStringArray679.length; i_34_++) {
 		    for (int i_35_ = 0; i_35_ < Class216.aStringArray6657.length; i_35_++) {
-			File file = new File(new StringBuilder().append(Class216.aStringArray6657[i_35_]).append(Class68.aStringArray679[i_34_]).append(File.separatorChar).append(string).append(File.separatorChar).toString());
+			File file = new File(Class216.aStringArray6657[i_35_] + Class68.aStringArray679[i_34_] + File.separatorChar + string + File.separatorChar);
 			if (file.exists() && method2753(new File(file, "test.dat"), true, -1984790861)) {
 			    string_30_ = file.toString();
 			    bool = true;
@@ -993,15 +993,14 @@ public abstract class Class291 implements Interface14, Runnable, FocusListener, 
 		}
 	    }
 	    if (string_30_ == null) {
-		string_30_ = new StringBuilder().append(Class83.aString765).append(File.separatorChar).append("Avalon").append(string_29_).append(File.separatorChar).append(string).append(File.separatorChar).append(string_27_).append(File.separatorChar).toString();
+		string_30_ = Class83.aString765 + File.separatorChar + "718Runescape" + string_29_ + File.separatorChar + string + File.separatorChar + string_27_ + File.separatorChar;
 		bool = true;
 	    }
 	    if (null != string_31_) {
 		File file = new File(string_31_);
 		File file_36_ = new File(string_30_);
 		try {
-		    File[] files = file.listFiles();
-		    File[] files_37_ = files;
+			File[] files_37_ = file.listFiles();
 		    for (int i_38_ = 0; i_38_ < files_37_.length; i_38_++) {
 			File file_39_ = files_37_[i_38_];
 			File file_40_ = new File(file_36_, file_39_.getName());
@@ -1020,7 +1019,7 @@ public abstract class Class291 implements Interface14, Runnable, FocusListener, 
 	    return new File(string_30_);
 	}
 	catch (RuntimeException runtimeexception) {
-	    throw Class346.method4175(runtimeexception, new StringBuilder().append("mc.b(").append(')').toString());
+	    throw Class346.method4175(runtimeexception, "mc.b(" + ')');
 	}
     }
 

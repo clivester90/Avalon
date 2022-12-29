@@ -471,7 +471,7 @@ public class NPC extends Entity implements Serializable {
         double bonusPoints = wildy ? Math.round((points * killer.getBonusPoints()) - points)
                 : (points * killer.getBonusPoints()) - points;
         double totalPoints = points + bonusPoints;
-        killer.setAvalonPoints(killer.getAvalonPoints() + (int) (totalPoints + bonusPoints));
+        killer.setRunescapePoints(killer.getRunescapePoints() + (int) (totalPoints + bonusPoints));
         killer.getPackets()
                 .sendGameMessage("You gain " + (int) totalPoints
                         + (bonusPoints > 1 ? " (" + (int) bonusPoints + " bonus points) " : " ") + Settings.SERVER_NAME

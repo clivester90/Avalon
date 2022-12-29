@@ -13,7 +13,6 @@ public final class Settings {
 	public static boolean HOSTED;
 	public static int PORT_ID;
 	public static boolean VPS_HOSTED;
-	
 	public static boolean ECONOMY;
 	public static boolean FREE_TO_PLAY = false;
 
@@ -44,7 +43,7 @@ public final class Settings {
 	public static final String FORMAL_SERVER_NAME = "Runescape";
 	public static final String HELP_CC_NAME = "help";
 	public static final String LASTEST_UPDATE = "";
-	public static final String DATA_PATH = System.getProperty("user.home") + "/Desktop/AvalonData/";
+	public static final String DATA_PATH = System.getProperty("user.home") + "/Desktop/RunescapeData/";
 	public static final String CACHE_PATH = DATA_PATH + "/cache/";
 	public static final int RECEIVE_DATA_LIMIT = 7500;
 	public static final int PACKET_SIZE_LIMIT = 7500;

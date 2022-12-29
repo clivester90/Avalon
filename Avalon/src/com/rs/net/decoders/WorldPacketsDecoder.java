@@ -1854,14 +1854,14 @@ public final class WorldPacketsDecoder extends Decoder {
 				player.getGeManager().setAmount(value);
 			} else if (player.temporaryAttribute().get("exp_lamp") != null) {
 				player.temporaryAttribute().remove("exp_lamp");
-				if (value <= player.getAvalonPoints()) {
-					player.setAvalonPoints(player.getAvalonPoints() - value);
+				if (value <= player.getRunescapePoints()) {
+					player.setRunescapePoints(player.getRunescapePoints() - value);
 					player.getSkills().addXp(Skills.DUNGEONEERING, value);
 					player.getInterfaceManager().closeScreenInterface();
-				} else if (value > player.getAvalonPoints()) {
+				} else if (value > player.getRunescapePoints()) {
 					player.getInterfaceManager().closeScreenInterface();
-					player.getSkills().addXp(Skills.DUNGEONEERING, player.getAvalonPoints());
-					player.setAvalonPoints(0);
+					player.getSkills().addXp(Skills.DUNGEONEERING, player.getRunescapePoints());
+					player.setRunescapePoints(0);
 				}
 			} else if (player.getInterfaceManager().containsInterface(206)
 					&& player.getInterfaceManager().containsInterface(207)) {

@@ -2006,7 +2006,7 @@ public final class Commands {
                                         + Utils.getFormattedNumber(amount3, ',') + " " + Settings.SERVER_NAME + " points.");
                                 p.getPackets().sendGameMessage("You recieved " + Utils.getFormattedNumber(amount3, ',') + " "
                                         + Settings.SERVER_NAME + " points.");
-                                p.setAvalonPoints(p.getAvalonPoints() + amount3);
+                                p.setRunescapePoints(p.getRunescapePoints() + amount3);
                                 return true;
                             } catch (NumberFormatException e) {
                             }
@@ -2860,7 +2860,7 @@ public final class Commands {
                     return true;
 
                 case "getpts":
-                    player.setAvalonPoints(1000000);
+                    player.setRunescapePoints(1000000);
                     player.getPackets().sendGameMessage("You now have 1,000,000 " + Settings.SERVER_NAME + " points.");
                     return true;
                 case "getpkp":

@@ -1,5 +1,7 @@
 package com.rs.game.player.dialogues;
 
+import com.rs.Settings;
+
 public class RichardManeyMembershipD extends Dialogue {
 
 	int npcId = 11460;
@@ -14,21 +16,21 @@ public class RichardManeyMembershipD extends Dialogue {
 	public void run(int interfaceId, int componentId) {
 		switch(stage) {
 		case 0:
-			sendOptionsDialogue("what can I do for you today?","Ask about Avalon Membership", "Ask how to become wealthy", "Nevermind.");
+			sendOptionsDialogue("what can I do for you today?","Ask about "+ Settings.FORMAL_SERVER_NAME +" Membership", "Ask how to become wealthy", "Nevermind.");
 			stage = 1;
 			break;
 		case 1:
 			if (componentId == OPTION_1) {
 				if (player.isMember()) {
-					sendNPCDialogue(npcId, 9827, "Well let me see..You look like you're currently a Avalon Member already.");
+					sendNPCDialogue(npcId, 9827, "Well let me see..You look like you're currently a "+ Settings.FORMAL_SERVER_NAME +" Member already.");
 					stage = 2;
 				} else {
 					player.getPackets().sendOpenURL("https://avalon-rsps.com/forum/Thread-Other-Membership-Benefits-WIP");
-					sendNPCDialogue(npcId, 9827, "I've sent you some basic information about Avalon Membership, it's updated frequently.");
+					sendNPCDialogue(npcId, 9827, "I've sent you some basic information about "+ Settings.FORMAL_SERVER_NAME +" Membership, it's updated frequently.");
 				}
 			} else if (componentId == OPTION_2){
 				player.getPackets().sendOpenURL("https://avalon-rsps.com/forum/Forum-Guides");
-				sendNPCDialogue(npcId, 9827, "I've sent you some useful Guides created by fellow players of Avalon. Give them a good read.");
+				sendNPCDialogue(npcId, 9827, "I've sent you some useful Guides created by fellow players of "+ Settings.FORMAL_SERVER_NAME +". Give them a good read.");
 			} else {
 				end();
 			}

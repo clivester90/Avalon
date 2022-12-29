@@ -129,7 +129,7 @@ public class NewPlayer extends Dialogue {
 		case 10:
 			stage = 11;
 			sendDialogue(
-					"To earn dungeoneering rewards from the rewards trader you must obtain Avalon Tokens by killing NPCs or Skilling in the"
+					"To earn dungeoneering rewards from the rewards trader you must obtain "+ Settings.FORMAL_SERVER_NAME +" Tokens by killing NPCs or Skilling in the"
 							+ " wilderness. Another way to earn these tokens is by purchasing them from the store or killing high level boss npcs.");
 			break;
 		case 11:

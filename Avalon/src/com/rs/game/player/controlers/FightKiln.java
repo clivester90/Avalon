@@ -765,7 +765,7 @@ public class FightKiln extends Controler {
 						player.getPackets()
 								.sendGameMessage("Don't have enough inventory space for reward, reward sent to bank");
 					}
-					player.setAvalonPoints(player.getAvalonPoints() + 100000);
+					player.setRunescapePoints(player.getRunescapePoints() + 100000);
 					player.getPackets().sendGameMessage("You gain 100,000 " + Settings.SERVER_NAME + " points for completing fight kiln.");
 					World.sendWorldMessage(
 							"<img=7><col=36648b>News: " + player.getDisplayName() + " has completed the fight kiln!",

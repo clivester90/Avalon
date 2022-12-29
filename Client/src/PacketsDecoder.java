@@ -109,11 +109,11 @@ public class PacketsDecoder {
                     return true;
                 }
                 Image image = Toolkit.getDefaultToolkit().getImage("src/resources/icon.png");
-                Loader.trayIcon = new TrayIcon(image, "Avalon");
+                Loader.trayIcon = new TrayIcon(image, Loader.SERVER_NAME);
                 try {
                     SystemTray tray = SystemTray.getSystemTray();
                     tray.add(Loader.trayIcon);
-                    Loader.trayIcon.displayMessage("Avalon", message, messageType);
+                    Loader.trayIcon.displayMessage(Loader.SERVER_NAME, message, messageType);
                 } catch (AWTException e1) {
                     e1.printStackTrace();
                 }

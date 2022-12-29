@@ -1,10 +1,13 @@
 package com.rs.game.cityhandler;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import com.rs.Settings;
 import com.rs.game.WorldObject;
@@ -16,11 +19,11 @@ public final class CityEventHandler {
 
     private static final Map<Integer, CityEvent> cityEvents = new HashMap<>();
 
-    private static final Logger logger = Logger.getLogger(CityEventHandler.class
-            .getCanonicalName());
+    private static final Logger logger = Logger.getLogger(CityEventHandler.class.getCanonicalName());
 
     public static boolean registerCitys() {
-        for (File file : (Settings.VPS_HOSTED ? new File("src/com/game/cityhandlers/impl/") : new File("src/com/rs/game/cityhandler/impl/")).listFiles()) {
+        String path = Paths.get("").toAbsolutePath().normalize() + "/Avalon/src/com/rs/game/cityhandler/impl/";
+        for (File file : Objects.requireNonNull(new File(path).listFiles())) {
             try {
 				if (!((CityEvent) Class.forName("com.rs.game.cityhandler.impl."+ file.getName().replace(".java", "")).newInstance()).init()) {
 				    return false;
@@ -29,7 +32,7 @@ public final class CityEventHandler {
 				//e.printStackTrace();
 			}
         }
-       // logger.info("Loaded " + cityEvents.size() + " city events.");
+        logger.info("Loaded " + cityEvents.size() + " city events.");
         return true;
     }
 
